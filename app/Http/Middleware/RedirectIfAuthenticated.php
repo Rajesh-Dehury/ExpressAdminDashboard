@@ -21,6 +21,9 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
+                if (in_array("express_user", $guards)) {
+                    return redirect()->route('express.dashboard');
+                }
                 return redirect(RouteServiceProvider::HOME);
             }
         }

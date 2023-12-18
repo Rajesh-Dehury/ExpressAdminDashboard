@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'express_user' => [
+            'driver' => 'session',
+            'provider' => 'express_users',
+        ],
     ],
 
     /*
@@ -63,6 +67,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'express_users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\ExpressUser::class,
         ],
 
         // 'users' => [
@@ -93,6 +101,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_reset_tokens',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'express_users' => [
+            'provider' => 'express_users',
             'table' => 'password_reset_tokens',
             'expire' => 60,
             'throttle' => 60,

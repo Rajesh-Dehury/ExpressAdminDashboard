@@ -14,13 +14,13 @@
     <script src="https://unpkg.com/@sgratzl/chartjs-chart-boxplot@3"></script>
 
     <!-- owl -->
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css" />
-    <script src="assets/js/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.min.css')}}" />
+    <script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
 
     <!-- bs icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
 
     @stack('css')
 </head>

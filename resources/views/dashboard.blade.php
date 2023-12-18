@@ -45,7 +45,7 @@
                     <div class="card">
                         <div class="d-flex px-2 py-4 align-items-center justify-content-between ">
                             <div class="stats-image col-4">
-                                <img src="assets/images/stats1.svg" alt="">
+                                <img src="{{asset('assets/images/stats1.svg')}}" alt="">
                             </div>
                             <div class="ps-2 col-8">
                                 <p class="stats-text">Total Licenses Issued</p>
@@ -58,7 +58,7 @@
                     <div class="card">
                         <div class="d-flex px-2 py-4 align-items-center justify-content-between ">
                             <div class="stats-image col-4">
-                                <img src="assets/images/stats1.svg" alt="">
+                                <img src="{{asset('assets/images/stats1.svg')}}" alt="">
                             </div>
                             <div class="ps-2 col-8">
                                 <p class="stats-text">Total Available Issued</p>
@@ -71,7 +71,7 @@
                     <div class="card">
                         <div class="d-flex px-2 py-4 align-items-center justify-content-between ">
                             <div class="stats-image col-4">
-                                <img src="assets/images/stats2.svg" alt="">
+                                <img src="{{asset('assets/images/stats2.svg')}}" alt="">
                             </div>
                             <div class="ps-2 col-8">
                                 <p class="stats-text">Total Reports Generated</p>
@@ -84,7 +84,7 @@
                     <div class="card">
                         <div class="d-flex px-2 py-4 align-items-center justify-content-between ">
                             <div class="stats-image col-4">
-                                <img src="assets/images/stats2.svg" alt="">
+                                <img src="{{asset('assets/images/stats2.svg')}}" alt="">
                             </div>
                             <div class="ps-2 col-8">
                                 <p class="stats-text">Total Pending Reports</p>
@@ -97,7 +97,7 @@
                     <div class="card">
                         <div class="d-flex px-2 py-4 align-items-center justify-content-between ">
                             <div class="stats-image col-4">
-                                <img src="assets/images/stats3.svg" alt="">
+                                <img src="{{asset('assets/images/stats3.svg')}}" alt="">
                             </div>
                             <div class="ps-2 col-8">
                                 <p class="stats-text">Total Registered User</p>
@@ -117,7 +117,7 @@
                     <button class="download-btn">Download</button>
                 </div>
                 <div class="col-md-3 d-none d-md-block">
-                    <img src="assets/images/download-box.svg" alt="" class="ms-auto">
+                    <img src="{{asset('assets/images/download-box.svg')}}" alt="" class="ms-auto">
                 </div>
             </div>
         </div>
@@ -126,7 +126,7 @@
             <div class="report-container-inner">
                 <div class="report-header">
                     <div>
-                        <img src="assets/images/purple_logo.png" alt="" class="purple_logo">
+                        <img src="{{asset('assets/images/purple_logo.png')}}" alt="" class="purple_logo">
                     </div>
                     <div>
                         <h4 class="mt-3 fw-bold mb-0">LIFEVITAE EXPRESS QUARTERLY USAGE REPORT</h4>
