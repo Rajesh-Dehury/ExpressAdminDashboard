@@ -40,9 +40,9 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'express_user' => [
+        'express_client_admin' => [
             'driver' => 'session',
-            'provider' => 'express_users',
+            'provider' => 'express_client_admins',
         ],
     ],
 
@@ -68,9 +68,9 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-        'express_users' => [
+        'express_client_admins' => [
             'driver' => 'eloquent',
-            'model' => App\Models\ExpressUser::class,
+            'model' => App\Models\ExpressClientAdmin::class,
         ],
 
         // 'users' => [
@@ -105,8 +105,8 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
-        'express_users' => [
-            'provider' => 'express_users',
+        'express_client_admins' => [
+            'provider' => 'express_client_admins',
             'table' => 'password_reset_tokens',
             'expire' => 60,
             'throttle' => 60,

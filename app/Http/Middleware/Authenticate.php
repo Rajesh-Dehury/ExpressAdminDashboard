@@ -14,7 +14,7 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
-        if (in_array("express_user", $this->guards)) {
+        if (in_array("express_client_admin", $this->guards)) {
             return route('express.login');
         }
         return $request->expectsJson() ? null : route('login');

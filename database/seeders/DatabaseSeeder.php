@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        \App\Models\ExpressUser::create([
+        \App\Models\ExpressClientAdmin::create([
             'name' => 'user1',
             'email' => 'user1@gmail.com',
             'email_verified_at' => now(),

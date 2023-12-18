@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class ExpressUser extends Authenticatable
+class ExpressClientAdmin extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
     
