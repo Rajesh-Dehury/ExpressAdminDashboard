@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\ExpressClientAdmin::create([
             'name' => 'user1',
             'email' => 'user1@gmail.com',
+            'omr_client_id' => 'leo1',
             'email_verified_at' => now(),
             'password' =>  Hash::make('password'),
             'remember_token' => Str::random(10),

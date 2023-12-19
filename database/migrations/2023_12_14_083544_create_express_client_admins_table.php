@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('forgot_password')->nullable();
+            $table->string('omr_client_id');
             $table->rememberToken();
             $table->timestamps();
         });
