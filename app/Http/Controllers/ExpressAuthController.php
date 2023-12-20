@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ForgotPassswordMail;
+use App\Models\ExpressClient;
 use App\Models\ExpressClientAdmin;
+use App\Models\ExpressUser;
+use Carbon\Carbon;
+use Carbon\CarbonImmutable;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -150,6 +154,54 @@ class ExpressAuthController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard');
+        $express_client_admin = Auth::guard('express_client_admin')->user();
+
+        // Dashboard statistics
+        $express_client = ExpressClient::with('expressUsers.expressReport')->where('slug', $express_client_admin->omr_client_id)->first();
+        $total_registered_user = $express_client->expressUsers;
+
+        // total registered users
+        $total_registered_user_count = $total_registered_user->count();
+
+        // report generated count
+        $reportCount = 0;
+        foreach ($express_client->expressUsers as $user) {
+            $reportCount += $user->expressReport ? 1 : 0;
+        }
+
+        // pending report count
+        $pendingReports = $total_registered_user_count - $reportCount;
+
+        // month and year
+        $end_month = Carbon::now()->subMonth()->format('M');
+        $start_month = Carbon::now()->subMonth(3)->format('M');
+
+        $year = Carbon::now()->subMonth()->format('Y') == Carbon::now()->subMonth(3)->format('Y') ? Carbon::now()->subMonth()->format('Y') : Carbon::now()->subMonth(3)->format('Y') . ' - ' . Carbon::now()->subMonth()->format('Y');
+
+
+        // fectch the quater data
+        $currentDate = Carbon::now();
+        $startDate = $currentDate->copy()->subMonths(3)->startOfMonth();
+        $endDate = $currentDate->copy()->subMonths(1)->endOfMonth();
+
+        $express_client_quater = ExpressClient::with('expressUsers.expressReport')
+            ->where('slug', $express_client_admin->omr_client_id)
+            ->whereHas('expressUsers', function ($query) use ($startDate, $endDate) {
+                // dd($query);
+                $query->whereBetween('created_at', [$startDate, $endDate]);
+            })
+            ->first();
+
+        // total registered users
+        $total_registered_user_quater = ExpressUser::where('omr_client_id', $express_client_admin->omr_client_id)
+            ->whereBetween('created_at', [$startDate, $endDate])->get();
+        $total_registered_user_quater_count = $total_registered_user_quater->count();
+
+        $reportCountQuater = 0;
+        foreach ($total_registered_user_quater as $user) {
+            $reportCountQuater += $user->expressReport ? 1 : 0;
+        }
+
+        return view('dashboard', compact('express_client_admin', 'express_client', 'total_registered_user_count', 'reportCount', 'pendingReports', 'end_month', 'start_month', 'year', 'total_registered_user_quater_count', 'reportCountQuater'));
     }
 }
