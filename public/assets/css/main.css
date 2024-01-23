@@ -302,6 +302,15 @@ a {
         width: auto;
     }
 
+    .owl-carousel .item {
+        max-width: 100%;
+    }
+
+    .top-character {
+        overflow: hidden;
+    }
+
+
     .top-character .owl-carousel .owl-nav button.owl-prev {
         background: #E5DAFB;
         color: #3A3A3A;

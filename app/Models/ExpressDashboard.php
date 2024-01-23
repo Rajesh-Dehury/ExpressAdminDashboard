@@ -9,4 +9,9 @@ class ExpressDashboard extends Model
 {
     use HasFactory;
     protected $table = 'express_dashboard';
+
+    function topCharacter()
+    {
+        return $this->hasOne(LifevitaeCharacter::class, 'id', 'lifevitae_character_id');
+    }
 }

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\ExpressClient;
+use App\Models\ExpressDashboard;
 use App\Models\ExpressUser;
 use App\Models\JobDetail;
 use App\Models\LifeSuggestion;
+use App\Models\LifevitaeCharacter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,12 +19,15 @@ class StudentDataController extends Controller
         $genderCount = $this->genderCount($express_client_admin);
 
         $skills = ['COGNITIVE', 'INTERACTIVE', 'EMOTIVE', 'ADAPTIVE', 'CREATIVE', 'MOTIVE'];
-        $SkillDistributionChart = $this->SkillDistributionChart($express_client_admin, $skills);
-        $DominantSkills = $this->DominantSkills($express_client_admin);
-        $DevelopingSkills = $this->DevelopingSkills($express_client_admin);
-        $Top10Strengths = $this->Top10Strengths($express_client_admin);
+        $ExpressDashboard = ExpressDashboard::first();
+        $SkillDistributionChart = $this->SkillDistributionChart($ExpressDashboard, $skills);
+        $DominantSkills = $this->DominantSkills($ExpressDashboard, $skills);
+        $DevelopingSkills = $this->DevelopingSkills($ExpressDashboard, $skills);
+        $Top10Strengths = $this->Top10Strengths($ExpressDashboard);
         $suggestedActivity = $this->suggestedActivity($DominantSkills);
         $Top3Pathway = $this->Top3Pathway($express_client_admin);
+        $lifevitae_characters = $ExpressDashboard->topCharacter;
+
 
         return view(
             'student_data',
@@ -35,6 +40,8 @@ class StudentDataController extends Controller
                 'skills',
                 'suggestedActivity',
                 'Top3Pathway',
+                'lifevitae_characters',
+                'ExpressDashboard',
             )
         );
     }
@@ -59,104 +66,50 @@ class StudentDataController extends Controller
         return $genderCount;
     }
 
-    function SkillDistributionChart($express_client_admin, $skills)
+    function SkillDistributionChart($ExpressDashboard, $skills)
     {
-        $express_client = ExpressClient::with('expressUsers.expressReport')->where('slug', $express_client_admin->omr_client_id)->first();
         $averages = array();
 
         foreach ($skills as $skill) {
-            $skill_avg = 0;
-            $skill_values = array();
-
-            foreach ($express_client->expressUsers as $user) {
-                array_push($skill_values, $user->expressReport->$skill ?? 0);
-            }
-
-            if (count($skill_values) > 0) {
-                $skill_avg = array_sum($skill_values) / count($skill_values);
-            }
-
-            $averages[$skill] = $skill_avg;
+            $averages[$skill] = $ExpressDashboard->$skill;
         }
 
         return $averages;
     }
 
-    function DominantSkills($express_client_admin)
+    function DominantSkills($ExpressDashboard, $skills)
     {
-        $express_client = ExpressClient::with('expressUsers.expressReport')->where('slug', $express_client_admin->omr_client_id)->first();
+        $skill_values = explode(',', $ExpressDashboard->dominant_skills_stat);
 
-        $skill_values = "";
+        $skill_labels = array();
 
-        foreach ($express_client->expressUsers as $user) {
-            $dominant_skills = $user->expressReport->dominant_skills ?? "";
-
-            if ($dominant_skills !== null && $dominant_skills !== "") {
-                $skill_values .= $dominant_skills . ',';
-            }
+        foreach ($skills as $skill) {
+            array_push($skill_labels, $skill);
         }
-
-        $skill_values = rtrim($skill_values, ',');
-
-        $skill_values_arr = explode(',', $skill_values);
-
-        $skill_counts = array_count_values($skill_values_arr);
 
         return [
-            'labels' => array_keys($skill_counts),
-            'data' => array_values($skill_counts),
+            'labels' => $skill_labels,
+            'data' => array_values($skill_values),
         ];
     }
-    function DevelopingSkills($express_client_admin)
+    function DevelopingSkills($ExpressDashboard, $skills)
     {
-        $express_client = ExpressClient::with('expressUsers.expressReport')->where('slug', $express_client_admin->omr_client_id)->first();
+        $skill_values = explode(',', $ExpressDashboard->developing_skills_stat);
 
-        $skill_values = "";
+        $skill_labels = array();
 
-        foreach ($express_client->expressUsers as $user) {
-            $developing_skills = $user->expressReport->developing_skills ?? "";
-
-            if ($developing_skills !== null && $developing_skills !== "") {
-                $skill_values .= $developing_skills . ',';
-            }
+        foreach ($skills as $skill) {
+            array_push($skill_labels, $skill);
         }
-
-        $skill_values = rtrim($skill_values, ',');
-
-        $skill_values_arr = explode(',', $skill_values);
-
-        $skill_counts = array_count_values($skill_values_arr);
 
         return [
-            'labels' => array_keys($skill_counts),
-            'data' => array_values($skill_counts),
+            'labels' => $skill_labels,
+            'data' => array_values($skill_values),
         ];
     }
-    function Top10Strengths($express_client_admin)
+    function Top10Strengths($ExpressDashboard)
     {
-        $express_client = ExpressClient::with('expressUsers.expressReport')->where('slug', $express_client_admin->omr_client_id)->first();
-
-        $skill_values = "";
-
-        foreach ($express_client->expressUsers as $user) {
-            $life_strengths = $user->expressReport->life_strengths ?? "";
-
-            if ($life_strengths !== null && $life_strengths !== "") {
-                $skill_values .= $life_strengths . ',';
-            }
-        }
-
-        $skill_values = rtrim($skill_values, ',');
-
-
-        $skill_values_arr = explode(',', $skill_values);
-
-        $strength_counts = array_count_values($skill_values_arr);
-
-        arsort($strength_counts);
-
-        $top_10_strengths = array_slice($strength_counts, 0, 10);
-
+        $top_10_strengths = explode(',', $ExpressDashboard->top_strengths);
         return $top_10_strengths;
     }
 

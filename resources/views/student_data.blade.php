@@ -156,10 +156,10 @@
                                 <script src="https://cdnjs.cloudfare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
                                 <script>
                                     const dataDevSkill = {
-                                        labels: @json(array_values($DominantSkills['labels'])),
+                                        labels: @json(array_values($DevelopingSkills['labels'])),
                                         datasets: [{
                                             label: "",
-                                            data: @json(array_values($DominantSkills['data'])),
+                                            data: @json(array_values($DevelopingSkills['data'])),
                                             backgroundColor: ['#c00000', '#ed7d31', '#ffc000', '#70ad47', '#5b9bd5', '#2d5597'],
                                         }]
                                     };
@@ -249,7 +249,6 @@
                             </div>
                             <div class="top-character">
                                 <div class="owl-carousel new-carousel">
-                                    @foreach($lifevitae_characters as $lc)
                                     <div class="item gray-box">
                                         <div class="row">
                                             <div class="col-md-4">
@@ -259,13 +258,15 @@
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="character-text">
-                                                    <h4>{{$lc->title}} <span style="float: right;">32</span></h4>
-                                                    <p class="owl-desc-text">{{$lc->class_description}}</p>
+                                                    <h4>
+                                                        {{$lifevitae_characters->title}}
+                                                        <!-- <span style="float: right;">32</span> -->
+                                                    </h4>
+                                                    <p class="owl-desc-text">{{$lifevitae_characters->class_description}}</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -337,7 +338,7 @@
                                         @foreach($Top10Strengths as $key=>$s)
                                         <div class="col-md-12">
                                             <div class="gray-box">
-                                                <span class="p-2 d-inline-block">{{ucfirst($key)}}</span>
+                                                <span class="p-2 d-inline-block">{{ucfirst($s)}}</span>
                                             </div>
                                         </div>
                                         @endforeach
