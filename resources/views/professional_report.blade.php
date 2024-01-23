@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profrssional Report</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 
     <script src="https://unpkg.com/chart.js@3"></script>
-    <link rel="stylesheet" href="assets/css/professional_report.css">
+    <link rel="stylesheet" href="{{asset('assets/css/professional_report.css')}}">
 </head>
 
 <body>
@@ -22,17 +21,17 @@
             </div>
             <div class="page-content">
                 <div class="cover-text-container">
-                    <img src="./assets/images/purple_logo.png" alt="" class="top-purple-logo">
+                    <img src="{{asset('assets/images/purple_logo.png')}}" alt="" class="top-purple-logo">
                     <p class="cover-main-text">Professional Report</p>
-                    <p class="cover-name">Alfredo Valentino</p>
-                    <p class="cover-date">Created date : 23/02/2023</p>
+                    <p class="cover-name">{{$user->name}}</p>
+                    <p class="cover-date">Created date : {{$user->created_at->format('j/n/Y')}}</p>
                 </div>
-                <img src="assets/images/professional_report/cc_cover.png" alt="" class="cover-img">
+                <img src="{{asset('assets/images/professional_report/cc_cover.png')}}" alt="" class="cover-img">
             </div>
             <div class="footer-content">
-                <img src="assets/images/professional_report/mask_group_bg.png" alt="" class="mask-img">
-                <img src="assets/images/professional_report/logo_LV_polos.png" alt="" class="mask-img2">
-                <img src="assets/images/professional_report/letter_head_footer_simple.png" alt="" class="footer-img">
+                <img src="{{asset('assets/images/professional_report/mask_group_bg.png')}}" alt="" class="mask-img">
+                <img src="{{asset('assets/images/professional_report/logo_LV_polos.png')}}" alt="" class="mask-img2">
+                <img src="{{asset('assets/images/professional_report/letter_head_footer_simple.png')}}" alt="" class="footer-img">
                 <p class="footer-text"><span>&copy;</span> 2023, LifeVitae Pte Ltd. All rights reserved.</p>
             </div>
         </div>
@@ -40,8 +39,8 @@
     <page size="A4">
         <div class="position-relative">
             <div class="page-header d-flex align-items-center">
-                <img src="./assets/images/purple_logo.png" alt="" class="header-logo">
-                <p class="mb-0 w-100 text-center">This report is specially curated for Alfredo Valentino</p>
+                <img src="{{asset('assets/images/purple_logo.png')}}" alt="" class="header-logo">
+                <p class="mb-0 w-100 text-center">This report is specially curated for {{$user->name}}</p>
             </div>
             <div class="page-content1">
                 <div class="header-content">
@@ -101,10 +100,10 @@
                 </div>
             </div>
             <div class="footer-content">
-                <img src="assets/images/professional_report/mask_group_bg.png" alt="" class="mask-img">
-                <img src="assets/images/professional_report/logo LV polos 1.png" alt="" class="mask-img2">
+                <img src="{{asset('assets/images/professional_report/mask_group_bg.png')}}" alt="" class="mask-img">
+                <img src="{{asset('assets/images/professional_report/logo LV polos 1.png')}}" alt="" class="mask-img2">
                 <p class="page-number">1</p>
-                <img src="assets/images/professional_report/letter_head_footer_simple.png" alt="" class="footer-img">
+                <img src="{{asset('assets/images/professional_report/letter_head_footer_simple.png')}}" alt="" class="footer-img">
                 <p class="footer-text"><span>&copy;</span> 2023, LifeVitae Pte Ltd. All rights reserved.</p>
             </div>
         </div>
@@ -113,8 +112,8 @@
         <div class="position-relative">
 
             <div class="page-header d-flex align-items-center">
-                <img src="./assets/images/purple_logo.png" alt="" class="header-logo">
-                <p class="mb-0 w-100 text-center">This report is specially curated for Alfredo Valentino</p>
+                <img src="{{asset('assets/images/purple_logo.png')}}" alt="" class="header-logo">
+                <p class="mb-0 w-100 text-center">This report is specially curated for {{$user->name}}</p>
             </div>
             <div class="page-content1">
                 <div class="header-content">
@@ -144,10 +143,9 @@
                 <div class="skills-section mt-3 mx-5">
                     <div class="d-flex align-items-center cognitive-border mb-2">
                         <div class="col-3 cognitive-bg d-flex">
-                            <img src="assets/images/professional_report/Cognitive logo 1.png" alt=""
-                                class="skill-logo mx-auto py-1">
+                            <img src="{{asset('assets/images/professional_report/Cognitive logo 1.png')}}" alt="" class="skill-logo mx-auto py-1">
                         </div>
-                        <div class="col-9">
+                        <div class="col-9 px-2">
                             <p class="mb-0 body-text fw-bold">Cognitive</p>
                             <p class="mb-0 body-text">
                                 Relating to the mental process involved in knowing, learning, and understanding things.
@@ -156,10 +154,9 @@
                     </div>
                     <div class="d-flex align-items-center interactive-border mb-2">
                         <div class="col-3 interactive-bg d-flex">
-                            <img src="assets/images/professional_report/interactive logo 2.png" alt=""
-                                class="skill-logo mx-auto py-1">
+                            <img src="{{asset('assets/images/professional_report/interactive logo 2.png')}}" alt="" class="skill-logo mx-auto py-1">
                         </div>
-                        <div class="col-9">
+                        <div class="col-9 px-2">
                             <p class="mb-0 body-text fw-bold">Interactive</p>
                             <p class="mb-0 body-text">
                                 Interactive skills refer to the general ability to interact with the external world to
@@ -169,10 +166,9 @@
                     </div>
                     <div class="d-flex align-items-center emotive-border mb-2">
                         <div class="col-3 emotive-bg d-flex">
-                            <img src="assets/images/professional_report/emotive logo 4.png" alt=""
-                                class="skill-logo mx-auto py-1">
+                            <img src="{{asset('assets/images/professional_report/emotive logo 4.png')}}" alt="" class="skill-logo mx-auto py-1">
                         </div>
-                        <div class="col-9">
+                        <div class="col-9 px-2">
                             <p class="mb-0 body-text fw-bold">Emotive</p>
                             <p class="mb-0 body-text">
                                 Recognising your own feelings and those of others, and developing effective ways for
@@ -182,10 +178,9 @@
                     </div>
                     <div class="d-flex align-items-center adaptive-border mb-2">
                         <div class="col-3 adaptive-bg d-flex">
-                            <img src="assets/images/professional_report/adaptive logo 1.png" alt=""
-                                class="skill-logo mx-auto py-1">
+                            <img src="{{asset('assets/images/professional_report/adaptive logo 1.png')}}" alt="" class="skill-logo mx-auto py-1">
                         </div>
-                        <div class="col-9">
+                        <div class="col-9 px-2">
                             <p class="mb-0 body-text fw-bold">Adaptive</p>
                             <p class="mb-0 body-text">
                                 Enables a person to cope in their environment with greatest success and least conflict
@@ -195,10 +190,9 @@
                     </div>
                     <div class="d-flex align-items-center creative-border mb-2">
                         <div class="col-3 creative-bg d-flex">
-                            <img src="assets/images/professional_report/creative logo 4.png" alt=""
-                                class="skill-logo mx-auto py-1">
+                            <img src="{{asset('assets/images/professional_report/creative logo 4.png')}}" alt="" class="skill-logo mx-auto py-1">
                         </div>
-                        <div class="col-9">
+                        <div class="col-9 px-2">
                             <p class="mb-0 body-text fw-bold">Creative</p>
                             <p class="mb-0 body-text">
                                 The tendency to generate or recognize ideas, alternatives, or possibilities that may be
@@ -208,10 +202,9 @@
                     </div>
                     <div class="d-flex align-items-center motive-border mb-2">
                         <div class="col-3 motive-bg d-flex">
-                            <img src="assets/images/professional_report/Motive logo 1.png" alt=""
-                                class="skill-logo mx-auto py-1">
+                            <img src="{{asset('assets/images/professional_report/Motive logo 1.png')}}" alt="" class="skill-logo mx-auto py-1">
                         </div>
-                        <div class="col-9">
+                        <div class="col-9 px-2">
                             <p class="mb-0 body-text fw-bold">Motive</p>
                             <p class="mb-0 body-text">
                                 Something that causes us to act or behave in order to reach a goal or desired endpoint
@@ -222,10 +215,10 @@
 
             </div>
             <div class="footer-content">
-                <img src="assets/images/professional_report/mask_group_bg.png" alt="" class="mask-img">
-                <img src="assets/images/professional_report/logo LV polos 1.png" alt="" class="mask-img2">
+                <img src="{{asset('assets/images/professional_report/mask_group_bg.png')}}" alt="" class="mask-img">
+                <img src="{{asset('assets/images/professional_report/logo LV polos 1.png')}}" alt="" class="mask-img2">
                 <p class="page-number">2</p>
-                <img src="assets/images/professional_report/letter_head_footer_simple.png" alt="" class="footer-img">
+                <img src="{{asset('assets/images/professional_report/letter_head_footer_simple.png')}}" alt="" class="footer-img">
                 <p class="footer-text"><span>&copy;</span> 2023, LifeVitae Pte Ltd. All rights reserved.</p>
             </div>
         </div>
@@ -234,8 +227,8 @@
         <div class="position-relative">
 
             <div class="page-header d-flex align-items-center">
-                <img src="./assets/images/purple_logo.png" alt="" class="header-logo">
-                <p class="mb-0 w-100 text-center">This report is specially curated for Alfredo Valentino</p>
+                <img src="{{asset('assets/images/purple_logo.png')}}" alt="" class="header-logo">
+                <p class="mb-0 w-100 text-center">This report is specially curated for {{$user->name}}</p>
             </div>
             <div class="page-content1">
                 <div class="header-content">
@@ -248,32 +241,22 @@
                     <div class="col-6">
                         <div class="d-flex justify-content-between">
                             <div class="col-5 position-relative">
-                                <img src="assets/images/professional_report/Motive logo 1.png" alt=""
-                                    class="position-absolute inside-img">
-                                <img src="assets/images/hex/hex-MOTIVE.png" alt="" class="img-fluid">
+                                <img src="{{$dominant_data['dominant_skill_inner_img1']}}" alt="" class="position-absolute inside-img">
+                                <img src="{{$dominant_data['dominant_skill_img1']}}" alt="" class="img-fluid">
 
-                                <p class="fw-bold text-center position-absolute skill-text motive-text">MOTIVE</p>
+                                <p class="fw-bold text-center position-absolute skill-text motive-text" style="color: {{$dominant_data['dominant_skill_text_color1']}};">{{$dominant_data['dominant_skill1']}}</p>
                             </div>
                             <div class="col-5 position-relative">
-                                <img src="assets/images/professional_report/Cognitive logo 1.png" alt=""
-                                    class="position-absolute inside-img">
-                                <img src="assets/images/hex/hex-COGNITIVE.png" alt="" class="img-fluid">
+                                <img src="{{$dominant_data['dominant_skill_inner_img2']}}" alt="" class="position-absolute inside-img">
+                                <img src="{{$dominant_data['dominant_skill_img2']}}" alt="" class="img-fluid">
 
-                                <p class="fw-bold text-center position-absolute skill-text cognitive-text">COGNITIVE</p>
+                                <p class="fw-bold text-center position-absolute skill-text cognitive-text" style="color: {{$dominant_data['dominant_skill_text_color2']}};">{{$dominant_data['dominant_skill2']}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="mx-5 pt-3">
-                    <p class="body-text mt-5">You are highly motivated to complete specific tasks and can find the
-                        passion and drive to work hard
-                        and push themselves. You are strong-willed and independent. You are also able to think logically
-                        and
-                        rationally, without emotional bias. You are able to rely on your thinking capacity, using facts
-                        and
-                        reasons to come to a conclusion. Due to this, you can make decisions quicker and more
-                        efficiently.
-                    </p>
+                    <p class="body-text mt-5">{{$dominant_data['dominant_skills_text']}}</p>
                 </div>
                 <div class="header-content">
                     <p class="header-content-text">Potential areas of improvements</p>
@@ -285,37 +268,29 @@
                     <div class="col-6">
                         <div class="d-flex justify-content-between">
                             <div class="col-5 position-relative">
-                                <img src="assets/images/professional_report/emotive logo 4.png" alt=""
-                                    class="position-absolute inside-img">
-                                <img src="assets/images/hex/hex-EMOTIVE.png" alt="" class="img-fluid">
+                                <img src="{{$developing_data['developing_skill_inner_img1']}}" alt="" class="position-absolute inside-img">
+                                <img src="{{$developing_data['developing_skill_img1']}}" alt="" class="img-fluid">
 
-                                <p class="fw-bold text-center position-absolute skill-text emotive-text">EMOTIVE</p>
+                                <p class="fw-bold text-center position-absolute skill-text emotive-text" style="color: {{$developing_data['developing_skill_text_color1']}};">{{$developing_data['developing_skill1']}}</p>
                             </div>
                             <div class="col-5 position-relative">
-                                <img src="assets/images/professional_report/adaptive logo 1.png" alt=""
-                                    class="position-absolute inside-img">
-                                <img src="assets/images/hex/hex-ADAPTIVE.png" alt="" class="img-fluid">
+                                <img src="{{$developing_data['developing_skill_inner_img2']}}" alt="" class="position-absolute inside-img">
+                                <img src="{{$developing_data['developing_skill_img2']}}" alt="" class="img-fluid">
 
-                                <p class="fw-bold text-center position-absolute skill-text adaptive-text">ADAPTIVE</p>
+                                <p class="fw-bold text-center position-absolute skill-text adaptive-text" style="color: {{$developing_data['developing_skill_text_color2']}};">{{$developing_data['developing_skill2']}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="mx-5 pt-3">
-                    <p class="body-text mt-5">You can find it difficult to understand your feelings and emotions and
-                        process them coherently. You are sometimes unable to show compassion and gratitude for others,
-                        or care for others in a genuine manner. As you are more guarded, you have difficulty trusting
-                        other people. You also sometimes lack the resilience to cope with adversity and struggle to
-                        recover from setbacks. You are afraid of change and can resist new situations, leading to
-                        difficulties in adapting to different environments.
-                    </p>
+                    <p class="body-text mt-5">{{$developing_data['developing_skills_text']}}</p>
                 </div>
             </div>
             <div class="footer-content">
-                <img src="assets/images/professional_report/mask_group_bg.png" alt="" class="mask-img">
-                <img src="assets/images/professional_report/logo LV polos 1.png" alt="" class="mask-img2">
+                <img src="{{asset('assets/images/professional_report/mask_group_bg.png')}}" alt="" class="mask-img">
+                <img src="{{asset('assets/images/professional_report/logo LV polos 1.png')}}" alt="" class="mask-img2">
                 <p class="page-number">3</p>
-                <img src="assets/images/professional_report/letter_head_footer_simple.png" alt="" class="footer-img">
+                <img src="{{asset('assets/images/professional_report/letter_head_footer_simple.png')}}" alt="" class="footer-img">
                 <p class="footer-text"><span>&copy;</span> 2023, LifeVitae Pte Ltd. All rights reserved.</p>
             </div>
         </div>
@@ -324,8 +299,8 @@
         <div class="position-relative">
 
             <div class="page-header d-flex align-items-center">
-                <img src="./assets/images/purple_logo.png" alt="" class="header-logo">
-                <p class="mb-0 w-100 text-center">This report is specially curated for Alfredo Valentino</p>
+                <img src="{{asset('assets/images/purple_logo.png')}}" alt="" class="header-logo">
+                <p class="mb-0 w-100 text-center">This report is specially curated for {{$user->name}}</p>
             </div>
             <div class="page-content1">
                 <div class="header-content">
@@ -337,88 +312,28 @@
                         upgrade to the full version to unlock these pathways.</p>
                 </div>
                 <div class="mx-5">
+                    @foreach($Top4Pathway as $t4p)
                     <div class="d-flex mb-1 align-items-center">
                         <div class="col-3">
                             <div class="position-relative">
-                                <img src="assets/images/high possibitily hexagon 1.png" alt="" class="img-fluid">
-                                <img src="assets/images/Creative Design.png" alt=""
-                                    class="position-absolute possibility-inside-img">
+                                <img src="{{asset('assets/images/high possibitily hexagon 1.png')}}" alt="" class="img-fluid">
+                                <img src="{{asset('assets/images/Creative Design.png')}}" alt="" class="position-absolute possibility-inside-img">
                             </div>
                         </div>
                         <div class="col-9">
-                            <p class="fw-bold body-text mb-0">Science & Technology</p>
-                            <p class="body-text">Science and technology, as a broad field, encompasses a wide range of
-                                disciplines,
-                                including biotechnology, life and physical science, animal and plant science, and
-                                information technology. Professionals in science and technology can be found in almost
-                                any industry, from government to manufacturing to pharmaceuticals. They use
-                                sophisticated testing equipment, are in charge of data tracking and logging, and
-                                collaborate with physicians and other researchers. A degree in Science and Technology
-                                helps a student undertake research based thinking techniques which are crucial in every
-                                industry.</p>
+                            <p class="fw-bold body-text mb-0">{{$t4p->title}}</p>
+                            <p class="body-text">{{$t4p->description}}</p>
                         </div>
                     </div>
-                    <div class="d-flex mb-1 align-items-center">
-                        <div class="col-3">
-                            <div class="position-relative">
-                                <img src="assets/images/high possibitily hexagon 1.png" alt="" class="img-fluid">
-                                <img src="assets/images/Creative Design.png" alt=""
-                                    class="position-absolute possibility-inside-img">
-                            </div>
-                        </div>
-                        <div class="col-9">
-                            <p class="fw-bold body-text mb-0">Analytics</p>
-                            <p class="body-text">Analytics helps us see insights and meaningful data that we might not
-                                otherwise detect. Business analytics focuses on using insights derived from data to make
-                                more informed decisions that will help organizations increase sales, reduce costs, and
-                                make other business improvements. Analytics professionals review data to identify key
-                                insights into a business's customers and ways the data can be used to solve problems.
-                                They also communicate this information to company leadership and other stakeholders.</p>
-                        </div>
-                    </div>
-                    <div class="d-flex mb-1 align-items-center">
-                        <div class="col-3">
-                            <div class="position-relative">
-                                <img src="assets/images/high possibitily hexagon 1.png" alt="" class="img-fluid">
-                                <img src="assets/images/Creative Design.png" alt=""
-                                    class="position-absolute possibility-inside-img">
-                            </div>
-                        </div>
-                        <div class="col-9">
-                            <p class="fw-bold body-text mb-0">Agriculture & Food Technology</p>
-                            <p class="body-text">Currently, Agriculture and Food Technology accounts for the largest job
-                                sector around the globe. The industry works through the whole process of food
-                                cultivation, processing, packaging and distribution. This sector employs graduates from
-                                many fields such as engineering, agriculture courses, biosciences etc. in positions such
-                                as research scientist, lab technician, food inspector, food engineer, biochemist, food
-                                product development director etc.</p>
-                        </div>
-                    </div>
-                    <div class="d-flex mb-1 align-items-center">
-                        <div class="col-3">
-                            <div class="position-relative">
-                                <img src="assets/images/high possibitily hexagon 1.png" alt="" class="img-fluid">
-                                <img src="assets/images/Creative Design.png" alt=""
-                                    class="position-absolute possibility-inside-img">
-                            </div>
-                        </div>
-                        <div class="col-9">
-                            <p class="fw-bold body-text mb-0">Legal & Criminal Investigation </p>
-                            <p class="body-text">Legal and criminal learning pathways provide a wide range of options.
-                                Professionals could work in the field, either responding to active crimes or gathering
-                                evidence. They could pursue their scientific interest by working in crime scenes and
-                                labs to analyze vital evidence. They also work in an office where they counsel and deal
-                                with day-to-day legal matters of an organisation.</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
 
             </div>
             <div class="footer-content">
-                <img src="assets/images/professional_report/mask_group_bg.png" alt="" class="mask-img">
-                <img src="assets/images/professional_report/logo LV polos 1.png" alt="" class="mask-img2">
+                <img src="{{asset('assets/images/professional_report/mask_group_bg.png')}}" alt="" class="mask-img">
+                <img src="{{asset('assets/images/professional_report/logo LV polos 1.png')}}" alt="" class="mask-img2">
                 <p class="page-number">4</p>
-                <img src="assets/images/professional_report/letter_head_footer_simple.png" alt="" class="footer-img">
+                <img src="{{asset('assets/images/professional_report/letter_head_footer_simple.png')}}" alt="" class="footer-img">
                 <p class="footer-text"><span>&copy;</span> 2023, LifeVitae Pte Ltd. All rights reserved.</p>
             </div>
         </div>
@@ -427,8 +342,8 @@
         <div class="position-relative">
 
             <div class="page-header d-flex align-items-center">
-                <img src="./assets/images/purple_logo.png" alt="" class="header-logo">
-                <p class="mb-0 w-100 text-center">This report is specially curated for Alfredo Valentino</p>
+                <img src="{{asset('assets/images/purple_logo.png')}}" alt="" class="header-logo">
+                <p class="mb-0 w-100 text-center">This report is specially curated for {{$user->name}}</p>
             </div>
             <div class="page-content1">
                 <div class="header-content">
@@ -439,92 +354,81 @@
                         <div class="content">
                             <div class="position-relative">
                                 <div>
-                                    <img src="assets/images/lifeStrengths/4 5.png" class="hex-shape-inner">
-                                    <p class="hex-text">Critical Thinking</p>
-                                    <img src="assets/images/lifeStrengths/critical hexagon.png"
-                                        class="position-absolute top-50 start-50 translate-middle ls-hex">
+                                    <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[0]}}" class="hex-shape-inner">
+                                    <p class="hex-text">{{$life_strengths[0]}}</p>
+                                    <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[0]}}.png" class="position-absolute top-50 start-50 translate-middle ls-hex">
                                 </div>
                             </div>
                             <div class="position-relative">
                                 <div>
-                                    <img src="assets/images/lifeStrengths/5 3.png" class="hex-shape-inner">
-                                    <p class="hex-text">Self Discipline</p>
-                                    <img src="assets/images/lifeStrengths/hexagon photoshop 1.png"
-                                        class="position-absolute top-50 start-50 translate-middle ls-hex">
+                                    <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[1]}}" class="hex-shape-inner">
+                                    <p class="hex-text">{{$life_strengths[1]}}</p>
+                                    <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[1]}}.png" class="position-absolute top-50 start-50 translate-middle ls-hex">
                                 </div>
                             </div>
                             <div class="position-relative">
                                 <div>
-                                    <img src="assets/images/lifeStrengths/2 24.png" class="hex-shape-inner">
-                                    <p class="hex-text">Being Persuasive</p>
-                                    <img src="assets/images/lifeStrengths/interactive hexagon 1.png"
-                                        class="position-absolute top-50 start-50 translate-middle ls-hex">
+                                    <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[2]}}" class="hex-shape-inner">
+                                    <p class="hex-text">{{$life_strengths[2]}}</p>
+                                    <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[2]}}.png" class="position-absolute top-50 start-50 translate-middle ls-hex">
                                 </div>
                             </div>
                             <div class="position-relative">
                                 <div>
-                                    <img src="assets/images/lifeStrengths/1 11.png" class="hex-shape-inner">
-                                    <p class="hex-text">Being Persuasive</p>
-                                    <img src="assets/images/lifeStrengths/cognitive hexagon 1.png"
-                                        class="position-absolute top-50 start-50 translate-middle ls-hex">
+                                    <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[3]}}" class="hex-shape-inner">
+                                    <p class="hex-text">{{$life_strengths[3]}}</p>
+                                    <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[3]}}.png" class="position-absolute top-50 start-50 translate-middle ls-hex">
                                 </div>
                             </div>
                         </div>
                         <div class="content">
                             <div class="position-relative">
                                 <div>
-                                    <img src="assets/images/lifeStrengths/3 3.png" class="hex-shape-inner">
-                                    <p class="hex-text">Patience</p>
-                                    <img src="assets/images/lifeStrengths/emotive hexagon 1.png"
-                                        class="position-absolute top-50 start-50 translate-middle ls-hex">
+                                    <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[4]}}" class="hex-shape-inner">
+                                    <p class="hex-text">{{$life_strengths[4]}}</p>
+                                    <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[4]}}.png" class="position-absolute top-50 start-50 translate-middle ls-hex">
                                 </div>
                             </div>
                             <div class="position-relative">
                                 <div>
-                                    <img src="assets/images/lifeStrengths/image 50 1.png"
-                                        class="position-absolute top-50 start-50 translate-middle ls-hex">
+                                    <img src="{{asset('assets/images/lifeStrengths/image 50 1.png')}}" class="position-absolute top-50 start-50 translate-middle ls-center-hex">
                                 </div>
                             </div>
                             <div class="position-relative">
                                 <div>
-                                    <img src="assets/images/lifeStrengths/4 6.png" class="hex-shape-inner">
-                                    <p class="hex-text">Entrepreneurship</p>
-                                    <img src="assets/images/lifeStrengths/critical hexagon.png"
-                                        class="position-absolute top-50 start-50 translate-middle ls-hex">
+                                    <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[5]}}" class="hex-shape-inner">
+                                    <p class="hex-text">{{$life_strengths[5]}}</p>
+                                    <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[5]}}.png" class="position-absolute top-50 start-50 translate-middle ls-hex">
                                 </div>
                             </div>
                         </div>
                         <div class="content">
                             <div class="position-relative">
                                 <div>
-                                    <img src="assets/images/lifeStrengths/5 4.png" class="hex-shape-inner">
-                                    <p class="hex-text">Will Power</p>
-                                    <img src="assets/images/lifeStrengths/hexagon photoshop 2.png"
-                                        class="position-absolute top-50 start-50 translate-middle ls-hex">
+                                    <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[6]}}" class="hex-shape-inner">
+                                    <p class="hex-text">{{$life_strengths[6]}}</p>
+                                    <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[6]}}.png" class="position-absolute top-50 start-50 translate-middle ls-hex">
                                 </div>
                             </div>
                             <div class="position-relative">
                                 <div>
-                                    <img src="assets/images/lifeStrengths/1 12.png" class="hex-shape-inner">
-                                    <p class="hex-text">Self Discipline</p>
-                                    <img src="assets/images/lifeStrengths/cognitive hexagon 2.png"
-                                        class="position-absolute top-50 start-50 translate-middle ls-hex">
+                                    <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[7]}}" class="hex-shape-inner">
+                                    <p class="hex-text">{{$life_strengths[7]}}</p>
+                                    <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[7]}}.png" class="position-absolute top-50 start-50 translate-middle ls-hex">
                                 </div>
                             </div>
                             <div class="position-relative">
                                 <div>
-                                    <img src="assets/images/lifeStrengths/2 25.png" class="hex-shape-inner">
-                                    <p class="hex-text">Being Persuasive</p>
-                                    <img src="assets/images/lifeStrengths/interactive hexagon 2.png"
-                                        class="position-absolute top-50 start-50 translate-middle ls-hex">
+                                    <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[8]}}" class="hex-shape-inner">
+                                    <p class="hex-text">{{$life_strengths[8]}}</p>
+                                    <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[8]}}.png" class="position-absolute top-50 start-50 translate-middle ls-hex">
                                 </div>
                             </div>
                             <div class="position-relative">
                                 <div>
-                                    <img src="assets/images/lifeStrengths/3 5.png" class="hex-shape-inner">
-                                    <p class="hex-text">Self Awareness</p>
-                                    <img src="assets/images/lifeStrengths/emotive hexagon 3.png"
-                                        class="position-absolute top-50 start-50 translate-middle ls-hex">
+                                    <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[9]}}" class="hex-shape-inner">
+                                    <p class="hex-text">{{$life_strengths[9]}}</p>
+                                    <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[9]}}.png" class="position-absolute top-50 start-50 translate-middle ls-hex">
                                 </div>
                             </div>
                         </div>
@@ -532,66 +436,28 @@
                 </div>
 
                 <div class="mx-5 mt-5">
-                    <div class="d-flex pt-5">
-                        <div class="col-6 px-2">
-                            <div class="mb-4">
-                                <p class="mb-1 body-text fw-bold text-purple">Thinking Ahead</p>
-                                <p class="mb-0 body-text">You are able to see around corners, and predict what happens
-                                    next</p>
+                    <div class="d-flex flex-wrap pt-5">
+                        @foreach($lifeStrengthText['achievements_strength'] as $index => $achievement)
+                        @if($index < 6)
+                            <div class="col-6 px-2">
+                                <div class="mb-4">
+                                    <p class="mb-1 body-text fw-bold text-purple">{{ $achievement }}</p>
+                                    <p class="mb-0 body-text">{{ $lifeStrengthText['description'][$index] }}</p>
+                                </div>
                             </div>
-                            <div class="mb-4">
-                                <p class="mb-1 body-text fw-bold text-purple">Sense Making</p>
-                                <p class="mb-0 body-text">The world is chaotic but you can make sense it for other</p>
-                            </div>
-                            <div class="mb-4">
-                                <p class="mb-1 body-text fw-bold text-purple">Collaborating</p>
-                                <p class="mb-0 body-text">
-                                    You are easy to work with, and you, in turn love to collobarate with others from
-                                    different fields
-                                </p>
-                            </div>
-                            <div class="mb-4">
-                                <p class="mb-1 body-text fw-bold text-purple">Self- Awareness</p>
-                                <p class="mb-0 body-text">
-                                    You are comfortable with who you are and don’t profess to be who you are not
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-6 px-2">
-                            <div class="mb-4">
-                                <p class="mb-1 body-text fw-bold text-purple">Originality</p>
-                                <p class="mb-0 body-text">
-                                    You think today, others think tomord-flex
-                                </p>
-                            </div>
-                            <div class="mb-4">
-                                <p class="mb-1 body-text fw-bold text-purple">Eloquence</p>
-                                <p class="mb-0 body-text">
-                                    You can communicate with different auidences in compelling ways.
-                                </p>
-                            </div>
-                            <div class="mb-4">
-                                <p class="mb-1 body-text fw-bold text-purple">Engagement</p>
-                                <p class="mb-0 body-text">
-                                    People tent to be drawn to you, they find it engaging to interact with you.
-                                </p>
-                            </div>
-                            <div class="mb-4">
-                                <p class="mb-1 body-text fw-bold text-purple">Calmness</p>
-                                <p class="mb-0 body-text">
-                                    When things go crazy, people turn for level-headed wisdom
-                                </p>
-                            </div>
-                        </div>
+                        @else
+                            @break
+                        @endif
+                        @endforeach
                     </div>
                 </div>
 
             </div>
             <div class="footer-content">
-                <img src="assets/images/professional_report/mask_group_bg.png" alt="" class="mask-img">
-                <img src="assets/images/professional_report/logo LV polos 1.png" alt="" class="mask-img2">
+                <img src="{{asset('assets/images/professional_report/mask_group_bg.png')}}" alt="" class="mask-img">
+                <img src="{{asset('assets/images/professional_report/logo LV polos 1.png')}}" alt="" class="mask-img2">
                 <p class="page-number">5</p>
-                <img src="assets/images/professional_report/letter_head_footer_simple.png" alt="" class="footer-img">
+                <img src="{{asset('assets/images/professional_report/letter_head_footer_simple.png')}}" alt="" class="footer-img">
                 <p class="footer-text"><span>&copy;</span> 2023, LifeVitae Pte Ltd. All rights reserved.</p>
             </div>
         </div>
@@ -600,69 +466,27 @@
         <div class="position-relative">
 
             <div class="page-header d-flex align-items-center">
-                <img src="./assets/images/purple_logo.png" alt="" class="header-logo">
-                <p class="mb-0 w-100 text-center">This report is specially curated for Alfredo Valentino</p>
+                <img src="{{asset('assets/images/purple_logo.png')}}" alt="" class="header-logo">
+                <p class="mb-0 w-100 text-center">This report is specially curated for {{$user->name}}</p>
             </div>
             <div class="page-content1">
                 <div class="header-content">
                     <p class="header-content-text">Your LifeStrengths</p>
                 </div>
                 <div class="mx-5 mt-5">
-                    <div class="d-flex">
-                        <div class="col-6 px-2">
-                            <div class="mb-4">
-                                <p class="mb-1 body-text fw-bold text-purple">Resilience</p>
-                                <p class="mb-0 body-text">
-                                    When faced with disappointment and failure, you can bounce back with ease.
-                                </p>
+                <div class="d-flex flex-wrap">
+                        @foreach($lifeStrengthText['achievements_strength'] as $index => $achievement)
+                        @if($index >= 6)
+                            <div class="col-6 px-2">
+                                <div class="mb-4">
+                                    <p class="mb-1 body-text fw-bold text-purple">{{ $achievement }}</p>
+                                    <p class="mb-0 body-text">{{ $lifeStrengthText['description'][$index] }}</p>
+                                </div>
                             </div>
-                            <div class="mb-4">
-                                <p class="mb-1 body-text fw-bold text-purple">Persistence</p>
-                                <p class="mb-0 body-text">
-                                    You will try, try and try again......until the world gets out of your way</p>
-                            </div>
-                            <div class="mb-4">
-                                <p class="mb-1 body-text fw-bold text-purple">Exploring</p>
-                                <p class="mb-0 body-text">
-                                    When others ask "why", you asking "why not"
-                                </p>
-                            </div>
-                            <div class="mb-4">
-                                <p class="mb-1 body-text fw-bold text-purple">Confident</p>
-                                <p class="mb-0 body-text">
-                                    You have a desire to explore new things and get to know people outside of your
-                                    circle.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-6 px-2">
-                            <div class="mb-4">
-                                <p class="mb-1 body-text fw-bold text-purple">Humility</p>
-                                <p class="mb-0 body-text">
-                                    You have control of your ego and can questions your beliefs when confronted with
-                                    reality
-                                </p>
-                            </div>
-                            <div class="mb-4">
-                                <p class="mb-1 body-text fw-bold text-purple">Entrepreneurship</p>
-                                <p class="mb-0 body-text">
-                                    You enjoy building things from scratch, and creating value from nothing.
-                                </p>
-                            </div>
-                            <div class="mb-4">
-                                <p class="mb-1 body-text fw-bold text-purple">Drive</p>
-                                <p class="mb-0 body-text">
-                                    You bring positive energy to life...energy that comes from inside you....touches
-                                    others
-                                </p>
-                            </div>
-                            <div class="mb-4">
-                                <p class="mb-1 body-text fw-bold text-purple">Passion</p>
-                                <p class="mb-0 body-text">
-                                    People tend to be drawn to you, they find it engaging to interact with you
-                                </p>
-                            </div>
-                        </div>
+                        @else
+                            @continue
+                        @endif
+                        @endforeach
                     </div>
                 </div>
                 <div class="mx-5 mt-5">
@@ -683,10 +507,10 @@
                 </div>
             </div>
             <div class="footer-content">
-                <img src="assets/images/professional_report/mask_group_bg.png" alt="" class="mask-img">
-                <img src="assets/images/professional_report/logo LV polos 1.png" alt="" class="mask-img2">
+                <img src="{{asset('assets/images/professional_report/mask_group_bg.png')}}" alt="" class="mask-img">
+                <img src="{{asset('assets/images/professional_report/logo LV polos 1.png')}}" alt="" class="mask-img2">
                 <p class="page-number">6</p>
-                <img src="assets/images/professional_report/letter_head_footer_simple.png" alt="" class="footer-img">
+                <img src="{{asset('assets/images/professional_report/letter_head_footer_simple.png')}}" alt="" class="footer-img">
                 <p class="footer-text"><span>&copy;</span> 2023, LifeVitae Pte Ltd. All rights reserved.</p>
             </div>
         </div>
@@ -695,8 +519,8 @@
         <div class="position-relative">
 
             <div class="page-header d-flex align-items-center">
-                <img src="./assets/images/purple_logo.png" alt="" class="header-logo">
-                <p class="mb-0 w-100 text-center">This report is specially curated for Alfredo Valentino</p>
+                <img src="{{asset('assets/images/purple_logo.png')}}" alt="" class="header-logo">
+                <p class="mb-0 w-100 text-center">This report is specially curated for {{$user->name}}</p>
             </div>
             <div class="page-content7">
                 <div class="px-5 mt-5">
@@ -732,7 +556,7 @@
                 </div>
                 <div class="d-flex justify-content-center">
                     <div class="col-6">
-                        <img src="assets/images/self development 1.svg" alt="">
+                        <img src="{{asset('assets/images/self development 1.svg')}}" alt="">
                     </div>
                 </div>
                 <p class="mx-5">
@@ -750,58 +574,45 @@
                 <div>
                     <div class="d-flex justify-content-between mx-5 mt-3">
                         <div class="d-flex align-items-center">
-                            <img src="assets/images/social/Mask group-1.png" alt="" class="social-icon">
+                            <img src="{{asset('assets/images/social/Mask group-1.png')}}" alt="" class="social-icon">
                             <p class="mb-0 ms-2 social-text">@lifevitae.co</p>
                         </div>
                         <div class="d-flex align-items-center">
-                            <img src="assets/images/social/Mask group-2.png" alt="" class="social-icon">
+                            <img src="{{asset('assets/images/social/Mask group-2.png')}}" alt="" class="social-icon">
                             <p class="mb-0 ms-2 social-text">LifeVitae</p>
                         </div>
                         <div class="d-flex align-items-center">
-                            <img src="assets/images/social/Mask group-3.png" alt="" class="social-icon">
+                            <img src="{{asset('assets/images/social/Mask group-3.png')}}" alt="" class="social-icon">
                             <p class="mb-0 ms-2 social-text">LifeVitae</p>
                         </div>
                         <div class="d-flex align-items-center">
-                            <img src="assets/images/social/Mask group.png" alt="" class="social-icon">
+                            <img src="{{asset('assets/images/social/Mask group.png')}}" alt="" class="social-icon">
                             <p class="mb-0 ms-2 social-text">@MLifevitae.co</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="footer-content">
-                <img src="assets/images/professional_report/mask_group_bg.png" alt="" class="mask-img">
-                <img src="assets/images/professional_report/logo LV polos 1.png" alt="" class="mask-img2">
+                <img src="{{asset('assets/images/professional_report/mask_group_bg.png')}}" alt="" class="mask-img">
+                <img src="{{asset('assets/images/professional_report/logo LV polos 1.png')}}" alt="" class="mask-img2">
                 <p class="page-number">7</p>
-                <img src="assets/images/professional_report/letter_head_footer_simple.png" alt="" class="footer-img">
+                <img src="{{asset('assets/images/professional_report/letter_head_footer_simple.png')}}" alt="" class="footer-img">
                 <p class="footer-text"><span>&copy;</span> 2023, LifeVitae Pte Ltd. All rights reserved.</p>
             </div>
         </div>
     </page>
 
 
-    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
     <script>
         const data = {
-            labels: [
-                'Cognitive',
-                'Motive',
-                'Creative',
-                'Adaptive',
-                'Emotive',
-                'Interactive'
-            ],
+            labels: @json($skills),
             datasets: [{
                 label: 'My First Dataset',
-                data: [65, 59, 90, 81, 56, 55],
+                data: @json($skills_data),
                 fill: true,
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgb(255, 99, 132)',

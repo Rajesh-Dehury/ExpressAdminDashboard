@@ -16,18 +16,18 @@
                 </button>
                 <p class="mb-0 heading-text">Student Key Data</p>
             </div>
-            <div class="position-relative d-none d-lg-block">
+            <form method="get" action="{{route('express.search')}}" class="position-relative d-none d-lg-block">
                 <i class="bi bi-search position-absolute position-absolute top-50 translate-middle-y top-search-icon"></i>
-                <input type="search" class="main-search" placeholder="Search for student name...">
-            </div>
+                <input type="search" class="main-search" name="student_name" placeholder="Search for student name...">
+            </form>
             <img src="https://via.placeholder.com/350" alt="" class="user-image-small d-block d-lg-none">
         </div>
     </div>
     <div class="inner-container">
-        <div class="position-relative d-block d-lg-none mt-3">
+        <form method="get" action="{{route('express.search')}}" class="position-relative d-block d-lg-none mt-3">
             <i class="bi bi-search position-absolute position-absolute top-50 translate-middle-y top-search-icon"></i>
-            <input type="search" class="main-search" placeholder="Search for student name...">
-        </div>
+            <input type="search" class="main-search" name="student_name" placeholder="Search for student name...">
+        </form>
 
         <div class="graph-data mt-5 mt-lg-0">
             <div class="row">
@@ -40,15 +40,11 @@
                                 </script>
                                 <script>
                                     const data = {
-                                        labels: ["Motive", "Creative", "Adaptive", "Emotive", "Interactive",
-                                            "Cognitive"
-                                        ],
+                                        labels: @json($skills),
                                         datasets: [{
                                             label: "",
-                                            data: [25, 5, 27, 20, 18, 5],
-                                            backgroundColor: ['#c00000', '#ed7d31', '#ffc000', '#70ad47',
-                                                '#5b9bd5', '#2d5597'
-                                            ],
+                                            data: @json(array_values($SkillDistributionChart)),
+                                            backgroundColor: ['#c00000', '#ed7d31', '#ffc000', '#70ad47', '#5b9bd5', '#2d5597'],
                                         }]
                                     };
                                     const config = {
@@ -65,7 +61,7 @@
                                                     callbacks: {
                                                         title: () => null, //to remove title
                                                         label: function(context) {
-                                                            return context.formattedValue + '%';
+                                                            return context.formattedValue;
                                                         }
                                                     },
                                                 },
@@ -107,10 +103,10 @@
                                 <script src="https://cdnjs.cloudfare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
                                 <script>
                                     const dataDomSkill = {
-                                        labels: ["Motive", "Creative", "Adaptive", "Emotive", "Interactive", "Cognitive"],
+                                        labels: @json(array_values($DominantSkills['labels'])),
                                         datasets: [{
                                             label: "",
-                                            data: [25, 5, 27, 20, 18, 5],
+                                            data: @json(array_values($DominantSkills['data'])),
                                             backgroundColor: ['#c00000', '#ed7d31', '#ffc000', '#70ad47', '#5b9bd5', '#2d5597'],
                                         }]
                                     };
@@ -131,7 +127,7 @@
                                                     callbacks: {
                                                         title: () => null, //to remove title
                                                         label: function(context) {
-                                                            return context.formattedValue + '%';
+                                                            return context.formattedValue;
                                                         }
                                                     },
                                                 },
@@ -160,10 +156,10 @@
                                 <script src="https://cdnjs.cloudfare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
                                 <script>
                                     const dataDevSkill = {
-                                        labels: ["Motive", "Creative", "Adaptive", "Emotive", "Interactive", "Cognitive"],
+                                        labels: @json(array_values($DominantSkills['labels'])),
                                         datasets: [{
                                             label: "",
-                                            data: [25, 5, 27, 20, 18, 5],
+                                            data: @json(array_values($DominantSkills['data'])),
                                             backgroundColor: ['#c00000', '#ed7d31', '#ffc000', '#70ad47', '#5b9bd5', '#2d5597'],
                                         }]
                                     };
@@ -182,7 +178,7 @@
                                                     callbacks: {
                                                         title: () => null, //to remove title
                                                         label: function(context) {
-                                                            return context.formattedValue + '%';
+                                                            return context.formattedValue;
                                                         }
                                                     },
                                                 },
@@ -222,7 +218,7 @@
                                 <h5 class="mb-0">Profiles Completed
                                     <span class="me-2"><i class="fa-solid fa-circle-question"></i></span>
                                     :
-                                    <span>40</span>
+                                    <span>{{array_sum($genderCount)}}</span>
                                 </h5>
                             </div>
                             <div class="d-flex align-items-start mt-5">
@@ -230,10 +226,10 @@
                                 <table>
                                     <tr class="mt-3">
                                         <th class="px-lg-4 px-2">
-                                            <h3>20</h3>
+                                            <h3>{{$genderCount['male']}}</h3>
                                         </th>
                                         <th class="px-lg-4 px-2">
-                                            <h3>20</h3>
+                                            <h3>{{$genderCount['female']}}</h3>
                                         </th>
                                     </tr>
                                     <tr>
@@ -253,54 +249,23 @@
                             </div>
                             <div class="top-character">
                                 <div class="owl-carousel new-carousel">
+                                    @foreach($lifevitae_characters as $lc)
                                     <div class="item gray-box">
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="character-box">
-                                                    <img src="assets/images/character.png">
+                                                    <img src="{{asset('assets/images/character.png')}}">
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="character-text">
-                                                    <h4>Dreamer <span style="float: right;">32</span></h4>
-                                                    <p class="owl-desc-text">Students in this class are both
-                                                        emotive and creative.
-                                                        They have a
-                                                        strong understanding of their feelings and are able to
-                                                        recognise
-                                                        and effectively manage their emotions. They are also
-                                                        able to
-                                                        generate ideas and solutions for unique problems through
-                                                        new,
-                                                        out of the box perspectives.</p>
+                                                    <h4>{{$lc->title}} <span style="float: right;">32</span></h4>
+                                                    <p class="owl-desc-text">{{$lc->class_description}}</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="item gray-box">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="character-box">
-                                                    <img src="assets/images/character.png">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="character-text">
-                                                    <h4>Dreamer <span style="float: right;">32</span></h4>
-                                                    <p class="owl-desc-text">Students in this class are both
-                                                        emotive and creative.
-                                                        They have a
-                                                        strong understanding of their feelings and are able to
-                                                        recognise
-                                                        and effectively manage their emotions. They are also
-                                                        able to
-                                                        generate ideas and solutions for unique problems through
-                                                        new,
-                                                        out of the box perspectives.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -313,36 +278,17 @@
                             </div>
 
                             <div class="d-flex flex-column p-2">
+                                @foreach($suggestedActivity as $key=>$sa)
                                 <div class="d-flex align-items-center activity-box1 mb-3">
                                     <div class="activity-img-box1">
-                                        <img src="assets/images/activity.png" alt="" class="activity-img">
+                                        <img src="{{asset('assets/images/activity.png')}}" alt="" class="activity-img">
                                     </div>
                                     <div>
-                                        <h6 class="mb-1 ms-3 fw-bold">Cognitive</h6>
-                                        <p class="mb-0 ms-3 fw-bold activity-text">Sudoku, Chess, Card games,
-                                            Puzzles, Reading</p>
+                                        <h6 class="mb-1 ms-3 fw-bold">{{$key}}</h6>
+                                        <p class="mb-0 ms-3 fw-bold activity-text">{{$sa}}</p>
                                     </div>
                                 </div>
-                                <div class="d-flex align-items-center activity-box2 mb-3">
-                                    <div class="activity-img-box2">
-                                        <img src="assets/images/activity.png" alt="" class="activity-img">
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1 ms-3 fw-bold">Interactive</h6>
-                                        <p class="mb-0 ms-3 fw-bold activity-text">Listen to radio, Play team
-                                            based-sports</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center activity-box3 mb-3">
-                                    <div class="activity-img-box3">
-                                        <img src="assets/images/activity.png" alt="" class="activity-img">
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1 ms-3 fw-bold">Emotive</h6>
-                                        <p class="mb-0 ms-3 fw-bold activity-text">Listen to radio, Have a pet,
-                                            play with children</p>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
 
                         </div>
@@ -362,37 +308,18 @@
                                     <span class="me-2"><i class="fa-solid fa-circle-question"></i></span>
                                 </h5>
                             </div>
+                            @foreach($Top3Pathway as $t3p)
+                            <div class="d-flex align-items-center mt-3">
+                                <div>
+                                    <img src="{{asset('assets/images/path.png')}}" alt="">
+                                </div>
+                                <div class="ms-3">
+                                    <p class="path-text1 mb-0">{{$t3p->title}}</p>
+                                    <p class="path-text2 mb-0">{{$t3p->description}}</p>
+                                </div>
+                            </div>
+                            @endforeach
 
-                            <div class="d-flex align-items-center mt-3">
-                                <div>
-                                    <img src="assets/images/path.png" alt="">
-                                </div>
-                                <div class="ms-3">
-                                    <p class="path-text1 mb-0">Business Administration</p>
-                                    <p class="path-text2 mb-0">Lorem Ipsum Descriptions Business Administration
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center mt-3">
-                                <div>
-                                    <img src="assets/images/path.png" alt="">
-                                </div>
-                                <div class="ms-3">
-                                    <p class="path-text1 mb-0">Business Administration</p>
-                                    <p class="path-text2 mb-0">Lorem Ipsum Descriptions Business Administration
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center mt-3">
-                                <div>
-                                    <img src="assets/images/path.png" alt="">
-                                </div>
-                                <div class="ms-3">
-                                    <p class="path-text1 mb-0">Business Administration</p>
-                                    <p class="path-text2 mb-0">Lorem Ipsum Descriptions Business Administration
-                                    </p>
-                                </div>
-                            </div>
                         </div>
                         <div class="extra-data-shadow mt-4">
                             <div class="d-flex align-items-center">
@@ -407,51 +334,13 @@
                             <div class="strength-box">
                                 <div class="p-3">
                                     <div class="row">
+                                        @foreach($Top10Strengths as $key=>$s)
                                         <div class="col-md-12">
                                             <div class="gray-box">
-                                                <span class="p-2 d-inline-block">Passion</span>
+                                                <span class="p-2 d-inline-block">{{ucfirst($key)}}</span>
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
-                                            <div class="gray-box">
-                                                <span class="p-2 d-inline-block">Curiosity</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="gray-box">
-                                                <span class="p-2 d-inline-block">Agility</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="gray-box">
-                                                <span class="p-2 d-inline-block">Persistence</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="gray-box">
-                                                <span class="p-2 d-inline-block">Exploring</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="gray-box">
-                                                <span class="p-2 d-inline-block">Originality</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="gray-box">
-                                                <span class="p-2 d-inline-block">Originality</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="gray-box">
-                                                <span class="p-2 d-inline-block">Originality</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="gray-box">
-                                                <span class="p-2 d-inline-block">Originality</span>
-                                            </div>
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>

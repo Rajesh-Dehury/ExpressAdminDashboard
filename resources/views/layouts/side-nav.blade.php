@@ -15,7 +15,7 @@
                         </span>
                         <span class="d-inline-block">Dashboard</span>
                     </a>
-                    <a href="{{route('student_data')}}" class="text-white mb-1 navLink d-block d-flex {{request()->routeIs('student_data')?'active':''}}">
+                    <a href="{{route('express.student_data')}}" class="text-white mb-1 navLink d-block d-flex {{request()->routeIs('student_data')?'active':''}}">
                         <span class="d-inline-block me-4">
                             <i class="bi bi-person"></i>
                         </span>

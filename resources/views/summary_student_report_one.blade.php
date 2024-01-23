@@ -15,17 +15,17 @@
 
 
 
-    <link rel="stylesheet" href="assets/css/summary_student_report_one.css">
+    <link rel="stylesheet" href="{{asset('assets/css/summary_student_report_one.css')}}">
 </head>
 
 <body>
     <div class="main-container">
         <div class="main-box">
-            <img src="assets/images/report/top-bg.png" class="top-bg">
+            <img src="{{asset('assets/images/report/top-bg.png')}}" class="top-bg">
             <div class="heading-box">
                 <div class="title-box">
                     <span class="title-side"></span>
-                    <span class="main-title">Gabriela Aritonang</span>
+                    <span class="main-title">{{$user->name}}</span>
                 </div>
                 <div class="img-container">
                     <div class="img_holder">
@@ -46,23 +46,23 @@
                     <div class="content">
                         <div class="box one">
                             <div class="img">
-                                <img src="assets/images/report/Motive_hexa.png" alt="">
-                                <img src="assets/images/report/trust.png" alt="" class="img-inner">
-                                <p class="text-inner">text box dadfa</p>
+                                <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[0]}}.png" alt="">
+                                <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[0]}}" alt="" class="img-inner">
+                                <p class="text-inner">{{$life_strengths[0]}}</p>
                             </div>
                         </div>
                         <div class="box two">
                             <div class="img">
-                                <img src="assets/images/report/Motive_hexa.png" alt="">
-                                <img src="assets/images/report/trust.png" alt="" class="img-inner">
-                                <p class="text-inner">text box dadfa</p>
+                                <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[1]}}.png" alt="">
+                                <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[1]}}" alt="" class="img-inner">
+                                <p class="text-inner">{{$life_strengths[1]}}</p>
                             </div>
                         </div>
                         <div class="box three">
                             <div class="img">
-                                <img src="assets/images/report/Motive_hexa.png" alt="">
-                                <img src="assets/images/report/trust.png" alt="" class="img-inner">
-                                <p class="text-inner">text box dadfa</p>
+                                <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[2]}}.png" alt="">
+                                <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[2]}}" alt="" class="img-inner">
+                                <p class="text-inner">{{$life_strengths[2]}}</p>
                             </div>
                         </div>
                         <div class="box four">
@@ -70,57 +70,57 @@
                         <div class="box five"></div>
                         <div class="box six">
                             <div class="img">
-                                <img src="assets/images/report/Motive_hexa.png" alt="">
-                                <img src="assets/images/report/trust.png" alt="" class="img-inner">
-                                <p class="text-inner">text box dadfa</p>
+                                <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[3]}}.png" alt="">
+                                <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[3]}}" alt="" class="img-inner">
+                                <p class="text-inner">{{$life_strengths[3]}}</p>
                             </div>
                         </div>
                         <div class="box seven">
                             <div class="img">
-                                <img src="assets/images/report/Motive_hexa.png" alt="">
-                                <img src="assets/images/report/trust.png" alt="" class="img-inner">
-                                <p class="text-inner">text box dadfa</p>
+                                <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[4]}}.png" alt="">
+                                <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[4]}}" alt="" class="img-inner">
+                                <p class="text-inner">{{$life_strengths[4]}}</p>
                             </div>
                         </div>
                         <div class="box eight"></div>
                         <div class="box nine"></div>
                         <div class="box ten">
                             <div class="img">
-                                <img src="assets/images/report/Motive_hexa.png" alt="">
-                                <img src="assets/images/report/trust.png" alt="" class="img-inner">
-                                <p class="text-inner">text box dadfa</p>
+                                <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[5]}}.png" alt="">
+                                <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[5]}}" alt="" class="img-inner">
+                                <p class="text-inner">{{$life_strengths[5]}}</p>
                             </div>
                         </div>
                         <div class="box eleven">
                             <div class="img">
-                                <img src="assets/images/report/Motive_hexa.png" alt="">
-                                <img src="assets/images/report/trust.png" alt="" class="img-inner">
-                                <p class="text-inner">text box dadfa</p>
+                                <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[6]}}.png" alt="">
+                                <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[6]}}" alt="" class="img-inner">
+                                <p class="text-inner">{{$life_strengths[6]}}</p>
                             </div>
                         </div>
                         <div class="box twelev"></div>
                         <div class="box thirteen"></div>
                         <div class="box forteen">
                             <div class="img">
-                                <img src="assets/images/report/Motive_hexa.png" alt="">
-                                <img src="assets/images/report/trust.png" alt="" class="img-inner">
-                                <p class="text-inner">text box dadfa</p>
+                                <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[7]}}.png" alt="">
+                                <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[7]}}" alt="" class="img-inner">
+                                <p class="text-inner">{{$life_strengths[7]}}</p>
                             </div>
                         </div>
                         <div class="box fifteen">
                             <div class="img">
-                                <img src="assets/images/report/Motive_hexa.png" alt="">
-                                <img src="assets/images/report/trust.png" alt="" class="img-inner">
-                                <p class="text-inner">text box dadfa</p>
+                                <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[8]}}.png" alt="">
+                                <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[8]}}" alt="" class="img-inner">
+                                <p class="text-inner">{{$life_strengths[8]}}</p>
                             </div>
                         </div>
                         <div class="box sixteen"></div>
                         <div class="box sevteen"></div>
                         <div class="box eitteen">
                             <div class="img">
-                                <img src="assets/images/report/Motive_hexa.png" alt="">
-                                <img src="assets/images/report/trust.png" alt="" class="img-inner">
-                                <p class="text-inner">text box dadfa</p>
+                                <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[9]}}.png" alt="">
+                                <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[9]}}" alt="" class="img-inner">
+                                <p class="text-inner">{{$life_strengths[9]}}</p>
                             </div>
                         </div>
                     </div>
@@ -130,7 +130,7 @@
                     </div>
                     <div class="TopCharacter-text">
                         <div class="TopCharacter-inner">
-                            <img src="assets/images/report/Clip path group.png" alt="">
+                            <img src="{{asset('assets/images/report/Clip path group.png')}}" alt="">
                             <div>
                                 <h2>Lorem ipsum dolor sit.</h2>
                                 <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum,
@@ -154,69 +154,57 @@
                     <div class="">
                         <div class="triangle-right-box">
                             <span class="triangle-right-right"></span>
-                            <span class="triangle-right-text">DominantSkills</span>
+                            <span class="triangle-right-text">Dominant Skills</span>
                         </div>
                     </div>
                     <div class="DominantSkills-text">
-                        <p class="text-justify">Saepe amet fugiat repellendus necessitatibus deserunt vitae ut id
-                            doloribus
-                            ratione, ipsa
-                            illo blanditiis temporibus. Temporibus quod sapiente maiores impedit aliquam laborum ut
-                            repellendus
-                            enim nihil obcaecati voluptatibus, exercitationem voluptatum, libero fugit! Unde quasi rerum
-                            odit
-                            temporibus nisi soluta.</p>
+                        <p class="text-justify">{{$dominant_data['dominant_skills_text']}}</p>
                     </div>
                     <div class="dominantskill">
                         <div class="">
-                            <div class="left-haxagon">
-                                <img class="img-left" src="assets/images/report/Motive_hexa.png" alt="">
-                                <img src="assets/images/report/trust.png" alt="" class="left-hex-inner">
+                            <div class="left-haxagon" style="background-color: {{$dominant_data['dominant_skill_color1']}};">
+                                <img class="img-left" src="{{$dominant_data['dominant_skill_img1']}}" alt="">
+                                <img src="{{$dominant_data['dominant_skill_inner_img1']}}" alt="" class="left-hex-inner">
                             </div>
-                            <p class="left-hexagon-text">COGNITIVE</p>
+                            <p class="left-hexagon-text" style="color: {{$dominant_data['dominant_skill_text_color1']}};">{{$dominant_data['dominant_skill1']}}</p>
                         </div>
                         <div class="">
-                            <div class="right-hexagon">
-                                <img class="img-right" src="assets/images/report/Motive_hexa.png" alt="">
-                                <img src="assets/images/report/trust.png" alt="" class="right-hex-inner">
+                            <div class="right-hexagon" style="background-color: {{$dominant_data['dominant_skill_color2']}};">
+                                <img class="img-right" src="{{$dominant_data['dominant_skill_img2']}}" alt="">
+                                <img src="{{$dominant_data['dominant_skill_inner_img2']}}" alt="" class="right-hex-inner">
                             </div>
-                            <p class="right-hexagon-text">ADAPTIVE</p>
+                            <p class="right-hexagon-text" style="color: {{$dominant_data['dominant_skill_text_color2']}};">{{$dominant_data['dominant_skill2']}}</p>
                         </div>
                     </div>
                     <div class="">
                         <div class="triangle-right-box">
                             <span class="triangle-right-right"></span>
-                            <span class="triangle-right-text">DominantSkills</span>
+                            <span class="triangle-right-text">Developing Skills</span>
                         </div>
                     </div>
                     <div class="DominantSkills-text">
-                        <p class="text-justify">Saepe amet fugiat repellendus necessitatibus deserunt vitae ut id
-                            doloribus
-                            ratione, ipsa
-                            illo blanditiis temporibus. Temporibus quod sapiente maiores impedit aliquam laborum ut
-                            repellendus
-                            enim nihil obcaecati voluptatibus..</p>
+                        <p class="text-justify">{{$developing_data['developing_skills_text']}}</p>
                     </div>
                     <div class="dominantskill">
                         <div class="">
-                            <div class="left-haxagon">
-                                <img class="img-left" src="assets/images/report/Motive_hexa.png" alt="">
-                                <img src="assets/images/report/trust.png" alt="" class="left-hex-inner">
+                            <div class="left-haxagon" style="background-color: {{$developing_data['developing_skill_color1']}};">
+                                <img class="img-left" src="{{$developing_data['developing_skill_img1']}}" alt="">
+                                <img src="{{$developing_data['developing_skill_inner_img1']}}" alt="" class="left-hex-inner">
                             </div>
-                            <p class="left-hexagon-text">INTERACTIVE</p>
+                            <p class="left-hexagon-text" style="color: {{$developing_data['developing_skill_text_color1']}};">{{$developing_data['developing_skill1']}}</p>
                         </div>
                         <div class="">
-                            <div class="right-hexagon">
-                                <img class="img-right" src="assets/images/report/Motive_hexa.png" alt="">
-                                <img src="assets/images/report/trust.png" alt="" class="right-hex-inner">
+                            <div class="right-hexagon" style="background-color: {{$developing_data['developing_skill_color2']}};">
+                                <img class="img-right" src="{{$developing_data['developing_skill_img2']}}" alt="">
+                                <img src="{{$developing_data['developing_skill_inner_img2']}}" alt="" class="right-hex-inner">
                             </div>
-                            <p class="right-hexagon-text">CREATIVE</p>
+                            <p class="right-hexagon-text" style="color: {{$developing_data['developing_skill_text_color2']}};">{{$developing_data['developing_skill2']}}</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="bottom-box">
-                <img src="assets/images/report/lifevitae_purple.png" alt="">
+                <img src="{{asset('assets/images/report/lifevitae_purple.png')}}" alt="">
                 <p>&copy; 2023, LifeVitae Pte Ltd. All rights reserved.</p>
             </div>
 
@@ -239,35 +227,18 @@
                 </div>
                 <div class="flex mt-30">
                     <div class="mt-20" class="suggested-img-box">
-                        <img class="suggested-activites-img" src="assets/images/report/Group.png" alt="">
+                        <img class="suggested-activites-img" src="{{asset('assets/images/report/Group.png')}}" alt="">
                     </div>
+                    @foreach($suggestedActivity as $key=>$sA)
                     <div class="suggested-box">
-                        <h2>Interactive</h2>
+                        <h2>{{$key}}</h2>
                         <ul class="mt-20">
-                            <li>Listen to the radio</li>
-                            <li>Play team-based sports</li>
-                            <li>Participate in social events</li>
-                            <li>Public Speaking</li>
-                            <li>Start a club</li>
-                            <li>Prepare what you want to say beforehand in front of a mirror</li>
+                            @foreach($sA as $sAData)
+                            <li>{{$sAData}}</li>
+                            @endforeach
                         </ul>
                     </div>
-                    <div class="suggested-box">
-                        <h2>Creative</h2>
-                        <ul class="mt-20">
-                            <li>Brainstorming</li>
-                            <li>Meditating</li>
-                            <li>Drawing</li>
-                            <li>Playing musical instruments</li>
-                            <li>Writing poetry</li>
-                            <li>Creating storyboard</li>
-                            <li>Knitting</li>
-                            <li>Baking</li>
-                            <li>Pottery</li>
-                            <li>Calligraphy</li>
-                            <li>Dancing</li>
-                        </ul>
-                    </div>
+                    @endforeach
                 </div>
                 <div class="end-section mt-30">
                     <div class="triangle-left-box">
@@ -278,11 +249,11 @@
                 </div>
                 <div class="bottom-box-footer">
                     <div class="bottom-box">
-                        <img src="assets/images/report/lifevitae_purple.png" alt="">
+                        <img src="{{asset('assets/images/report/lifevitae_purple.png')}}" alt="">
                         <p>&copy; 2023, LifeVitae Pte Ltd. All rights reserved.</p>
                     </div>
 
-                    <img src="assets/images/report/bottom-bg.png" alt="" class="bottom-bg">
+                    <img src="{{asset('assets/images/report/bottom-bg.png')}}" alt="" class="bottom-bg">
                 </div>
 
             </div>
@@ -291,17 +262,10 @@
 
     <script>
         const data = {
-            labels: [
-                'Cognitive',
-                'Motive',
-                'Creative',
-                'Adaptive',
-                'Emotive',
-                'Interactive'
-            ],
+            labels: @json($skills),
             datasets: [{
                 label: 'My First Dataset',
-                data: [65, 59, 90, 81, 56, 55],
+                data: @json($skills_data),
                 fill: true,
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgb(255, 99, 132)',

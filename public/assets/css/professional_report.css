@@ -287,7 +287,11 @@ page[size="A4"] {
 }
 
 .ls-hex {
-    width: 130px;
+    width: 95px;
+}
+
+.ls-center-hex {
+    width: 150px;
 }
 
 .content div {

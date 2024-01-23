@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ExpressAuthController;
+use App\Http\Controllers\StudentDataController;
+use App\Http\Controllers\StudentSearchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,10 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/student_data', function () {
-    return view('student_data');
-})->name('student_data');
 
 Route::get('/report', function () {
     return view('report');
@@ -48,4 +46,10 @@ Route::group(['middleware' => ['auth:express_client_admin']], function () {
     Route::get('express/change/password', [ExpressAuthController::class, 'changePasswordView'])->name('express.change.password');
     Route::post('express/change/password', [ExpressAuthController::class, 'changePassword'])->name('express.change.password');
     Route::get('express/logout', [ExpressAuthController::class, 'logout'])->name('express.logout');
+
+    // student Data
+    Route::get('express/student_data', [StudentDataController::class, 'studentData'])->name('express.student_data');
+    Route::get('express/search', [StudentSearchController::class, 'search'])->name('express.search');
+    Route::get('express/reportOne/{id}', [StudentSearchController::class, 'reportOne'])->name('express.reportOne');
+    Route::get('express/reportTwo/{id}', [StudentSearchController::class, 'reportTwo'])->name('express.reportTwo');
 });

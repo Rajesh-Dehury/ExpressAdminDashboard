@@ -7,7 +7,6 @@ use App\Models\ExpressClient;
 use App\Models\ExpressClientAdmin;
 use App\Models\ExpressUser;
 use Carbon\Carbon;
-use Carbon\CarbonImmutable;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -202,6 +201,20 @@ class ExpressAuthController extends Controller
             $reportCountQuater += $user->expressReport ? 1 : 0;
         }
 
-        return view('dashboard', compact('express_client_admin', 'express_client', 'total_registered_user_count', 'reportCount', 'pendingReports', 'end_month', 'start_month', 'year', 'total_registered_user_quater_count', 'reportCountQuater'));
+        return view(
+            'dashboard',
+            compact(
+                'express_client_admin',
+                'express_client',
+                'total_registered_user_count',
+                'reportCount',
+                'pendingReports',
+                'end_month',
+                'start_month',
+                'year',
+                'total_registered_user_quater_count',
+                'reportCountQuater'
+            )
+        );
     }
 }

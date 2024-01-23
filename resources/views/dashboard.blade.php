@@ -17,10 +17,10 @@
                 </button>
                 <p class="mb-0 heading-text">Dashboard</p>
             </div>
-            <div class="position-relative d-none d-lg-block">
+            <form method="get" action="{{route('express.search')}}" class="position-relative d-none d-lg-block">
                 <i class="bi bi-search position-absolute position-absolute top-50 translate-middle-y top-search-icon"></i>
-                <input type="search" class="main-search" placeholder="Search for student name...">
-            </div>
+                <input type="search" class="main-search" name="student_name" placeholder="Search for student name...">
+            </form>
             <img src="https://via.placeholder.com/350" alt="" class="user-image-small d-block d-lg-none">
         </div>
     </div>
@@ -34,10 +34,10 @@
                 </div>
             </div>
         </div>
-        <div class="position-relative d-block d-lg-none mt-3">
+        <form method="get" action="{{route('express.search')}}" class="position-relative d-block d-lg-none mt-3">
             <i class="bi bi-search position-absolute position-absolute top-50 translate-middle-y top-search-icon"></i>
-            <input type="search" class="main-search" placeholder="Search for student name...">
-        </div>
+            <input type="search" class="main-search" name="student_name" placeholder="Search for student name...">
+        </form>
 
         <div class="stats mt-5">
             <div class="row">
