@@ -21,16 +21,16 @@
                 <i class="bi bi-search position-absolute position-absolute top-50 translate-middle-y top-search-icon"></i>
                 <input type="search" class="main-search" name="student_name" placeholder="Search for student name...">
             </form>
-            <img src="https://via.placeholder.com/350" alt="" class="user-image-small d-block d-lg-none">
+            <!-- <img src="https://via.placeholder.com/350" alt="" class="user-image-small d-block d-lg-none"> -->
         </div>
     </div>
     <div class="inner-container">
         <div class="user-details d-flex">
-            <img src="https://via.placeholder.com/350" alt="" class="user-image d-none d-lg-block">
+            <!-- <img src="https://via.placeholder.com/350" alt="" class="user-image d-none d-lg-block"> -->
             <div class="d-flex align-items-center ms-3">
                 <div>
                     <h3 class="user-name ">Hello, <strong>{{$express_client_admin->name}}</strong></h3>
-                    <p class="user-below-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                    <!-- <p class="user-below-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p> -->
                 </div>
             </div>
         </div>
@@ -109,7 +109,7 @@
             </div>
         </div>
 
-        <div class="download-box mt-5">
+        <!-- <div class="download-box mt-5">
             <div class="d-flex align-items-center">
                 <div class="col-md-9 col-12">
                     <p class="download-box-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -120,7 +120,7 @@
                     <img src="{{asset('assets/images/download-box.svg')}}" alt="" class="ms-auto">
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="report-container mt-5">
             <div class="report-container-inner">
@@ -162,14 +162,14 @@
                                 <td class="table-data">Reports Generated</td>
                                 <td class="table-data">{{$reportCountQuater}}</td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td class="table-data">&nbsp;</td>
                                 <td class="table-data">&nbsp;</td>
                             </tr>
                             <tr>
                                 <td class="table-data">&nbsp;</td>
                                 <td class="table-data">&nbsp;</td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
