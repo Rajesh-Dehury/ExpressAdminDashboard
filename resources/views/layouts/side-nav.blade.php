@@ -21,26 +21,32 @@
                         </span>
                         <span class="d-inline-block">Student Data</span>
                     </a>
-                    <a href="{{route('report')}}" class="text-white mb-1 navLink d-block d-flex {{request()->routeIs('report')?'active':''}}">
+                    <!-- <a href="{{route('report')}}" class="text-white mb-1 navLink d-block d-flex {{request()->routeIs('report')?'active':''}}">
                         <span class="d-inline-block me-4">
                             <i class="bi bi-graph-up"></i>
                         </span>
                         <span class="d-inline-block">Report</span>
-                    </a>
+                    </a> -->
                 </div>
                 <div class="mb-5 pb-5">
-                    <a href="" class="text-white mb-1 navLink d-block d-flex">
+                    <a href="{{route('express.logout')}}" class="text-white mb-3 navLink d-block d-flex">
+                        <span class="d-inline-block me-4">
+                            <i class="bi bi-power"></i>
+                        </span>
+                        <span class="d-inline-block">Logout</span>
+                    </a>
+                    <!-- <a href="" class="text-white mb-1 navLink d-block d-flex">
                         <span class="d-inline-block me-4">
                             <i class="bi bi-gear"></i>
                         </span>
                         <span class="d-inline-block">Settings</span>
-                    </a>
-                    <a href="" class="text-white mb-1 navLink d-block d-flex">
+                    </a> -->
+                    <!-- <a href="" class="text-white mb-1 navLink d-block d-flex">
                         <span class="d-inline-block me-4">
                             <i class="bi bi-info-circle"></i>
                         </span>
                         <span class="d-inline-block">Info</span>
-                    </a>
+                    </a> -->
                 </div>
             </div>
         </div>
