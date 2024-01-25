@@ -89,8 +89,8 @@
                                     );
                                 </script>
                             </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, asperiores.
-                                Tempora corrupti fugit numquam pariatur minus esse debitis ex laborum!</p>
+                            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, asperiores.
+                                Tempora corrupti fugit numquam pariatur minus esse debitis ex laborum!</p> -->
                         </div>
                     </div>
                 </div>
