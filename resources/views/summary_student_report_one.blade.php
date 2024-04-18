@@ -28,10 +28,10 @@
                     <span class="main-title">{{$user->name}}</span>
                 </div>
                 <div class="img-container">
-                    <div class="img_holder">
+                    <!-- <div class="img_holder">
                         <img class="user-image" src="https://placehold.co/600x400" alt="">
                         <span class="user-badge">Silver</span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div>

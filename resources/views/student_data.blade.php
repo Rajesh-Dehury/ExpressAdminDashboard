@@ -20,7 +20,7 @@
                 <i class="bi bi-search position-absolute position-absolute top-50 translate-middle-y top-search-icon"></i>
                 <input type="search" class="main-search" name="student_name" placeholder="Search for student name...">
             </form>
-            <img src="https://via.placeholder.com/350" alt="" class="user-image-small d-block d-lg-none">
+            <img src="{{$express_client_admin->logo ?? 'https://ui-avatars.com/api/?name=' . $express_client_admin->name}}" alt="" class="user-image-small d-block d-lg-none">
         </div>
     </div>
     <div class="inner-container">
@@ -208,7 +208,7 @@
 
         <div class="extra-data mt-5">
             <div class="row justify-content-between">
-                <div class="col-sm-6">
+                <div class="col-sm-7">
                     <div class="d-flex flex-column">
                         <div class="extra-data-shadow">
                             <div class="d-flex align-items-center">
@@ -279,17 +279,232 @@
                             </div>
 
                             <div class="d-flex flex-column p-2">
-                                @foreach($suggestedActivity as $key=>$sa)
+                                @foreach($suggestedActivity as $key => $sa)
                                 <div class="d-flex align-items-center activity-box1 mb-3">
-                                    <div class="activity-img-box1">
-                                        <img src="{{asset('assets/images/activity.png')}}" alt="" class="activity-img">
+                                    <div class="activity-img-box1 me-3">
+                                        <img src="{{ asset('assets/images/activity.png') }}" alt="" class="activity-img">
                                     </div>
-                                    <div>
-                                        <h6 class="mb-1 ms-3 fw-bold">{{$key}}</h6>
-                                        <p class="mb-0 ms-3 fw-bold activity-text">{{$sa}}</p>
+                                    <div class="d-flex flex-column">
+                                        <h6 class="mb-1 ms-3 fw-bold w-full">{{ $key }}</h6>
+                                        <div class="d-flex align-items-center">
+                                            <div>
+                                                <ul class="list-unstyled ms-3 fw-bold activity-text" style="list-style-type: disc;">
+                                                    @php $activities = explode(',', $sa); @endphp
+                                                    @foreach($activities as $index => $activity)
+                                                    @if($index % 3 == 0 && $index != 0)
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <ul class="list-unstyled ms-3 fw-bold activity-text" style="list-style-type: disc;">
+                                                    @endif
+                                                    <li >{{ $activity }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 @endforeach
+                            </div>
+
+                        </div>
+                        <div class="extra-data-shadow mt-4">
+                            <div class="d-flex justify-content-between">
+                                <h5>
+                                    Courses
+                                </h5>
+                            </div>
+                            <div class="course-main-box px-3">
+                                <div class="row mt-4">
+                                    <div class="col-6 mb-4">
+                                        <div class="courses-box p-2">
+                                            <p class="course-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-heading">Course by</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-heading">Provider</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-heading">Duration</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-data">Kevin Gilbert</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-data">Coursera</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-data"><i class="fa-regular fa-clock icon-green"></i> 6 hour</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="mt-2 mb-3 hr-gray">
+                                            <div>
+                                                <p class="mb-1 course-heading">Description:</p>
+                                                <p class="mb-0 course-sub-heading">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum explicabo placeat minus cupiditate adipisci sed, omnis ea, a provident tempora voluptas vero nam recusandae quo quos. Recusandae nisi nobis nam?</p>
+                                            </div>
+                                            <hr class="my-3 hr-gray">
+
+                                            <a href="#" class="btn smallBtn">Find Out More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mb-4">
+                                        <div class="courses-box p-2">
+                                            <p class="course-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-heading">Course by</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-heading">Provider</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-heading">Duration</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-data">Kevin Gilbert</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-data">Coursera</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-data"><i class="fa-regular fa-clock icon-green"></i> 6 hour</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="mt-2 mb-3 hr-gray">
+                                            <div>
+                                                <p class="mb-1 course-heading">Description:</p>
+                                                <p class="mb-0 course-sub-heading">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum explicabo placeat minus cupiditate adipisci sed, omnis ea, a provident tempora voluptas vero nam recusandae quo quos. Recusandae nisi nobis nam?</p>
+                                            </div>
+                                            <hr class="my-3 hr-gray">
+
+                                            <a href="#" class="btn smallBtn">Find Out More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mb-4">
+                                        <div class="courses-box p-2">
+                                            <p class="course-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-heading">Course by</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-heading">Provider</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-heading">Duration</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-data">Kevin Gilbert</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-data">Coursera</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-data"><i class="fa-regular fa-clock icon-green"></i> 6 hour</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="mt-2 mb-3 hr-gray">
+                                            <div>
+                                                <p class="mb-1 course-heading">Description:</p>
+                                                <p class="mb-0 course-sub-heading">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum explicabo placeat minus cupiditate adipisci sed, omnis ea, a provident tempora voluptas vero nam recusandae quo quos. Recusandae nisi nobis nam?</p>
+                                            </div>
+                                            <hr class="my-3 hr-gray">
+
+                                            <a href="#" class="btn smallBtn">Find Out More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mb-4">
+                                        <div class="courses-box p-2">
+                                            <p class="course-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-heading">Course by</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-heading">Provider</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-heading">Duration</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-data">Kevin Gilbert</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-data">Coursera</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div>
+                                                        <p class="course-sub-data"><i class="fa-regular fa-clock icon-green"></i> 6 hour</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="mt-2 mb-3 hr-gray">
+                                            <div>
+                                                <p class="mb-1 course-heading">Description:</p>
+                                                <p class="mb-0 course-sub-heading">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum explicabo placeat minus cupiditate adipisci sed, omnis ea, a provident tempora voluptas vero nam recusandae quo quos. Recusandae nisi nobis nam?</p>
+                                            </div>
+                                            <hr class="my-3 hr-gray">
+
+                                            <a href="#" class="btn smallBtn">Find Out More</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
@@ -316,7 +531,7 @@
                                 </div>
                                 <div class="ms-3">
                                     <p class="path-text1 mb-0">{{$t3p->title}}</p>
-                                    <p class="path-text2 mb-0">{{$t3p->description}}</p>
+                                    <!-- <p class="path-text2 mb-0">{{$t3p->description}}</p> -->
                                 </div>
                             </div>
                             @endforeach
@@ -338,6 +553,31 @@
                                         @foreach($Top10Strengths as $key=>$s)
                                         <div class="col-md-12">
                                             <div class="gray-box">
+                                                <span class="p-2 d-inline-block">{{ucfirst($s)}}</span>
+                                            </div>
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="extra-data-shadow mt-4">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-box-outliner me-3">
+                                    <i class="fa-solid fa-user-graduate icon-item-outliner"></i>
+                                </div>
+                                <h5 class="mb-0">
+                                    Outliners
+                                    <span class="me-2"><i class="fa-solid fa-circle-question"></i></span>
+                                </h5>
+                            </div>
+                            <div class="strength-box">
+                                <div class="p-3">
+                                    <div class="row">
+                                        @foreach($Top10Strengths as $key=>$s)
+                                        <div class="col-md-12">
+                                            <div class="gray-box-outliner">
                                                 <span class="p-2 d-inline-block">{{ucfirst($s)}}</span>
                                             </div>
                                         </div>

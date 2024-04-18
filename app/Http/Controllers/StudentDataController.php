@@ -27,7 +27,7 @@ class StudentDataController extends Controller
         $suggestedActivity = $this->suggestedActivity($DominantSkills);
         $Top3Pathway = $this->Top3Pathway($express_client_admin);
         $lifevitae_characters = $ExpressDashboard->topCharacter;
-
+        $express_client_admin = Auth::guard('express_client_admin')->user();
 
         return view(
             'student_data',
@@ -42,6 +42,7 @@ class StudentDataController extends Controller
                 'Top3Pathway',
                 'lifevitae_characters',
                 'ExpressDashboard',
+                'express_client_admin',
             )
         );
     }
@@ -145,7 +146,7 @@ class StudentDataController extends Controller
 
     function suggestedActivity($DominantSkills)
     {
-        $firstThreeDominantSkills = array_slice($DominantSkills['labels'], 0, 3);
+        $firstThreeDominantSkills = array_slice($DominantSkills['labels'], 0, 2);
 
         $suggestedActivity = [];
 
@@ -164,5 +165,12 @@ class StudentDataController extends Controller
         }
 
         return $suggestedActivity;
+    }
+
+    function expressInfo()
+    {
+        return view(
+            'info'
+        );
     }
 }

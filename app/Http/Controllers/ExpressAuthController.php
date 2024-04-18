@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class ExpressAuthController extends Controller
@@ -73,7 +74,7 @@ class ExpressAuthController extends Controller
                 'link' => route('express.forgot.link', ['link' => $forgot_password, 'id' => $express_client_admin->id]),
             ];
 
-            Mail::to('test@gmail.com')->send(new ForgotPassswordMail($data));
+            Mail::to($express_client_admin->email)->send(new ForgotPassswordMail($data));
         } catch (Exception $e) {
         }
 
@@ -122,33 +123,62 @@ class ExpressAuthController extends Controller
     }
 
 
-    function changePasswordView()
+    function updateProfile()
     {
-        return view('express_change_password');
+
+        $express_client_admin = Auth::guard('express_client_admin')->user();
+        return view(
+            'settings',
+            compact('express_client_admin',)
+        );
     }
 
-    function changePassword(Request $request)
+    public function updateProfilePost(Request $request)
     {
-        $request->validate([
-            'old_password' => 'required',
-            'new_password' => 'required',
-            'confirm_new_password' => 'required|same:new_password'
-        ]);
+        $rules = [];
+
+        if (!empty($request->old_password)) {
+            $rules += [
+                'old_password' => 'required',
+                'new_password' => 'required',
+                'confirm_new_password' => 'required|same:new_password',
+            ];
+        }
+
+        if ($request->hasFile('logo')) {
+            $rules['logo'] = 'image|mimes:jpeg,png,jpg,gif|max:2048';
+        }
+
+        $rules['organisation_name'] = 'nullable|string|max:255';
+
+        $request->validate($rules);
 
         $ExpressClientAdmin = Auth::guard('express_client_admin')->user();
 
-        if (Hash::check($request->old_password, $ExpressClientAdmin->password)) {
-            ExpressClientAdmin::find($ExpressClientAdmin->id)->update([
-                'password' => Hash::make($request->new_password)
-            ]);
-
-            return redirect()->route('express.dashboard');
+        if (!empty($request->old_password) && !Hash::check($request->old_password, $ExpressClientAdmin->password)) {
+            return redirect()
+                ->back()
+                ->withErrors(['old_password' => 'Invalid Password.'])
+                ->withInput();
         }
 
-        return redirect()
-            ->back()
-            ->withErrors(['old_password' => 'Invalid Password.'])
-            ->withInput();
+        $expUser = ExpressClientAdmin::find($ExpressClientAdmin->id);
+
+        $expUser->update([
+            'password' => Hash::make($request->new_password),
+        ]);
+
+        if ($request->hasFile('logo')) {
+            $oldLogoPath = str_replace('/storage', 'public', $expUser->logo);
+            Storage::delete($oldLogoPath);
+
+            $logoPath = $request->file('logo')->store('logos', 'public');
+            $expUser->update(['logo' => Storage::url($logoPath)]);
+        }
+
+        $expUser->update(['organisation_name' => $request->input('organisation_name')]);
+
+        return redirect()->route('express.update.profile');
     }
 
     public function dashboard()

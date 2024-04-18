@@ -19,18 +19,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/reportOne', function () {
+    return view('report_one');
+});
+Route::get('/reportTwo', function () {
+    return view('report_two');
+});
 
 Route::get('/report', function () {
     return view('report');
 })->name('report');
-
-Route::get('/professional_report', function () {
-    return view('professional_report');
-})->name('professional_report');
-
-Route::get('/summary_student_report_one', function () {
-    return view('summary_student_report_one');
-})->name('summary_student_report_one');
 
 
 Route::group(['middleware' => ['guest:express_client_admin']], function () {
@@ -43,8 +41,8 @@ Route::group(['middleware' => ['guest:express_client_admin']], function () {
 });
 Route::group(['middleware' => ['auth:express_client_admin']], function () {
     Route::get('express/dashboard', [ExpressAuthController::class, 'dashboard'])->name('express.dashboard');
-    Route::get('express/change/password', [ExpressAuthController::class, 'changePasswordView'])->name('express.change.password');
-    Route::post('express/change/password', [ExpressAuthController::class, 'changePassword'])->name('express.change.password');
+    Route::get('express/update/profile', [ExpressAuthController::class, 'updateProfile'])->name('express.update.profile');
+    Route::post('express/update/profile', [ExpressAuthController::class, 'updateProfilePost'])->name('express.update.profile');
     Route::get('express/logout', [ExpressAuthController::class, 'logout'])->name('express.logout');
 
     // student Data
@@ -52,4 +50,7 @@ Route::group(['middleware' => ['auth:express_client_admin']], function () {
     Route::get('express/search', [StudentSearchController::class, 'search'])->name('express.search');
     Route::get('express/reportOne/{id}', [StudentSearchController::class, 'reportOne'])->name('express.reportOne');
     Route::get('express/reportTwo/{id}', [StudentSearchController::class, 'reportTwo'])->name('express.reportTwo');
+
+
+    Route::get('express/info', [StudentDataController::class, 'expressInfo'])->name('express.info');
 });

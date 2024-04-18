@@ -29,7 +29,7 @@
                         <div class="form-group">
                             <label for="password_confermation">Confirm Password</label>
                             <input type="password" maxlength="255" autocomplete="off" name="password_confermation" class="form-control" id="password_confermation">
-                            @error('password')
+                            @error('password_confermation')
                             <small id="" class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>

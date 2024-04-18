@@ -34,10 +34,11 @@
                     <tr class="head-row">
                         <th class="head-data left-round">S.NO</th>
                         <th class="head-data">Name</th>
-                        <th class="head-data">gender</th>
-                        <th class="head-data">Standard</th>
+                        <!-- <th class="head-data">gender</th> -->
+                        <!-- <th class="head-data">Standard</th> -->
                         <th class="head-data">institute</th>
-                        <th class="head-data right-round">Action</th>
+                        <th class="head-data">Student Report</th>
+                        <th class="head-data right-round">Professional Report</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,7 +50,7 @@
                         <td class="body-data">
                             <span>{{$user->name}}</span>
                         </td>
-                        <td class="body-data">
+                        <!-- <td class="body-data">
                             <span>
                                 @if($user->gender == 1)
                                 Male
@@ -57,17 +58,24 @@
                                 Female
                                 @endif
                             </span>
-                        </td>
-                        <td class="body-data">
+                        </td> -->
+                        <!-- <td class="body-data">
                             <span>{{$user->standard}}</span>
-                        </td>
+                        </td> -->
                         <td class="body-data">
                             <span>{{$user->institute}}</span>
+                        </td>
+                        <td class="body-data">
+                            @if($user->expressReport)
+                            <span>
+                                <a href="{{route('express.reportOne',$user->id)}}" class="" target="_blank">View</a>
+                            </span>
+                            @endif 
                         </td>
                         <td class="body-data right-round">
                             @if($user->expressReport)
                             <span>
-                                <a href="{{route('express.reportOne',$user->id)}}" class="" target="_blank">Report</a>
+                                <a href="{{route('express.reportTwo',$user->id)}}" class="" target="_blank">View</a>
                             </span>
                             @endif
                         </td>

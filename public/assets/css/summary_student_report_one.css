@@ -154,6 +154,7 @@
         display: inline-block;
         position: relative;
         padding-right: 70px;
+        padding-top: 80px;
     }
 
     .img_holder {
@@ -668,6 +669,7 @@
     display: inline-block;
     position: relative;
     padding-right: 70px;
+    padding-top: 80px;
 }
 
 .img_holder {

@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('express_client_admins', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('logo')->default('https://ui-avatars.com/api/?name=Test');
+            $table->string('organisation_name')->nullable();
+            $table->string('name')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

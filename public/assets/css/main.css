@@ -100,8 +100,8 @@ a {
 
 /* User profile section */
 .user-image {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     object-fit: contain;
     border-radius: 100%;
 }
@@ -116,11 +116,12 @@ a {
 
 .user-name {
     color: #40c4c1;
+    font-size: 1.5rem;
 }
 
 .user-below-text {
     color: #5a5a5a;
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-bottom: 0;
 }
 
@@ -181,7 +182,7 @@ a {
 .report-container-inner {
     border-radius: 34px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-    padding: 30px 50px;
+    padding: 30px 30px;
 }
 
 .report-header {
@@ -368,23 +369,23 @@ a {
     }
 
     .stats-image {
-        height: 50px;
-        width: 50px;
+        height: 40px;
+        width: 40px;
     }
 
     .stats-image img {
-        height: 30px;
-        width: 30px;
+        height: 20px;
+        width: 20px;
     }
 
     .stats-text {
         color: #5a5a5a;
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         margin-bottom: 0;
     }
 
     .stats-value {
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: bold;
         margin-bottom: 0;
     }
@@ -395,7 +396,7 @@ a {
 
     .report-container-inner {
         border-radius: 14px;
-        padding: 20px;
+        padding: 10px;
     }
 
     .close-icon {
@@ -494,13 +495,6 @@ a {
     border-radius: 10px;
 }
 
-.icon-box {
-    background: #e5dafb;
-    height: 40px;
-    width: 40px;
-    border-radius: 10px;
-    position: relative;
-}
 
 .icon-item {
     position: absolute;
@@ -508,6 +502,30 @@ a {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #5e3fbe;
+}
+
+.icon-box {
+    background: #E5DAFB;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.icon-box-outliner {
+    background: #c7e1e0;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.icon-item-outliner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* color: #25fff8; */
 }
 
 /* report css */
@@ -541,6 +559,15 @@ a {
 
 .gray-box {
     background: #E5DAFB;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    padding: 4px 10px;
+    margin: 0.5rem 0;
+}
+
+.gray-box-outliner {
+    background: #c7e1e0;
     width: 100%;
     height: auto;
     border-radius: 15px;
@@ -642,7 +669,7 @@ a {
 }
 
 .strength-box {
-    height: 410px;
+    height: 443px;
     overflow-y: auto;
 }
 
@@ -681,4 +708,89 @@ a {
 .head-data {
     padding: 15px;
     border: 2px solid white;
+}
+
+.custom-input {
+    background: #edf2f6;
+    padding: 10px 8px;
+}
+
+.btn-purple {
+    background: #8950e1;
+    color: #fff;
+    padding: 10px 50px;
+}
+
+.btn-purple:hover {
+    background: #812dff;
+    color: #fff;
+}
+
+.logo_outline {
+    background: #edf2f6;
+    padding: 15px;
+    border: 2px dashed #6e6e6e;
+    border-radius: 15px;
+    width: 150px;
+    height: 150px;
+}
+
+.account_setting_text {
+    color: #812dff;
+    margin-bottom: 0;
+}
+
+.underline_account {
+    display: inline-block;
+    padding: 1px;
+    margin-left: 1.5rem;
+    width: 170px;
+    background: #812dff;
+}
+
+.courses-box {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 5px;
+}
+
+.course-heading {
+    font-size: 0.7rem;
+}
+
+.course-sub-heading {
+    font-size: 0.5rem;
+    color: #888888;
+    margin-bottom: 0;
+}
+
+.course-sub-data {
+    font-size: 0.5rem;
+    font-weight: bold;
+}
+
+.icon-green {
+    color: #23bd33;
+}
+
+.hr-gray {
+    color: #888888;
+}
+
+.smallBtn {
+    font-size: 0.5rem;
+    background: #40c4c1;
+    color: #fff;
+    width: 100%;
+}
+.smallBtn:hover {
+    font-size: 0.5rem;
+    background: #40c4c1;
+    color: #fff;
+    width: 100%;
+}
+
+.course-main-box{
+    height: 470px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
