@@ -62,7 +62,7 @@
                             </div>
                             <div class="ps-1 col-8">
                                 <p class="stats-text">Total Available Licenses</p>
-                                <p class="stats-value">12</p>
+                                <p class="stats-value">{{$express_client_admin->total_available_licenses}}</p>
                             </div>
                         </div>
                     </div>

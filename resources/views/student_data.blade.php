@@ -44,7 +44,7 @@
                                         datasets: [{
                                             label: "",
                                             data: @json(array_values($SkillDistributionChart)),
-                                            backgroundColor: ['#c00000', '#ed7d31', '#ffc000', '#70ad47', '#5b9bd5', '#2d5597'],
+                                            backgroundColor: ['#2d5497', '#5b9bd5', '#6fac45', '#ffbe00', '#ff9000', '#c00000'],
                                         }]
                                     };
                                     const config = {
@@ -107,7 +107,7 @@
                                         datasets: [{
                                             label: "",
                                             data: @json(array_values($DominantSkills['data'])),
-                                            backgroundColor: ['#c00000', '#ed7d31', '#ffc000', '#70ad47', '#5b9bd5', '#2d5597'],
+                                            backgroundColor: ['#2d5497', '#5b9bd5', '#6fac45', '#ffbe00', '#ff9000', '#c00000'],
                                         }]
                                     };
 
@@ -160,7 +160,7 @@
                                         datasets: [{
                                             label: "",
                                             data: @json(array_values($DevelopingSkills['data'])),
-                                            backgroundColor: ['#c00000', '#ed7d31', '#ffc000', '#70ad47', '#5b9bd5', '#2d5597'],
+                                            backgroundColor: ['#2d5497', '#5b9bd5', '#6fac45', '#ffbe00', '#ff9000', '#c00000'],
                                         }]
                                     };
                                     const configDevSkill = {
@@ -308,7 +308,7 @@
                             </div>
 
                         </div>
-                        <div class="extra-data-shadow mt-4">
+                        <div class="extra-data-shadow mt-4 d-none">
                             <div class="d-flex justify-content-between">
                                 <h5>
                                     Courses
@@ -562,7 +562,7 @@
                             </div>
                         </div>
 
-                        <div class="extra-data-shadow mt-4">
+                        <div class="extra-data-shadow mt-4 d-none">
                             <div class="d-flex align-items-center">
                                 <div class="icon-box-outliner me-3">
                                     <i class="fa-solid fa-user-graduate icon-item-outliner"></i>

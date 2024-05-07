@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('forgot_password')->nullable();
             $table->string('omr_client_id');
+            $table->integer('total_available_licenses')->default(0)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

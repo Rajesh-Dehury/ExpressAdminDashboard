@@ -259,7 +259,8 @@
             </div>
         </div>
     </div>
-
+    <button id="downloadPdf" class="no-print" onclick="generatePDF()">Download</button>
+    
     <script>
         const data = {
             labels: @json($skills),
@@ -291,6 +292,12 @@
         const ctx = document.getElementById('myChart').getContext('2d');
 
         new Chart(ctx, config);
+
+        // download pdf
+        function generatePDF() {
+            window.print();
+        }
+        window.addEventListener('load', generatePDF());
     </script>
 </body>
 

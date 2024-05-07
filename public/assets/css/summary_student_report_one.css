@@ -22,7 +22,29 @@
     right: 0;
 }
 
+.no-print {
+    background-color: #3dbbb8;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 20px auto;
+    display: block;
+    position: sticky;
+    bottom: 0;
+    border-radius: 20px;
+}
+
+.no-print:hover {
+    background-color: #2d8b89;
+}
+
 @media print {
+    .no-print {
+        display: none !important;
+    }
+
     body {
         -webkit-print-color-adjust: exact;
         background: #fff !important;

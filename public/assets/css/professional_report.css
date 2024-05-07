@@ -22,7 +22,28 @@ page[size="A4"] {
     margin-bottom: 0.5cm;
 }
 
+.no-print {
+    background-color: #3dbbb8;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 20px auto;
+    display: block;
+    position: sticky;
+    bottom: 0;
+    border-radius: 20px;
+}
+
+.no-print:hover {
+    background-color: #2d8b89;
+}
+
 @media print {
+    .no-print {
+        display: none !important;
+    }
 
     body,
     page[size="A4"] {
@@ -331,7 +352,7 @@ page[size="A4"] {
 }
 
 .st-box {
-    margin-top: 100px;
+    margin-top: -50px;
     border: 2px solid #8950e1;
     border-radius: 8px;
     padding: 10px;

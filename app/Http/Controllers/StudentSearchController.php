@@ -32,14 +32,14 @@ class StudentSearchController extends Controller
         $life_strengths =  explode(',', $expressReport->life_strengths);
 
 
-        $skills = ['COGNITIVE', 'INTERACTIVE', 'EMOTIVE', 'ADAPTIVE', 'CREATIVE', 'MOTIVE'];
+        $skills = ['MOTIVE', 'CREATIVE', 'ADAPTIVE', 'EMOTIVE', 'INTERACTIVE', 'COGNITIVE'];
         $skills_data = [
-            $expressReport->COGNITIVE,
-            $expressReport->INTERACTIVE,
-            $expressReport->EMOTIVE,
-            $expressReport->ADAPTIVE,
-            $expressReport->CREATIVE,
             $expressReport->MOTIVE,
+            $expressReport->CREATIVE,
+            $expressReport->ADAPTIVE,
+            $expressReport->EMOTIVE,
+            $expressReport->INTERACTIVE,
+            $expressReport->COGNITIVE,
         ];
 
         $dominant_skills = explode(',', $expressReport->dominant_skills);
@@ -72,20 +72,20 @@ class StudentSearchController extends Controller
     function reportTwo($id)
     {
         $user = ExpressUser::find($id);
-        
+
         $expressReport = $user->expressReport;
 
         $life_strengths =  explode(',', $expressReport->life_strengths);
 
 
-        $skills = ['COGNITIVE', 'INTERACTIVE', 'EMOTIVE', 'ADAPTIVE', 'CREATIVE', 'MOTIVE'];
+        $skills = ['MOTIVE', 'CREATIVE', 'ADAPTIVE', 'EMOTIVE', 'INTERACTIVE', 'COGNITIVE'];
         $skills_data = [
-            $expressReport->COGNITIVE,
-            $expressReport->INTERACTIVE,
-            $expressReport->EMOTIVE,
-            $expressReport->ADAPTIVE,
-            $expressReport->CREATIVE,
             $expressReport->MOTIVE,
+            $expressReport->CREATIVE,
+            $expressReport->ADAPTIVE,
+            $expressReport->EMOTIVE,
+            $expressReport->INTERACTIVE,
+            $expressReport->COGNITIVE,
         ];
 
         $dominant_skills = explode(',', $expressReport->dominant_skills);
@@ -143,37 +143,37 @@ class StudentSearchController extends Controller
     public function getDominantSkillData($dominant_skill1, $dominant_skill2, $dominant_skills_text)
     {
         $skillImages = [
-            'COGNITIVE' => asset('assets/images/report/hex-COGNITIVE.png'),
-            'INTERACTIVE' => asset('assets/images/report/hex-INTERACTIVE.png'),
-            'EMOTIVE' => asset('assets/images/report/hex-EMOTIVE.png'),
-            'ADAPTIVE' => asset('assets/images/report/hex-ADAPTIVE.png'),
-            'CREATIVE' => asset('assets/images/report/hex-CREATIVE.png'),
             'MOTIVE' => asset('assets/images/report/hex-MOTIVE.png'),
+            'CREATIVE' => asset('assets/images/report/hex-CREATIVE.png'),
+            'ADAPTIVE' => asset('assets/images/report/hex-ADAPTIVE.png'),
+            'EMOTIVE' => asset('assets/images/report/hex-EMOTIVE.png'),
+            'INTERACTIVE' => asset('assets/images/report/hex-INTERACTIVE.png'),
+            'COGNITIVE' => asset('assets/images/report/hex-COGNITIVE.png'),
         ];
         $skillInnerImages = [
-            'COGNITIVE' => asset('assets/images/report/hax-inner-COGNITIVE.png'),
-            'INTERACTIVE' => asset('assets/images/report/hax-inner-INTERACTIVE.png'),
-            'EMOTIVE' => asset('assets/images/report/hax-inner-EMOTIVE.png'),
-            'ADAPTIVE' => asset('assets/images/report/hax-inner-ADAPTIVE.png'),
-            'CREATIVE' => asset('assets/images/report/hax-inner-CREATIVE.png'),
             'MOTIVE' => asset('assets/images/report/hax-inner-MOTIVE.png'),
+            'CREATIVE' => asset('assets/images/report/hax-inner-CREATIVE.png'),
+            'ADAPTIVE' => asset('assets/images/report/hax-inner-ADAPTIVE.png'),
+            'EMOTIVE' => asset('assets/images/report/hax-inner-EMOTIVE.png'),
+            'INTERACTIVE' => asset('assets/images/report/hax-inner-INTERACTIVE.png'),
+            'COGNITIVE' => asset('assets/images/report/hax-inner-COGNITIVE.png'),
         ];
         $skillColors = [
-            'COGNITIVE' => '#bdd6ff',
-            'INTERACTIVE' => '#add5f8',
-            'EMOTIVE' => '#dfffc9',
-            'ADAPTIVE' => '#ffebaf',
-            'CREATIVE' => '#ffd7a3',
-            'MOTIVE' => '#ffdbdb',
+            'MOTIVE' => '#bdd6ff',
+            'CREATIVE' => '#add5f8',
+            'ADAPTIVE' => '#dfffc9',
+            'EMOTIVE' => '#ffebaf',
+            'INTERACTIVE' => '#ffd7a3',
+            'COGNITIVE' => '#ffdbdb',
         ];
 
         $skillTextColors = [
-            'COGNITIVE' => '#2d5497',
-            'INTERACTIVE' => '#5b9bd5',
-            'EMOTIVE' => '#6fac45',
-            'ADAPTIVE' => '#ffbe00',
-            'CREATIVE' => '#ff9000',
-            'MOTIVE' => '#c00000',
+            'MOTIVE' => '#2d5497',
+            'CREATIVE' => '#5b9bd5',
+            'ADAPTIVE' => '#6fac45',
+            'EMOTIVE' => '#ffbe00',
+            'INTERACTIVE' => '#ff9000',
+            'COGNITIVE' => '#c00000',
         ];
 
         $dominant_skill_img1 = '';
@@ -217,37 +217,37 @@ class StudentSearchController extends Controller
     public function getDevelopingSkillData($developing_skill1, $developing_skill2, $developing_skills_text)
     {
         $skillImages = [
-            'COGNITIVE' => asset('assets/images/report/hex-COGNITIVE.png'),
-            'INTERACTIVE' => asset('assets/images/report/hex-INTERACTIVE.png'),
-            'EMOTIVE' => asset('assets/images/report/hex-EMOTIVE.png'),
-            'ADAPTIVE' => asset('assets/images/report/hex-ADAPTIVE.png'),
-            'CREATIVE' => asset('assets/images/report/hex-CREATIVE.png'),
             'MOTIVE' => asset('assets/images/report/hex-MOTIVE.png'),
+            'CREATIVE' => asset('assets/images/report/hex-CREATIVE.png'),
+            'ADAPTIVE' => asset('assets/images/report/hex-ADAPTIVE.png'),
+            'EMOTIVE' => asset('assets/images/report/hex-EMOTIVE.png'),
+            'INTERACTIVE' => asset('assets/images/report/hex-INTERACTIVE.png'),
+            'COGNITIVE' => asset('assets/images/report/hex-COGNITIVE.png'),
         ];
         $skillInnerImages = [
-            'COGNITIVE' => asset('assets/images/report/hax-inner-COGNITIVE.png'),
-            'INTERACTIVE' => asset('assets/images/report/hax-inner-INTERACTIVE.png'),
-            'EMOTIVE' => asset('assets/images/report/hax-inner-EMOTIVE.png'),
-            'ADAPTIVE' => asset('assets/images/report/hax-inner-ADAPTIVE.png'),
-            'CREATIVE' => asset('assets/images/report/hax-inner-CREATIVE.png'),
             'MOTIVE' => asset('assets/images/report/hax-inner-MOTIVE.png'),
+            'CREATIVE' => asset('assets/images/report/hax-inner-CREATIVE.png'),
+            'ADAPTIVE' => asset('assets/images/report/hax-inner-ADAPTIVE.png'),
+            'EMOTIVE' => asset('assets/images/report/hax-inner-EMOTIVE.png'),
+            'INTERACTIVE' => asset('assets/images/report/hax-inner-INTERACTIVE.png'),
+            'COGNITIVE' => asset('assets/images/report/hax-inner-COGNITIVE.png'),
         ];
         $skillColors = [
-            'COGNITIVE' => '#bdd6ff',
-            'INTERACTIVE' => '#add5f8',
-            'EMOTIVE' => '#dfffc9',
-            'ADAPTIVE' => '#ffebaf',
-            'CREATIVE' => '#ffd7a3',
-            'MOTIVE' => '#ffdbdb',
+            'MOTIVE' => '#bdd6ff',
+            'CREATIVE' => '#add5f8',
+            'ADAPTIVE' => '#dfffc9',
+            'EMOTIVE' => '#ffebaf',
+            'INTERACTIVE' => '#ffd7a3',
+            'COGNITIVE' => '#ffdbdb',
         ];
 
         $skillTextColors = [
-            'COGNITIVE' => '#2d5497',
-            'INTERACTIVE' => '#5b9bd5',
-            'EMOTIVE' => '#6fac45',
-            'ADAPTIVE' => '#ffbe00',
-            'CREATIVE' => '#ff9000',
-            'MOTIVE' => '#c00000',
+            'MOTIVE' => '#2d5497',
+            'CREATIVE' => '#5b9bd5',
+            'ADAPTIVE' => '#6fac45',
+            'EMOTIVE' => '#ffbe00',
+            'INTERACTIVE' => '#ff9000',
+            'COGNITIVE' => '#c00000',
         ];
 
         $developing_skill_img1 = '';

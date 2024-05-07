@@ -317,7 +317,7 @@
                         <div class="col-3">
                             <div class="position-relative">
                                 <img src="{{asset('assets/images/high possibitily hexagon 1.png')}}" alt="" class="img-fluid">
-                                <img src="{{asset('assets/images/Creative Design.png')}}" alt="" class="position-absolute possibility-inside-img">
+                                <img src="{{$t4p->icon_name}}" alt="" class="position-absolute possibility-inside-img">
                             </div>
                         </div>
                         <div class="col-9">
@@ -346,7 +346,7 @@
                 <p class="mb-0 w-100 text-center">This report is specially curated for {{$user->name}}</p>
             </div>
             <div class="page-content1">
-                <div class="header-content">
+                <div class="header-content" style="margin: 5px 40px;">
                     <p class="header-content-text">Your LifeStrengths</p>
                 </div>
                 <div class="mx-5 main">
@@ -435,34 +435,69 @@
                     </div>
                 </div>
 
-                <div class="mx-5 mt-5">
-                    <div class="d-flex flex-wrap pt-5">
+                <div class="mx-5 mt-2">
+                    <div class="d-flex flex-wrap pt-3">
                         @foreach($lifeStrengthText['achievements_strength'] as $index => $achievement)
-                        @if($index < 6)
-                            <div class="col-6 px-2">
-                                <div class="mb-4">
-                                    <p class="mb-1 body-text fw-bold text-purple">{{ $achievement }}</p>
-                                    <p class="mb-0 body-text">{{ $lifeStrengthText['description'][$index] }}</p>
-                                </div>
+                        @if($index < 6) <div class="col-6 px-2">
+                            <div class="mb-4">
+                                <p class="mb-1 body-text fw-bold text-purple">{{ $achievement }}</p>
+                                <p class="mb-0 body-text">{{ $lifeStrengthText['description'][$index] }}</p>
                             </div>
+                    </div>
+                    @else
+                    @break
+                    @endif
+                    @endforeach
+                </div>
+            </div>
+            <div class="page-content1">
+                <div class="header-content" style="margin: 5px 40px;">
+                    <p class="header-content-text">Your LifeStrengths</p>
+                </div>
+                <div class="mx-5 mt-3">
+                    <div class="d-flex flex-wrap">
+                        @foreach($lifeStrengthText['achievements_strength'] as $index => $achievement)
+                        @if($index >= 6)
+                        <div class="col-6 px-2">
+                            <div class="mb-4">
+                                <p class="mb-1 body-text fw-bold text-purple">{{ $achievement }}</p>
+                                <p class="mb-0 body-text">{{ $lifeStrengthText['description'][$index] }}</p>
+                            </div>
+                        </div>
                         @else
-                            @break
+                        @continue
                         @endif
                         @endforeach
                     </div>
                 </div>
-
-            </div>
-            <div class="footer-content">
-                <img src="{{asset('assets/images/professional_report/mask_group_bg.png')}}" alt="" class="mask-img">
-                <img src="{{asset('assets/images/professional_report/logo LV polos 1.png')}}" alt="" class="mask-img2">
-                <p class="page-number">5</p>
-                <img src="{{asset('assets/images/professional_report/letter_head_footer_simple.png')}}" alt="" class="footer-img">
-                <p class="footer-text"><span>&copy;</span> 2023, LifeVitae Pte Ltd. All rights reserved.</p>
+                <div class="mx-5 mt-5">
+                    <div class="st-box">
+                        <p class="body-text text-purple">Disclaimer: This report has been developed using LifeVitae's
+                            data science proprietary
+                            algorithms. The information provided in this report is for general educational and/or
+                            personal purposes only. It should not be taken as an official diagnosis or restrictive
+                            analysis. The purpose of this is to aid in self-discovery and self-improvement. It is
+                            designed by LifeVitae to help individuals identify their core life skills and career
+                            pathways through the synergy of data collected from other individuals and behaviours, and
+                            artificial intelligence.</p>
+                        <p class="body-text text-purple">This report is based on the latest inputs provided by the user.
+                            Please note that any
+                            subsequent modifications to the LifeProfile will generate a new report, rendering this
+                            report invalid.</p>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="footer-content" style="bottom: -35px;">
+            <img src="{{asset('assets/images/professional_report/mask_group_bg.png')}}" alt="" class="mask-img">
+            <img src="{{asset('assets/images/professional_report/logo LV polos 1.png')}}" alt="" class="mask-img2">
+            <p class="page-number">5</p>
+            <img src="{{asset('assets/images/professional_report/letter_head_footer_simple.png')}}" alt="" class="footer-img">
+            <p class="footer-text"><span>&copy;</span> 2023, LifeVitae Pte Ltd. All rights reserved.</p>
+        </div>
+        </div>
     </page>
-    <page size="A4">
+    <page size="A4" style="display: none;">
         <div class="position-relative">
 
             <div class="page-header d-flex align-items-center">
@@ -474,17 +509,17 @@
                     <p class="header-content-text">Your LifeStrengths</p>
                 </div>
                 <div class="mx-5 mt-5">
-                <div class="d-flex flex-wrap">
+                    <div class="d-flex flex-wrap">
                         @foreach($lifeStrengthText['achievements_strength'] as $index => $achievement)
                         @if($index >= 6)
-                            <div class="col-6 px-2">
-                                <div class="mb-4">
-                                    <p class="mb-1 body-text fw-bold text-purple">{{ $achievement }}</p>
-                                    <p class="mb-0 body-text">{{ $lifeStrengthText['description'][$index] }}</p>
-                                </div>
+                        <div class="col-6 px-2">
+                            <div class="mb-4">
+                                <p class="mb-1 body-text fw-bold text-purple">{{ $achievement }}</p>
+                                <p class="mb-0 body-text">{{ $lifeStrengthText['description'][$index] }}</p>
                             </div>
+                        </div>
                         @else
-                            @continue
+                        @continue
                         @endif
                         @endforeach
                     </div>
@@ -595,13 +630,13 @@
             <div class="footer-content">
                 <img src="{{asset('assets/images/professional_report/mask_group_bg.png')}}" alt="" class="mask-img">
                 <img src="{{asset('assets/images/professional_report/logo LV polos 1.png')}}" alt="" class="mask-img2">
-                <p class="page-number">7</p>
+                <p class="page-number">6</p>
                 <img src="{{asset('assets/images/professional_report/letter_head_footer_simple.png')}}" alt="" class="footer-img">
                 <p class="footer-text"><span>&copy;</span> 2023, LifeVitae Pte Ltd. All rights reserved.</p>
             </div>
         </div>
     </page>
-
+    <button id="downloadPdf" class="no-print" onclick="generatePDF()">Download</button>
 
     <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
@@ -638,6 +673,14 @@
         const ctx = document.getElementById('myChart').getContext('2d');
 
         new Chart(ctx, config);
+
+        // download pdf
+        function generatePDF() {
+            window.print();
+        }
+        window.addEventListener('load', function() {
+            setTimeout(generatePDF, 2000);
+        });
     </script>
 </body>
 
