@@ -514,7 +514,7 @@
                     <div class="d-flex flex-column">
                         <div class="extra-data-shadow">
                             <div class="d-flex py-3">
-                                <button class="download-btn mt-0 mx-auto">Download Summary Repor</button>
+                                <button class="download-btn mt-0 mx-auto">Download Summary Report</button>
                             </div>
                         </div>
                         <div class="extra-data-shadow mt-4">
