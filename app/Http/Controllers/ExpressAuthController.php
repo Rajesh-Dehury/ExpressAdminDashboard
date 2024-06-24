@@ -155,28 +155,28 @@ class ExpressAuthController extends Controller
 
         $ExpressClientAdmin = Auth::guard('express_client_admin')->user();
 
-        if (!empty($request->old_password) && !Hash::check($request->old_password, $ExpressClientAdmin->password)) {
-            return redirect()
-                ->back()
-                ->withErrors(['old_password' => 'Invalid Password.'])
-                ->withInput();
+        if (!empty($request->old_password)) {
+            if (!Hash::check($request->old_password, $ExpressClientAdmin->password)) {
+                return redirect()
+                    ->back()
+                    ->withErrors(['old_password' => 'Invalid Password.'])
+                    ->withInput();
+            }
+
+            $ExpressClientAdmin->update([
+                'password' => Hash::make($request->new_password),
+            ]);
         }
 
-        $expUser = ExpressClientAdmin::find($ExpressClientAdmin->id);
-
-        $expUser->update([
-            'password' => Hash::make($request->new_password),
-        ]);
-
         if ($request->hasFile('logo')) {
-            $oldLogoPath = str_replace('/storage', 'public', $expUser->logo);
+            $oldLogoPath = str_replace('/storage', 'public', $ExpressClientAdmin->logo);
             Storage::delete($oldLogoPath);
 
             $logoPath = $request->file('logo')->store('logos', 'public');
-            $expUser->update(['logo' => Storage::url($logoPath)]);
+            $ExpressClientAdmin->update(['logo' => Storage::url($logoPath)]);
         }
 
-        $expUser->update(['organisation_name' => $request->input('organisation_name')]);
+        $ExpressClientAdmin->update(['organisation_name' => $request->input('organisation_name')]);
 
         return redirect()->route('express.update.profile');
     }
