@@ -21,12 +21,12 @@
                 <i class="bi bi-search position-absolute position-absolute top-50 translate-middle-y top-search-icon"></i>
                 <input type="search" class="main-search" name="student_name" placeholder="Search for student name...">
             </form>
-            <img src="{{$express_client_admin->logo ?? 'https://ui-avatars.com/api/?name=' . $express_client_admin->name}}" alt="" class="user-image-small d-block d-lg-none">
+            <img src="{{$express_client_admin->logo || empty($express_client_admin->logo) ? asset('assets\images\profile-circle.svg'):$express_client_admin->logo}}" alt="" class="user-image-small d-block d-lg-none">
         </div>
     </div>
     <div class="inner-container">
         <div class="user-details d-flex">
-            <img src="{{$express_client_admin->logo ?? 'https://ui-avatars.com/api/?name=' . $express_client_admin->name}}" alt="" class="user-image d-none d-lg-block">
+            <img src="{{$express_client_admin->logo || empty($express_client_admin->logo) ? asset('assets\images\profile-circle.svg'):$express_client_admin->logo}}" alt="" class="user-image d-none d-lg-block">
             <div class="d-flex align-items-center ms-3">
                 <div>
                     <h3 class="user-name ">Hello<strong class="d-none">, {{$express_client_admin->name}}</strong></h3>
