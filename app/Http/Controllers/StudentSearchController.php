@@ -119,6 +119,11 @@ class StudentSearchController extends Controller
         );
     }
 
+    public function quaterlyReport()
+    {
+        return view('report_one');
+    }
+
     function suggestedActivity($DominantSkills)
     {
         $firstThreeDominantSkills = $DominantSkills;

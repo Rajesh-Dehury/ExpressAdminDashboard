@@ -31,7 +31,7 @@ page[size="A4"] {
 
 .main-box {
     width: 8in;
-    height: 11.2in;
+    height: 11.49in;
     position: relative;
     background: #fff;
     margin-bottom: 0.5cm;
@@ -169,6 +169,28 @@ page[size="A4"] {
     font-size: 0.7rem;
 }
 
+.skill-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 120px;
+    width: 120px;
+    margin: auto;
+}
+
+.skill_img {
+    position: absolute;
+    width: 100px;
+    height: auto;
+}
+
+.skill_img_inner {
+    position: absolute;
+    width: 60px;
+    height: auto;
+}
+
 @media print {
     body {
         -webkit-print-color-adjust: exact;
@@ -184,7 +206,7 @@ page[size="A4"] {
     }
 
     .main-box {
-        margin-bottom: 0;
+        margin-bottom: 0 !important;
     }
 
     .bottom {
@@ -195,5 +217,25 @@ page[size="A4"] {
         width: 100%;
         background: #fff;
         padding: 10px;
+    }
+
+    .skill-container {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        position: relative !important;
+    }
+
+    .skill_img,
+    .skill_img_inner {
+        position: absolute !important;
+    }
+
+    .skill_img {
+        width: 100px !important;
+    }
+
+    .skill_img_inner {
+        width: 60px !important;
     }
 }

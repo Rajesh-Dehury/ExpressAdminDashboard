@@ -141,18 +141,18 @@
                         <div class="d-flex justify-content-between">
                             <div class="d-flex">
                                 <div>
-                                    <div class="position-relative">
+                                    <div class="skill-container">
                                         <img src="/assets/images/report/hex-MOTIVE.png" alt="" class="skill_img">
-                                        <img src="/assets/images/report/hax-inner-MOTIVE.png" alt="" class="skill_img_inner position-absolute top-50 start-50 translate-middle">
+                                        <img src="/assets/images/report/hax-inner-MOTIVE.png" alt="" class="skill_img_inner">
                                     </div>
                                     <p class="mb-0 text-center fw-bold">MOTIVE</p>
                                 </div>
                             </div>
                             <div class="d-flex">
                                 <div>
-                                    <div class="position-relative">
+                                    <div class="skill-container">
                                         <img src="/assets/images/report/hex-MOTIVE.png" alt="" class="skill_img">
-                                        <img src="/assets/images/report/hax-inner-MOTIVE.png" alt="" class="skill_img_inner position-absolute top-50 start-50 translate-middle">
+                                        <img src="/assets/images/report/hax-inner-MOTIVE.png" alt="" class="skill_img_inner">
                                     </div>
                                     <p class="mb-0 text-center fw-bold">MOTIVE</p>
                                 </div>
@@ -163,9 +163,9 @@
                         <h6>WEAKEST SKILLS:</h6>
                         <div class="d-flex ">
                             <div>
-                                <div class="position-relative">
+                                <div class="skill-container">
                                     <img src="/assets/images/report/hex-MOTIVE.png" alt="" class="skill_img">
-                                    <img src="/assets/images/report/hax-inner-MOTIVE.png" alt="" class="skill_img_inner position-absolute top-50 start-50 translate-middle">
+                                    <img src="/assets/images/report/hax-inner-MOTIVE.png" alt="" class="skill_img_inner">
                                 </div>
                                 <p class="mb-0 text-center fw-bold">MOTIVE</p>
                             </div>
@@ -311,11 +311,20 @@
         });
     </script>
 
-<script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Add a delay before converting to PDF to ensure proper rendering
             setTimeout(function() {
-                html2pdf().set({ html2canvas: { scale: 1 }, filename: 'report_one.pdf', jsPDF: { format: 'a4', orientation: 'portrait' } }).from(document.body).save();
+                html2pdf().set({
+                    html2canvas: {
+                        scale: 1
+                    },
+                    filename: 'report_one.pdf',
+                    jsPDF: {
+                        format: 'a4',
+                        orientation: 'portrait'
+                    }
+                }).from(document.body).save();
             }, 1000); // Adjust the delay as needed (in milliseconds)
         });
     </script>

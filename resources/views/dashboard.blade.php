@@ -113,7 +113,7 @@
             <div class="d-flex align-items-center">
                 <div class="col-md-9 col-12">
                     <p class="download-box-text">You can download your quarterly report below</p>
-                    <button class="download-btn">Download</button>
+                    <a href="{{route('express.quaterly.report')}}" target="_blank" class="download-btn">Download</a>
                 </div>
                 <div class="col-md-3 d-none d-md-block">
                     <img src="{{asset('assets/images/download-box.svg')}}" alt="" class="ms-auto">

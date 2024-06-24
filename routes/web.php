@@ -50,6 +50,7 @@ Route::group(['middleware' => ['auth:express_client_admin']], function () {
     Route::get('express/search', [StudentSearchController::class, 'search'])->name('express.search');
     Route::get('express/reportOne/{id}', [StudentSearchController::class, 'reportOne'])->name('express.reportOne');
     Route::get('express/reportTwo/{id}', [StudentSearchController::class, 'reportTwo'])->name('express.reportTwo');
+    Route::get('express/quaterly/report', [StudentSearchController::class, 'quaterlyReport'])->name('express.quaterly.report');
 
 
     Route::get('express/info', [StudentDataController::class, 'expressInfo'])->name('express.info');
