@@ -216,7 +216,7 @@
                                     <i class="fa-solid fa-user-graduate icon-item"></i>
                                 </div>
                                 <h5 class="mb-0">Profiles Completed
-                                    <span class="me-2"><i class="fa-solid fa-circle-question"></i></span>
+                                    <span class="me-2" id="ProfilesCompleted"><i class="fa-solid fa-circle-question"></i></span>
                                     :
                                     <span>{{array_sum($genderCount)}}</span>
                                 </h5>
@@ -244,7 +244,7 @@
                             <div class="d-flex justify-content-between">
                                 <h5>
                                     Top Character
-                                    <span class="me-2"><i class="fa-solid fa-circle-question"></i></span>
+                                    <span class="me-2" id="TopCharacter"><i class="fa-solid fa-circle-question"></i></span>
                                 </h5>
                             </div>
                             <div class="top-character">
@@ -297,7 +297,7 @@
                                             <div class="col-md-4">
                                                 <ul class="list-unstyled ms-3 fw-bold activity-text" style="list-style-type: disc;">
                                                     @endif
-                                                    <li >{{ $activity }}</li>
+                                                    <li>{{ $activity }}</li>
                                                     @endforeach
                                                 </ul>
                                             </div>
@@ -521,7 +521,7 @@
                             <div class="d-flex align-items-center">
                                 <h5 class="mb-0">
                                     Top 3 Pathway
-                                    <span class="me-2"><i class="fa-solid fa-circle-question"></i></span>
+                                    <span class="me-2" id="Top3Pathway"><i class="fa-solid fa-circle-question"></i></span>
                                 </h5>
                             </div>
                             @foreach($Top3Pathway as $t3p)
@@ -544,7 +544,7 @@
                                 </div>
                                 <h5 class="mb-0">
                                     Top Strengths
-                                    <span class="me-2"><i class="fa-solid fa-circle-question"></i></span>
+                                    <span class="me-2" id="TopStrengths"><i class="fa-solid fa-circle-question"></i></span>
                                 </h5>
                             </div>
                             <div class="strength-box">
@@ -603,6 +603,34 @@
         items: 1,
         nav: true,
         navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+    })
+
+    // popovers
+    $(document).ready(function() {
+        $('#ProfilesCompleted').popover({
+            html: true,
+            placement: 'top',
+            trigger: 'hover',
+            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, voluptas!'
+        });
+        $('#Top3Pathway').popover({
+            html: true,
+            placement: 'top',
+            trigger: 'hover',
+            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, voluptas!'
+        });
+        $('#TopCharacter').popover({
+            html: true,
+            placement: 'top',
+            trigger: 'hover',
+            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, voluptas!'
+        });
+        $('#TopStrengths').popover({
+            html: true,
+            placement: 'top',
+            trigger: 'hover',
+            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, voluptas!'
+        });
     })
 </script>
 @endpush
