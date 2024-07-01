@@ -34,7 +34,9 @@
                 <div class="col-sm-6">
                     <div class="d-flex justify-content-center">
                         <div>
-                            <h5>Skill Distribution Chart</h5>
+                            <h5>Skill Distribution Chart
+                                <span class="me-2" id="SkillDistributionChart"><i class="fa-solid fa-circle-question"></i></span>
+                            </h5>
                             <div class="myPieChart2">
                                 <canvas id="myChart"></canvas>
                                 </script>
@@ -97,7 +99,9 @@
                 <div class="col-sm-6">
                     <div class="d-flex flex-column h-100">
                         <div class="d-flex flex-column align-items-center">
-                            <h5 class="align-self-stretch align-self-lg-center">Dominant Skills</h5>
+                            <h5 class="align-self-stretch align-self-lg-center">Dominant Skills
+                                <span class="me-2" id="DominantSkills"><i class="fa-solid fa-circle-question"></i></span>
+                            </h5>
                             <div class="dominant-skill-charts">
                                 <canvas id="myChartDomSkill"></canvas>
                                 <script src="https://cdnjs.cloudfare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
@@ -150,7 +154,9 @@
                             </div>
                         </div>
                         <div class="d-flex flex-column align-items-center mt-auto">
-                            <h5 class="align-self-stretch align-self-lg-center">Developing Skills</h5>
+                            <h5 class="align-self-stretch align-self-lg-center">Developing Skills
+                                <span class="me-2" id="DevelopingSkills"><i class="fa-solid fa-circle-question"></i></span>
+                            </h5>
                             <div class="developing-skill-charts">
                                 <canvas id="myChartDevSkill"></canvas>
                                 <script src="https://cdnjs.cloudfare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
@@ -514,7 +520,7 @@
                     <div class="d-flex flex-column">
                         <div class="extra-data-shadow">
                             <div class="d-flex py-3">
-                                <button class="download-btn mt-0 mx-auto">Download Summary Report</button>
+                                <a href="{{route('express.summery.report')}}" target="_blank" class="download-btn mt-0 mx-auto">Download Summary Report</a>
                             </div>
                         </div>
                         <div class="extra-data-shadow mt-4">
@@ -611,25 +617,43 @@
             html: true,
             placement: 'top',
             trigger: 'hover',
-            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, voluptas!'
+            content: 'This indicates the total number of profiles that have been completed by students on the platform.'
         });
         $('#Top3Pathway').popover({
             html: true,
             placement: 'top',
             trigger: 'hover',
-            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, voluptas!'
+            content: 'This section lists the top three career pathways that are best suited for the selected group based on their profile information.'
         });
         $('#TopCharacter').popover({
             html: true,
             placement: 'top',
             trigger: 'hover',
-            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, voluptas!'
+            content: 'This highlights the most common character trait among students in the selected group.'
         });
         $('#TopStrengths').popover({
             html: true,
             placement: 'top',
             trigger: 'hover',
-            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, voluptas!'
+            content: 'This highlights the top Life Strengths of the selected group of students based on their profile information.'
+        });
+        $('#SkillDistributionChart').popover({
+            html: true,
+            placement: 'top',
+            trigger: 'hover',
+            content: 'This chart represents the distribution of different skill categories for the selected group.'
+        });
+        $('#DevelopingSkills').popover({
+            html: true,
+            placement: 'top',
+            trigger: 'hover',
+            content: 'This group of students has potential for growth in these skills, and improvement can help them achieve a more balanced skill set.'
+        });
+        $('#DominantSkills').popover({
+            html: true,
+            placement: 'top',
+            trigger: 'hover',
+            content: 'This group of students excels in these skills and can leverage them for their future career and personal development.'
         });
     })
 </script>

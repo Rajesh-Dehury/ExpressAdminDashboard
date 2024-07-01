@@ -173,4 +173,38 @@ class StudentDataController extends Controller
             'info'
         );
     }
+
+    public function summeryReport()
+    {
+        $express_client_admin = Auth::guard('express_client_admin')->user();
+        $genderCount = $this->genderCount($express_client_admin);
+
+        $skills = ['COGNITIVE', 'INTERACTIVE', 'EMOTIVE', 'ADAPTIVE', 'CREATIVE', 'MOTIVE'];
+        $ExpressDashboard = ExpressDashboard::first();
+        $SkillDistributionChart = $this->SkillDistributionChart($ExpressDashboard, $skills);
+        $DominantSkills = $this->DominantSkills($ExpressDashboard, $skills);
+        $DevelopingSkills = $this->DevelopingSkills($ExpressDashboard, $skills);
+        $Top10Strengths = $this->Top10Strengths($ExpressDashboard);
+        $suggestedActivity = $this->suggestedActivity($DominantSkills);
+        $Top3Pathway = $this->Top3Pathway($express_client_admin);
+        $lifevitae_characters = $ExpressDashboard->topCharacter;
+        $express_client_admin = Auth::guard('express_client_admin')->user();
+
+        return view(
+            'summery_report',
+            compact(
+                'genderCount',
+                'SkillDistributionChart',
+                'DominantSkills',
+                'DevelopingSkills',
+                'Top10Strengths',
+                'skills',
+                'suggestedActivity',
+                'Top3Pathway',
+                'lifevitae_characters',
+                'ExpressDashboard',
+                'express_client_admin',
+            )
+        );
+    }
 }
