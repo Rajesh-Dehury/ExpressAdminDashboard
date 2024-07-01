@@ -224,9 +224,12 @@
                                 <h5 class="mb-0">Profiles Completed
                                     <span class="me-2" id="ProfilesCompleted"><i class="fa-solid fa-circle-question"></i></span>
                                     :
-                                    <span>{{array_sum($genderCount)}}</span>
+                                    @if($genderCount['unavailable'])
+                                    <span>{{$genderCount['total']}}</span>
+                                    @endif
                                 </h5>
                             </div>
+                            @if($genderCount['unavailable'])
                             <div class="d-flex align-items-start mt-5">
                                 <h5 class="ms-5 ps-2 me-2 fw-bold">Gender <br>Breakdown:</h5>
                                 <table>
@@ -237,13 +240,22 @@
                                         <th class="px-lg-4 px-2">
                                             <h3>{{$genderCount['female']}}</h3>
                                         </th>
+                                        <th class="px-lg-4 px-2">
+                                            <h3>{{$genderCount['not_specified']}}</h3>
+                                        </th>
                                     </tr>
                                     <tr>
                                         <td class="px-lg-4 px-2">Male</td>
                                         <td class="px-lg-4 px-2">Female</td>
+                                        <td class="px-lg-4 px-2">Unspecified</td>
                                     </tr>
                                 </table>
                             </div>
+                            @else
+                            <div class="d-flex align-items-start mt-5">
+                                <h5 class="ms-5 ps-2 me-2 fw-bold">Gender Unavailable</h5>
+                            </div>
+                            @endif
                         </div>
 
                         <div class="extra-data-shadow mt-4">

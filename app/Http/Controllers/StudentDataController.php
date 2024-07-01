@@ -54,13 +54,26 @@ class StudentDataController extends Controller
         $genderCount = [
             'male' => 0,
             'female' => 0,
+            'not_specified' => 0, // Count for users without a specified gender
+            'unavailable' => true, // Indicator for users without a gender field
+            'total' => 0 // Total user count
         ];
 
         foreach ($registered_users as $user) {
-            if ($user->gender == 1) {
-                $genderCount['male']++;
+            // Increment the total user count
+            $genderCount['total']++;
+
+            // Check if the gender field exists and is not null
+            if (isset($user->gender)) {
+                if ($user->gender == 1) {
+                    $genderCount['male']++;
+                } elseif ($user->gender == 2) {
+                    $genderCount['female']++;
+                } else {
+                    $genderCount['not_specified']++;
+                }
             } else {
-                $genderCount['female']++;
+                $genderCount['unavailable'] = false;
             }
         }
 
