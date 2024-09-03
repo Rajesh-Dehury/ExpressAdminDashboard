@@ -32,7 +32,7 @@
                         <div class="form-group" style="position: relative;">
                             <label for="password">Password</label>
                             <input type="password" name="password" autocomplete="off" id="password" class="form-control">
-                            <button type="button" class="app-input__show-password" id="show_password"></button>
+                            <button type="button" class="app-input__show-password" id="show_password" onclick="togglePassword()"></button>
                             @error('password')
                             <small id="emailHelp" class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -56,4 +56,16 @@
 @endsection
 
 @push('script')
+<script>
+    function togglePassword() {
+        var passwordField = document.getElementById("password");
+        var showPasswordButton = document.getElementById("show_password");
+
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+        } else {
+            passwordField.type = "password";
+        }
+    }
+</script>
 @endpush
