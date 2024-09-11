@@ -26,7 +26,7 @@
     </div>
     <div class="inner-container">
         <div class="user-details d-flex">
-            <img src="{{$express_client_admin->logo || empty($express_client_admin->logo) ? asset('assets\images\profile-circle.svg'):$express_client_admin->logo}}" alt="" class="user-image d-none d-lg-block">
+            <img src="{{ !empty($express_client_admin->logo) ? asset($express_client_admin->logo) : asset('assets/images/profile-circle.svg') }}" alt="" class="user-image d-none d-lg-block">
             <div class="d-flex align-items-center ms-3">
                 <div>
                     <h3 class="user-name ">Hello<strong class="d-none">, {{$express_client_admin->name}}</strong></h3>
