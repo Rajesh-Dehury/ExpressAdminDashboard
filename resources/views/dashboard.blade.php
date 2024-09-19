@@ -21,7 +21,7 @@
                 <i class="bi bi-search position-absolute position-absolute top-50 translate-middle-y top-search-icon"></i>
                 <input type="search" class="main-search" name="student_name" placeholder="Search for student name...">
             </form>
-            <img src="{{$express_client_admin->logo || empty($express_client_admin->logo) ? asset('assets\images\profile-circle.svg'):$express_client_admin->logo}}" alt="" class="user-image-small d-block d-lg-none">
+            <img src="{{ !empty($express_client_admin->logo) ? asset($express_client_admin->logo) : asset('assets/images/profile-circle.svg') }}" alt="" class="user-image-small d-block d-lg-none">
         </div>
     </div>
     <div class="inner-container">
