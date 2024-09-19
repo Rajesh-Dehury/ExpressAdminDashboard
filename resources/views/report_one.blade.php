@@ -317,7 +317,7 @@
             setTimeout(function() {
                 html2pdf().set({
                     html2canvas: {
-                        scale: 1
+                        scale: 3
                     },
                     filename: 'report_one.pdf',
                     jsPDF: {
