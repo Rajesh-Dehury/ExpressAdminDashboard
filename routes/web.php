@@ -29,6 +29,9 @@ Route::get('/reportTwo', function () {
 Route::get('/report', function () {
     return view('report');
 })->name('report');
+Route::get('/monthly_report', function () {
+    return view('monthly_report');
+})->name('monthly_report');
 
 
 Route::group(['middleware' => ['guest:express_client_admin']], function () {
@@ -55,4 +58,6 @@ Route::group(['middleware' => ['auth:express_client_admin']], function () {
 
 
     Route::get('express/info', [StudentDataController::class, 'expressInfo'])->name('express.info');
+    Route::get('express/monthly/report/{id}', [StudentSearchController::class, 'monthlyReport'])->name('express.monthly.report');
+    Route::get('express/monthly/reportView/{id}', [StudentSearchController::class, 'monthlyReport'])->name('express.monthly.report.view');
 });

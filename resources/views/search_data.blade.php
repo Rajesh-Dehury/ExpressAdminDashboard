@@ -28,69 +28,58 @@
             <i class="bi bi-search position-absolute position-absolute top-50 translate-middle-y top-search-icon"></i>
             <input type="search" class="main-search" name="student_name" placeholder="Search for student name...">
         </form>
-        <div class="tableContainer">
-            <table class="mainTable">
+        <!-- New Table Section -->
+        <div class="report-table tableContainer">
+            <table class="mainTable table table-striped table-bordered">
                 <thead>
                     <tr class="head-row">
-                        <th class="head-data left-round">S.NO</th>
-                        <th class="head-data">Name</th>
-                        <!-- <th class="head-data">gender</th> -->
-                        <!-- <th class="head-data">Standard</th> -->
-                        <th class="head-data">institute</th>
-                        <th class="head-data">Student Report</th>
-                        <th class="head-data right-round">Professional Report</th>
+                        <th class="head-data py-3">S.NO</th>
+                        <th class="head-data py-3">Name</th>
+                        <th class="head-data py-3">Institute</th>
+                        <th class="head-data py-3">Student Summary</th>
+                        <th class="head-data py-3">LifeVitae Express Report</th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse($searched_users as $user)
                     <tr class="body-row">
-                        <td class="body-data left-round">
-                            <span>{{$loop->iteration + (request('page')>1?((request('page')-1)*10):0)}}</span>
+                        <td class="body-data">
+                            <span>{{ $loop->iteration + (request('page') > 1 ? ((request('page') - 1) * 10) : 0) }}</span>
                         </td>
                         <td class="body-data">
-                            <span>{{$user->name}}</span>
+                            <span>{{ $user->name }}</span>
                         </td>
-                        <!-- <td class="body-data">
-                            <span>
-                                @if($user->gender == 1)
-                                Male
-                                @else
-                                Female
-                                @endif
-                            </span>
-                        </td> -->
-                        <!-- <td class="body-data">
-                            <span>{{$user->standard}}</span>
-                        </td> -->
                         <td class="body-data">
-                            <span>{{$user->institute}}</span>
+                            <span>{{ $user->institute }}</span>
                         </td>
                         <td class="body-data">
                             @if($user->expressReport)
                             <span>
-                                <a href="{{route('express.reportOne',$user->id)}}" class="" target="_blank">View</a>
+                                <a href="{{ route('express.reportOne', $user->id) }}" class="" target="_blank">View</a>
                             </span>
-                            @endif 
+                            @endif
                         </td>
-                        <td class="body-data right-round">
+                        <td class="body-data">
                             @if($user->expressReport)
                             <span>
-                                <a href="{{route('express.reportTwo',$user->id)}}" class="" target="_blank">View</a>
+                                <a href="{{ route('express.reportTwo', $user->id) }}" class="" target="_blank">View</a>
                             </span>
                             @endif
                         </td>
                     </tr>
                     @empty
                     <tr class="body-row">
-                        <td class="body-data" colspan="6" style="border-radius: 30px;">
+                        <td class="body-data" colspan="5" style="border-radius: 30px;">
                             <span>No Record Found</span>
                         </td>
                     </tr>
                     @endforelse
                 </tbody>
             </table>
-            <div class="mt-3">
-                {{$searched_users->appends(request()->query())->links('pagination::bootstrap-5')}}
+
+            <!-- Pagination Controls -->
+            <div class="">
+                {{ $searched_users->appends(request()->query())->links('pagination::bootstrap-5') }}
             </div>
         </div>
     </div>

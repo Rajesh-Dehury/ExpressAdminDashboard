@@ -113,13 +113,53 @@
             <div class="d-flex align-items-center">
                 <div class="col-md-9 col-12">
                     <p class="download-box-text">You can download your quarterly report below</p>
-                    <a href="{{route('express.quaterly.report')}}" target="_blank" class="download-btn">Download</a>
+                    <a href="{{route('express.quaterly.report')}}" target="_blank" class="download-btn d-none">Download</a>
                 </div>
                 <div class="col-md-3 d-none d-md-block">
                     <img src="{{asset('assets/images/download-box.svg')}}" alt="" class="ms-auto">
                 </div>
             </div>
         </div>
+
+        <!-- New Table Section -->
+        <div class="report-table mt-5">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Name of Report</th>
+                        <th>Created Date</th>
+                        <th>View Report</th>
+                        <th class="">Download report</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($monthly_records as $index => $record)
+                    <tr>
+                        <td>{{ $monthly_records->firstItem() + $index }}</td> <!-- Adjust numbering for pagination -->
+                        <td>{{ $record->school_name }}_{{ \Carbon\Carbon::parse($record->year_month)->format('M_Y') }}</td>
+                        <td>{{ $record->created_at->format('jS M Y') }}</td>
+                        <td class="text-center">
+                            <a target="_blank" href="{{route('express.monthly.report',$record->id)}}">
+                                <i class="bi icon-blue bi-file-earmark-text"></i>
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a target="_blank" href="{{route('express.monthly.report.view',$record->id)}}">
+                                <i class="bi icon-blue bi-download"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+
+            <!-- Add pagination controls -->
+            <div class="d-flex justify-content-center mt-3">
+                {{ $monthly_records->links() }}
+            </div>
+        </div>
+        <!-- End of Table Section -->
 
         <div class="report-container mt-5 d-none">
             <div class="report-container-inner">
@@ -161,14 +201,6 @@
                                 <td class="table-data">Reports Generated</td>
                                 <td class="table-data">{{$reportCountQuater}}</td>
                             </tr>
-                            <!-- <tr>
-                                <td class="table-data">&nbsp;</td>
-                                <td class="table-data">&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td class="table-data">&nbsp;</td>
-                                <td class="table-data">&nbsp;</td>
-                            </tr> -->
                         </tbody>
                     </table>
                 </div>

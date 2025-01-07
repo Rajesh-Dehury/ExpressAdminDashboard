@@ -794,3 +794,7 @@ a {
     overflow-y: scroll;
     overflow-x: hidden;
 }
+
+.icon-blue{
+    color: #40C4C1;
+}

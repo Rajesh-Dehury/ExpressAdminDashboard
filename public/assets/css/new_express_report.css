@@ -1,0 +1,731 @@
+/* design issues job street event */
+@media (max-width: 1200px) and (min-width: 901px) { 
+    .hex-strength {
+        width: 100px !important;
+    }
+    .high-pathway {
+        background: linear-gradient(to right, #B656C4 0%, #B656C4 17.5%, #ffffff 0%, #ffffff 100%) !important;
+    }
+    /* for seekspace express */
+    .pathway-safety {
+        background: linear-gradient(to right, #B656C4 0%, #B656C4 17.5%, #ffffff 0%, #ffffff 100%) !important;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .page-container {
+        font-size: 14px !important;
+    }
+    .cover_header{
+        font-size: 20px !important;
+        margin-top: 10px !important; 
+        margin-bottom: 10px !important;
+    }
+    .headerimg{
+        width: 100% !important;
+    }
+    .coverimg {
+        width: 100% !important;
+        top: 20px !important;
+        left: 0px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    .page1-content {
+        padding: 20px 20px 45px !important;
+    }
+    .page2-content{
+        padding: 40px 20px 50px !important;
+    }
+    .page3-content{
+        padding: 40px 20px 50px !important;
+    }
+    .page4-content{
+        padding: 40px 20px 50px !important;
+    }
+    .page5-content{
+        padding: 40px 20px 50px !important;
+    }
+    .page6-content{
+        padding: 40px 20px 50px !important;
+    }
+    .page7-content{
+        padding: 40px 20px 50px !important;
+    }
+    .page8-content{
+        padding: 50px 40px 50px !important;
+    }
+    .pathway-safety{
+        margin-top: 25px !important;
+        min-height: 400px !important;
+        background: linear-gradient(to bottom,#A2C708 0%,#A2C708 30%,#ffffff 0%,#ffffff 100%) !important; 
+    }
+    .description-title{
+        margin-top: 20px !important;
+        font-size: 16px !important;
+    }
+    .description-text{
+        font-size: 14px !important;
+    }
+    .logo_lfvt{
+        padding: 15px !important;
+        font-size: 18px !important;
+    }
+    .det{
+        font-size: 16px !important; 
+    }
+    .descpription-box{
+        margin-top: 25px !important;
+        min-height: 350px !important;
+    }
+    .cognitive {
+        background: linear-gradient(to bottom,#2D5497 0%,#2D5497 30%,#ffffff 0%,#ffffff 100%) !important;
+    }
+    .interactive {
+        background: linear-gradient(to bottom,#5C9AD5 0%,#5C9AD5 30%,#ffffff 0%,#ffffff 100%) !important;
+    }
+    .emotive {
+        background: linear-gradient(to bottom,#6FAC45 0%,#6FAC45 30%,#ffffff 0%,#ffffff 100%) !important;
+    }
+    .adaptive {
+        background: linear-gradient(to bottom,#FFBE00 0%,#FFBE00 30%,#ffffff 0%,#ffffff 100%) !important;
+    }
+    .creative {
+        background: linear-gradient(to bottom,#ED7D31 0%,#ED7D31 30%,#ffffff 0%,#ffffff 100%) !important;
+    }
+    .motive {
+        background: linear-gradient(to bottom,#BE0000 0%,#BE0000 30%,#ffffff 0%,#ffffff 100%) !important;
+    }
+    .high-pathway {
+        background: linear-gradient(to bottom,#B656C4 0%,#B656C4 30%,#ffffff 0%,#ffffff 100%) !important;
+    }
+    .circle-strength img{
+        width: 100px !important;
+    }
+    .skill_header{
+        font-size: 20px !important;
+    }
+    .skill{
+        font-size: 16px !important;
+    }
+    .skill_para{
+        font-size: 16px !important;
+    }
+    .skill_signify_text{
+        font-size: 20px !important; 
+        padding: 10px !important; 
+    }
+    .lp_text{
+        padding: 20px !important; 
+    }
+    .disc{
+        margin: 10px 10px !important;
+        font-size: 18px !important;
+        padding: 10px !important;
+    }
+    .logo_lfvt{
+        padding: 15px 0 !important;
+    }
+    .logo_lfvt img{
+        width: 70%;
+    }
+    .footer img{
+        width: 100% !important;
+    }
+    .footer p{
+        font-size: 12px !important;
+    }
+    .report_header{
+        font-size: 12px !important;
+    }
+    .report_header img{
+        height: 15px !important;
+        left: 18px !important;
+    }
+    .hexagon_pagination{
+        height: 40px !important;
+        width: 40px !important;
+    }
+    .lv_last_page{
+        padding: 10px 25px !important;
+    }
+}
+
+.page-container{
+    margin: 10px 0; 
+    background: #ffffff;
+    font-size: 22px;
+    /* height: 1754px;
+    width: 1240px; */
+    size: A4;
+}
+.page1-content{
+    padding: 150px 40px 500px;
+}
+.page2-content{
+    padding: 60px 20px 30px;
+}
+.page3-content{
+    padding: 100px 20px 220px;
+}
+.page4-content{
+    padding: 100px 20px 550px;
+}
+.page5-content{
+    padding: 100px 20px 450px;
+}
+.page6-content{
+    padding: 100px 20px 500px;
+}
+.page7-content{
+    padding: 100px 20px 550px;
+}
+.page8-content{
+    padding: 450px 40px 450px;
+}
+.logo_lfvt{
+    padding: 50px 120px 50px 0;
+}
+.lv_last_page{
+    padding: 50px 120px;
+}
+.cover_header{
+    font-size: 34px;
+    color: #8A50E2;
+}
+.cover {
+    padding-bottom: 100px;
+}
+.report_header{
+    font-size: 16px;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 4px solid #8a50e2;
+}
+.report_header img {
+    height: 35px;
+    position: absolute;
+    left: 26px;
+}
+.coverimg {
+    width: 1125px;
+    position: absolute;
+    top: 26px;
+}
+.page_header_bg{
+    background-color: #8a50e2; 
+    padding: 10px; 
+    color:#ffffff; 
+    width: 100%; 
+    border-radius: 16px; 
+    font-size: 26px; 
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer {
+    text-align: center;
+    color: #8A50E2;
+    font-size: 20px;
+}
+.last_page{
+    color: #000000;
+    font-size: 30px;
+}
+.page_para{
+    padding: 15px 0;
+    font-size: 18px;
+    text-align: justify;
+    color: #000000;
+}
+.page_heading{
+    color: #8950E1; 
+    font-weight: 700;
+    font-size: 40px;
+    text-align: left;
+}
+.disclaimer{
+    font-size: 24px;
+    padding: 40px 10px;
+    text-align: justify;
+    color: #000000;
+    font-style: italic;
+}
+.life_powers{
+    width: 300px;
+}
+.det{
+    font-size: 22px; 
+    padding: 20px; 
+    margin-top: 20px; 
+    margin-bottom: 20px;
+}
+.descpription-box{
+    color: #000000;
+    border-radius: 16px;
+    min-height: 120px;
+    width: 90%;
+    padding: 5px;
+    margin: 5px auto;
+}
+.cognitive {
+    background: linear-gradient(to right,#2D5497 0%,#2D5497 15%,#ffffff 0%,#ffffff 100%);
+    border: 3px solid #2D5497;
+}
+.interactive {
+    background: linear-gradient(to right,#5C9AD5 0%,#5C9AD5 15%,#ffffff 0%,#ffffff 100%);
+    border: 3px solid #5C9AD5;
+}
+.emotive {
+    background: linear-gradient(to right,#6FAC45 0%,#6FAC45 15%,#ffffff 0%,#ffffff 100%);
+    border: 3px solid #6FAC45;
+}
+.adaptive {
+    background: linear-gradient(to right,#FFBE00 0%,#FFBE00 15%,#ffffff 0%,#ffffff 100%);
+    border: 3px solid #FFBE00;
+}
+.creative {
+    background: linear-gradient(to right,#ED7D31 0%,#ED7D31 15%,#ffffff 0%,#ffffff 100%);
+    border: 3px solid #ED7D31;
+}
+.motive {
+    background: linear-gradient(to right,#BE0000 0%,#BE0000 15%,#ffffff 0%,#ffffff 100%);
+    border: 3px solid #BE0000;
+}
+.high-pathway {
+    background: linear-gradient(to right,#B656C4 0%,#B656C4 15%,#ffffff 0%,#ffffff 100%);
+    border: 3px solid #B656C4;
+}
+.circle-strength{
+    /* background-repeat: no-repeat; */
+    /* background-size: contain; */
+    background-position: center;
+    /* color: #ffffff; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.description-title{
+    font-weight: bold; 
+    font-size: 15px; 
+    margin-top: 5px;
+}
+.description-text{
+    font-size: 15px;
+}
+.skill_header{
+    font-size: 30px;
+    color: #8a50e2; 
+    font-weight: bold; 
+    width:100%;
+}
+.skill{
+    font-weight: bold;
+    font-size: 22px;
+}
+.skill_para{
+    font-size: 22px;
+    margin: 0 auto;
+}
+.skill_box{
+    border: 2px solid #8a50e2; 
+    align-items: center;
+    justify-content:center; 
+    padding: 10px; 
+    border-radius: 15px; 
+    margin: 20px;
+    text-align: center;
+}
+.hex-strength{
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    background-position: center; 
+    color: #ffffff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.lp_text {
+    background-color: #8a50e2; 
+    padding: 30px 180px; 
+    color:#ffffff; 
+    width: 100%; 
+    border-radius: 16px; 
+    font-size: 20px;
+    text-align: center; 
+}
+.safety{
+    background-image: url('/assets/professional_report/high_hexa.png'); 
+    width: 100px; 
+    height: 100px;
+}
+.disc{
+    min-height: 100px;
+    max-width: 100%; 
+    text-align: justify;
+    margin: 15px;
+    font-size: 15px;
+    border: 4px solid #8a50e2;
+    padding: 20px;
+    border-radius: 20px;
+    color: #8a50e2;
+    font-style: italic;
+}
+.strength_heading{
+    font-weight: 700;
+    color: #8950E1;
+    font-size: 20px;
+    text-align: justify;
+}
+.strength_dis{
+    font-size: 18px;
+    text-align: justify;
+}
+
+#hexGrid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    font-size: 15px;
+    list-style-type: none;
+    padding: 0;
+}
+.hex-list{
+        position: relative;
+    perspective: 1000px;
+    margin-bottom: -20px;
+}
+.hex {
+    position: relative;
+    visibility:hidden;
+    outline:1px solid transparent;
+
+}
+.hex::after{
+    content:'';
+    display:block;
+    padding-bottom: 100%;  /* =  100 / tan(60) * 1.5 */
+}
+.hexIn{
+    position: absolute;
+    width: 100%;
+    padding-bottom: 100%;
+    margin: 0;
+    visibility: hidden;
+    outline: 1px solid transparent;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+
+}
+.hexIn * {
+    position: absolute;
+    visibility: visible;
+    outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+}
+.hex-list:hover .hexIn{
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.hexLink {
+    display: flex;
+    width: 94%;
+    transform: scale(1.05);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 94%;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    -webkit-clip-path: polygon(40% 7.67949%, 43.1596% 6.20615%, 46.52704% 5.30384%, 50% 5%, 53.47296% 5.30384%, 56.8404% 6.20615%, 60% 7.67949%, 81.65064% 20.17949%, 84.50639% 22.17911%, 86.97152% 24.64425%, 88.97114% 27.5%, 90.44449% 30.6596%, 91.34679% 34.02704%, 91.65064% 37.5%, 91.65064% 62.5%, 91.34679% 65.97296%, 90.44449% 69.3404%, 88.97114% 72.5%, 86.97152% 75.35575%, 84.50639% 77.82089%, 81.65064% 79.82051%, 60% 92.32051%, 56.8404% 93.79385%, 53.47296% 94.69616%, 50% 95%, 46.52704% 94.69616%, 43.1596% 93.79385%, 40% 92.32051%, 18.34936% 79.82051%, 15.49361% 77.82089%, 13.02848% 75.35575%, 11.02886% 72.5%, 9.55551% 69.3404%, 8.65321% 65.97296%, 8.34936% 62.5%, 8.34936% 37.5%, 8.65321% 34.02704%, 9.55551% 30.6596%, 11.02886% 27.5%, 13.02848% 24.64425%, 15.49361% 22.17911%, 18.34936% 20.17949%);
+    clip-path: polygon(40% 7.67949%, 43.1596% 6.20615%, 46.52704% 5.30384%, 50% 5%, 53.47296% 5.30384%, 56.8404% 6.20615%, 60% 7.67949%, 81.65064% 20.17949%, 84.50639% 22.17911%, 86.97152% 24.64425%, 88.97114% 27.5%, 90.44449% 30.6596%, 91.34679% 34.02704%, 91.65064% 37.5%, 91.65064% 62.5%, 91.34679% 65.97296%, 90.44449% 69.3404%, 88.97114% 72.5%, 86.97152% 75.35575%, 84.50639% 77.82089%, 81.65064% 79.82051%, 60% 92.32051%, 56.8404% 93.79385%, 53.47296% 94.69616%, 50% 95%, 46.52704% 94.69616%, 43.1596% 93.79385%, 40% 92.32051%, 18.34936% 79.82051%, 15.49361% 77.82089%, 13.02848% 75.35575%, 11.02886% 72.5%, 9.55551% 69.3404%, 8.65321% 65.97296%, 8.34936% 62.5%, 8.34936% 37.5%, 8.65321% 34.02704%, 9.55551% 30.6596%, 11.02886% 27.5%, 13.02848% 24.64425%, 15.49361% 22.17911%, 18.34936% 20.17949%);
+    transition: all 0.7s linear;
+}
+.hexLink:hover{
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.2s linear;
+}
+/*** HEX CONTENT **********************************************************************/
+.hex img {
+    width: 25px;
+    position: relative;
+    margin-bottom: 10px;
+    transition: all 0.3s linear;
+}
+
+
+
+.hex p {
+    width: 75% !important;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #000;
+    font-size: 11px !important;
+    text-transform: unset !important;
+    max-height: 80px;
+    overflow: hidden;
+}
+
+
+.hexLink:hover img{
+    transition: all 0.3s linear;
+margin-bottom: 15px;
+}
+
+.hexLink, .hexLink-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+
+-moz-backface-visibility:hidden;
+-webkit-backface-visibility:hidden;
+backface-visibility:hidden;
+
+}
+.hexLink-back{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    overflow: hidden;
+    -webkit-clip-path: polygon(40% 7.67949%, 43.1596% 6.20615%, 46.52704% 5.30384%, 50% 5%, 53.47296% 5.30384%, 56.8404% 6.20615%, 60% 7.67949%, 81.65064% 20.17949%, 84.50639% 22.17911%, 86.97152% 24.64425%, 88.97114% 27.5%, 90.44449% 30.6596%, 91.34679% 34.02704%, 91.65064% 37.5%, 91.65064% 62.5%, 91.34679% 65.97296%, 90.44449% 69.3404%, 88.97114% 72.5%, 86.97152% 75.35575%, 84.50639% 77.82089%, 81.65064% 79.82051%, 60% 92.32051%, 56.8404% 93.79385%, 53.47296% 94.69616%, 50% 95%, 46.52704% 94.69616%, 43.1596% 93.79385%, 40% 92.32051%, 18.34936% 79.82051%, 15.49361% 77.82089%, 13.02848% 75.35575%, 11.02886% 72.5%, 9.55551% 69.3404%, 8.65321% 65.97296%, 8.34936% 62.5%, 8.34936% 37.5%, 8.65321% 34.02704%, 9.55551% 30.6596%, 11.02886% 27.5%, 13.02848% 24.64425%, 15.49361% 22.17911%, 18.34936% 20.17949%);
+    clip-path: polygon(40% 7.67949%, 43.1596% 6.20615%, 46.52704% 5.30384%, 50% 5%, 53.47296% 5.30384%, 56.8404% 6.20615%, 60% 7.67949%, 81.65064% 20.17949%, 84.50639% 22.17911%, 86.97152% 24.64425%, 88.97114% 27.5%, 90.44449% 30.6596%, 91.34679% 34.02704%, 91.65064% 37.5%, 91.65064% 62.5%, 91.34679% 65.97296%, 90.44449% 69.3404%, 88.97114% 72.5%, 86.97152% 75.35575%, 84.50639% 77.82089%, 81.65064% 79.82051%, 60% 92.32051%, 56.8404% 93.79385%, 53.47296% 94.69616%, 50% 95%, 46.52704% 94.69616%, 43.1596% 93.79385%, 40% 92.32051%, 18.34936% 79.82051%, 15.49361% 77.82089%, 13.02848% 75.35575%, 11.02886% 72.5%, 9.55551% 69.3404%, 8.65321% 65.97296%, 8.34936% 62.5%, 8.34936% 37.5%, 8.65321% 34.02704%, 9.55551% 30.6596%, 11.02886% 27.5%, 13.02848% 24.64425%, 15.49361% 22.17911%, 18.34936% 20.17949%);
+    text-align: center;
+    transition: all 0.7s linear;
+}
+.hexLink-back:hover{
+    text-decoration: none;
+}
+@media (min-width:1201px) {
+    #hexGrid{
+        padding-bottom: 4.4%
+    }
+    .hex-list {
+        width: 18%;
+    }
+    .hex-list:nth-child(7n+5){ 
+        margin-left:10%; 
+    }
+}
+
+@media (max-width: 1200px) and (min-width:901px) { 
+    #hexGrid{
+        padding-bottom: 5.5%
+    }
+    .hex-list {
+        width: 25%;
+    }
+    .hex-list:nth-child(7n+5){
+        margin-left:12.5%; 
+    }
+}
+
+@media (max-width: 900px) and (min-width:601px) { 
+    #hexGrid{
+        padding-bottom: 7.4%
+    }
+    .hex-list {
+        width: 17%;
+    }
+    .hex-list:nth-child(5n+6){ 
+        margin-left:10.1%; 
+    }
+    a {
+        text-decoration: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    #hexGrid{
+        padding-bottom: 11.2%
+    }
+    .hex-list {
+        width: 50%;
+    }
+    .hex-list:nth-child(3n+3){
+        margin-left:25%; 
+    }
+
+    .hex p {
+        font-size: 8.5px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    #hexGrid {
+        font-size: 13px;
+    }
+}
+#strength-h-Grid {
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+    margin: 0 auto;
+    overflow: hidden;
+    font-size: 15px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.hexLink{
+    clip-path: none;
+}
+.hexLink-back{
+    clip-path: none;
+}
+.hexa_bg_Cognitive {
+background: url(https://lifevitae.co/assets/thinkplace/Cognitive_hexa.png);
+background-repeat: no-repeat;
+background-size: contain;
+background-position: center;
+text-decoration: none;
+}
+.hexa_bg_Interactive {
+background: url(https://lifevitae.co/assets/thinkplace/Interactive_hexa.png);
+background-repeat: no-repeat;
+background-size: contain;
+background-position: center;
+text-decoration: none;
+}
+.hexa_bg_Emotive {
+background: url(https://lifevitae.co/assets/thinkplace/Emotive_hexa.png);
+background-repeat: no-repeat;
+background-size: contain;
+background-position: center;
+text-decoration: none;
+}
+.hexa_bg_Adaptive {
+background: url(https://lifevitae.co/assets/thinkplace/Adaptive_hexa.png);
+background-repeat: no-repeat;
+background-size: contain;
+background-position: center;
+text-decoration: none;
+}
+.hexa_bg_Creative {
+background: url(https://lifevitae.co/assets/thinkplace/Creative_hexa.png);
+background-repeat: no-repeat;
+background-size: contain;
+background-position: center;
+text-decoration: none;
+}
+.hexa_bg_Motive {
+background: url(https://lifevitae.co/assets/thinkplace/Motive_hexa.png);
+background-repeat: no-repeat;
+background-size: contain;
+background-position: center;
+text-decoration: none;
+}
+#strength-h-Grid .life-strengths-check label{
+clip-path: none;
+}
+
+.select_hexa_bg_Cognitive input[type=checkbox]:checked~label{
+background: url(https://lifevitae.co/assets/thinkplace/Cognitive_hexa.png) !important;
+background-repeat: no-repeat !important;
+background-size: contain !important;
+background-position: center !important;
+text-decoration: none;
+}
+.select_hexa_bg_Interactive input[type=checkbox]:checked~label{
+background: url(https://lifevitae.co/assets/thinkplace/Interactive_hexa.png) !important;
+background-repeat: no-repeat !important;
+background-size: contain !important;
+background-position: center !important;
+text-decoration: none;
+}
+.select_hexa_bg_Emotive input[type=checkbox]:checked~label{
+background: url(https://lifevitae.co/assets/thinkplace/Emotive_hexa.png) !important;
+background-repeat: no-repeat !important;
+background-size: contain !important;
+background-position: center !important;
+text-decoration: none;
+}
+.select_hexa_bg_Adaptive input[type=checkbox]:checked~label{
+background: url(https://lifevitae.co/assets/thinkplace/Adaptive_hexa.png) !important;
+background-repeat: no-repeat !important;
+background-size: contain !important;
+background-position: center !important;
+text-decoration: none;
+}
+.select_hexa_bg_Creative input[type=checkbox]:checked~label{
+background: url(https://lifevitae.co/assets/thinkplace/Creative_hexa.png) !important;
+background-repeat: no-repeat !important;
+background-size: contain !important;
+background-position: center !important;
+text-decoration: none;
+}
+.select_hexa_bg_Motive input[type=checkbox]:checked~label{
+background: url(https://lifevitae.co/assets/thinkplace/Motive_hexa.png) !important;
+background-repeat: no-repeat !important;
+background-size: contain !important;
+background-position: center !important;
+text-decoration: none;
+}
+
+#strength-h-Grid .life-strength-check label{
+background: url(https://lifevitae.co/assets/thinkplace/Default_hexa.png);
+background-repeat: no-repeat;
+background-size: contain;
+background-position: center;
+text-decoration: none;
+    box-shadow: none;
+}
+
+.hexagon_pagination {
+    position: absolute;
+    /* top: -35px; */
+    bottom: 62px;
+    right: 35px;
+    height: 95px;
+    width: 95px;
+    background: linear-gradient(180deg, #F4E121 50%, #7D47CF 50%);
+}
+.hexagon_pagination p {
+    position: relative;
+    top: 30%;
+    font-size: 30px;
+    font-weight: 800;
+}
+.hexagon_pagination, .hexagon_pagination:before, .double:after {
+    -webkit-clip-path: polygon(40% 7.67949%, 43.1596% 6.20615%, 46.52704% 5.30384%, 50% 5%, 53.47296% 5.30384%, 56.8404% 6.20615%, 60% 7.67949%, 81.65064% 20.17949%, 84.50639% 22.17911%, 86.97152% 24.64425%, 88.97114% 27.5%, 90.44449% 30.6596%, 91.34679% 34.02704%, 91.65064% 37.5%, 91.65064% 62.5%, 91.34679% 65.97296%, 90.44449% 69.3404%, 88.97114% 72.5%, 86.97152% 75.35575%, 84.50639% 77.82089%, 81.65064% 79.82051%, 60% 92.32051%, 56.8404% 93.79385%, 53.47296% 94.69616%, 50% 95%, 46.52704% 94.69616%, 43.1596% 93.79385%, 40% 92.32051%, 18.34936% 79.82051%, 15.49361% 77.82089%, 13.02848% 75.35575%, 11.02886% 72.5%, 9.55551% 69.3404%, 8.65321% 65.97296%, 8.34936% 62.5%, 8.34936% 37.5%, 8.65321% 34.02704%, 9.55551% 30.6596%, 11.02886% 27.5%, 13.02848% 24.64425%, 15.49361% 22.17911%, 18.34936% 20.17949%);
+    clip-path: polygon(40% 7.67949%, 43.1596% 6.20615%, 46.52704% 5.30384%, 50% 5%, 53.47296% 5.30384%, 56.8404% 6.20615%, 60% 7.67949%, 81.65064% 20.17949%, 84.50639% 22.17911%, 86.97152% 24.64425%, 88.97114% 27.5%, 90.44449% 30.6596%, 91.34679% 34.02704%, 91.65064% 37.5%, 91.65064% 62.5%, 91.34679% 65.97296%, 90.44449% 69.3404%, 88.97114% 72.5%, 86.97152% 75.35575%, 84.50639% 77.82089%, 81.65064% 79.82051%, 60% 92.32051%, 56.8404% 93.79385%, 53.47296% 94.69616%, 50% 95%, 46.52704% 94.69616%, 43.1596% 93.79385%, 40% 92.32051%, 18.34936% 79.82051%, 15.49361% 77.82089%, 13.02848% 75.35575%, 11.02886% 72.5%, 9.55551% 69.3404%, 8.65321% 65.97296%, 8.34936% 62.5%, 8.34936% 37.5%, 8.65321% 34.02704%, 9.55551% 30.6596%, 11.02886% 27.5%, 13.02848% 24.64425%, 15.49361% 22.17911%, 18.34936% 20.17949%);
+}
+.page_no:before {
+    top: 6px;
+    left: 6px;
+    height: calc(100% - 12px);
+    width: calc(100% - 12px);
+    background: #ffffff;
+}
+.page_no:before {
+    background-position: center;
+    background-size: 100% 100%;
+    color: #7D47CF;
+    background: #ffffff;
+}
+.hexagon_pagination:before, .double:after {
+    position: absolute;
+    content: '';
+}

@@ -15,7 +15,7 @@
                     <i class="bi bi-list"></i>
                 </button>
             </div>
-            <form method="get" action="{{route('express.search')}}" class="position-relative d-none d-lg-block">
+            <form method="get" action="{{route('express.search')}}" class="position-relative d-none">
                 <i class="bi bi-search position-absolute position-absolute top-50 translate-middle-y top-search-icon"></i>
                 <input type="search" class="main-search" name="student_name" placeholder="Search for student name...">
             </form>

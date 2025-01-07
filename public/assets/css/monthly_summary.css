@@ -1,0 +1,130 @@
+@media print { 
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .page1-content {
+        padding: 5rem 2.5rem 5rem !important;
+    }
+    .page2-content {
+        padding: 5rem 2.5rem 3rem !important;
+    }
+    .page3-content {
+        padding: 5rem 2.5rem 30rem !important;
+        min-height: 29.7cm !important;
+    }
+    #barChart {
+        width: 850px !important;
+    }
+
+    .page1-content, .page2-content, .page3-content {
+        page-break-inside: avoid;
+    }
+}
+
+.right-grey {
+    background-color: #D5BAFF;
+    height: 10rem;
+    right: 0;
+    width: 3rem;
+    top: 20rem;
+    position: absolute;
+}
+.left-grey {
+    background-color: #D5BAFF;
+    height: 10rem;
+    left: 0;
+    width: 3rem;
+    bottom: 0;
+    position: absolute;
+}
+.page1-content {
+    padding: 5rem 2.5rem 5rem;
+    position: relative;
+}
+.page2-content {
+    padding: 5rem 2.5rem 5rem;
+    position: relative;
+}
+.page3-content {
+    padding: 5rem 2.5rem 20rem;
+    position: relative;    
+    min-height: 29.7cm !important;
+}
+.logo_lv_purple img{
+    height: 35px;
+}
+.footer {
+    text-align: left;
+    color: #ffffff;
+    background-color: #40C4C1;
+    font-size: 20px;
+    font-style: italic;
+}
+.footer-end {
+    background-color: #824FD2;
+    width: 100%;
+    height: 1rem;
+}
+.round-page {
+    background-color: #824FD2;
+    color: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 25%;
+    right: 35px;
+    height: 60px;
+    width: 60px;
+}
+.round-page p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 30px;
+    font-weight: 500;
+    font-style: normal;
+}
+.page_header_ul {
+    font-size: 30px;
+    font-weight: 700;
+    color: #191919;
+    text-transform: uppercase;
+}
+.under-line {
+    border: 4px solid #824FD2;
+    width: 10rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+.grey_box {
+    border: 3px solid #D5BAFF;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+}
+.skill {
+    font-weight: bold;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+.black_header {
+    font-size: 24px;
+    color: #191919;
+    font-weight: 700;
+    width: 100%;
+}
+.summary_table table {
+    text-align: center;
+    border-spacing: 8px;
+    border-collapse: separate;
+    font-size: 14px;
+    color: #000000;
+}
+.summary_table th, td {
+    border: 1px solid #E7E7E7;
+    border-collapse: separate;
+    padding: 4px;
+}

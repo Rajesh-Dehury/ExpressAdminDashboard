@@ -266,7 +266,7 @@
                                 </h5>
                             </div>
                             <div class="top-character">
-                                <div class="owl-carousel new-carousel">
+                                <div class="">
                                     <div class="item gray-box">
                                         <div class="row">
                                             <div class="col-md-4">
@@ -302,20 +302,27 @@
                                     <div class="activity-img-box1 me-3">
                                         <img src="{{ asset('assets/images/activity.png') }}" alt="" class="activity-img">
                                     </div>
-                                    <div class="d-flex flex-column">
-                                        <h6 class="mb-1 ms-3 fw-bold w-full">{{ $key }}</h6>
-                                        <div class="d-flex align-items-center">
-                                            <div>
+                                    <div class="d-flex flex-column w-100">
+                                        <h6 class="mb-1 ms-3 fw-bold">{{ $key }}</h6>
+                                        <div class="row">
+                                            @php $activities = explode(',', $sa); @endphp
+                                            <!-- First Column -->
+                                            <div class="col-md-6">
                                                 <ul class="list-unstyled ms-3 fw-bold activity-text" style="list-style-type: disc;">
-                                                    @php $activities = explode(',', $sa); @endphp
                                                     @foreach($activities as $index => $activity)
-                                                    @if($index % 3 == 0 && $index != 0)
+                                                    @if($index % 2 == 0) <!-- First column will have items with even indices -->
+                                                    <li>{{ $activity }}</li>
+                                                    @endif
+                                                    @endforeach
                                                 </ul>
                                             </div>
-                                            <div class="col-md-4">
+                                            <!-- Second Column -->
+                                            <div class="col-md-6">
                                                 <ul class="list-unstyled ms-3 fw-bold activity-text" style="list-style-type: disc;">
-                                                    @endif
+                                                    @foreach($activities as $index => $activity)
+                                                    @if($index % 2 != 0) <!-- Second column will have items with odd indices -->
                                                     <li>{{ $activity }}</li>
+                                                    @endif
                                                     @endforeach
                                                 </ul>
                                             </div>
@@ -615,13 +622,13 @@
 @push('script')
 <!-- owl -->
 <script>
-    $('.new-carousel').owlCarousel({
-        responsiveClass: true,
-        margin: 10,
-        items: 1,
-        nav: true,
-        navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-    })
+    // $('.new-carousel').owlCarousel({
+    //     responsiveClass: true,
+    //     margin: 10,
+    //     items: 1,
+    //     nav: true,
+    //     navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+    // })
 
     // popovers
     $(document).ready(function() {

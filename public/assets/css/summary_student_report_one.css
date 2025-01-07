@@ -2,8 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: sans-serif;
-    font-family: 'DM Serif Display', serif;
+    font-family: Helvetica;
 }
 
 .main-box {
@@ -80,7 +79,7 @@
     .main-title {
         margin-left: 10px;
         font-size: 1.5rem;
-        font-family: 'DM Serif Display', serif;
+        font-family: Helvetica;
     }
 
     .triangle-left-box {
@@ -89,11 +88,11 @@
 
     .triangle-left-text {
         background: #824fd2;
-        padding-top: 2%;
+        padding-top: 3%;
         padding-left: 10%;
         /* padding-right: 40%; */
         color: #fff;
-        font-family: 'DM Serif Display', serif;
+        font-family: Helvetica;
         width: 300px;
     }
 
@@ -117,11 +116,11 @@
 
     .triangle-right-text {
         background: #824fd2;
-        padding-top: 2%;
+        padding-top: 3%;
         padding-left: 10%;
         /* padding-right: 40%; */
         color: #fff;
-        font-family: 'DM Serif Display', serif;
+        font-family: Helvetica;
         width: 300px;
     }
 
@@ -402,24 +401,24 @@
     .left-haxagon {
         clip-path: polygon(0 0, 75% 0%, 100% 50%, 75% 100%, 0 100%, 0% 50%);
         height: 125px;
-        background: #bdd6ff;
+        /* background: #bdd6ff; */
         width: 160px;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-right: 50px;
+        /* padding-right: 50px; */
         position: relative;
     }
 
     .right-hexagon {
         clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
         height: 125px;
-        background: #ffebaf;
+        /* background: #ffebaf; */
         width: 160px;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-left: 50px;
+        /* padding-left: 50px; */
         position: relative;
     }
 
@@ -436,18 +435,19 @@
     }
 
     .left-hexagon-text {
-        color: #2d5597;
+        color: #000;
         font-family: sans-serif;
         font-weight: bold;
         margin-top: 3px;
+        text-align: center;
     }
 
     .right-hexagon-text {
-        color: #ffc000;
+        color: #000;
         font-family: sans-serif;
         font-weight: bold;
         margin-top: 3px;
-        text-align: end;
+        text-align: center;
         margin-right: 8px;
     }
 
@@ -554,7 +554,7 @@
         background: #824fd2;
         padding: 6px;
         color: #fff;
-        font-family: 'DM Serif Display', serif;
+        font-family: Helvetica;
         width: 700px;
         text-align: center;
     }
@@ -593,7 +593,7 @@
 .main-title {
     margin-left: 10px;
     font-size: 1.5rem;
-    font-family: 'DM Serif Display', serif;
+    font-family: Helvetica;
 }
 
 .triangle-left-box {
@@ -602,11 +602,11 @@
 
 .triangle-left-text {
     background: #824fd2;
-    padding-top: 2%;
+    padding-top: 3%;
     padding-left: 10%;
     /* padding-right: 40%; */
     color: #fff;
-    font-family: 'DM Serif Display', serif;
+    font-family: Helvetica;
     width: 300px;
 }
 
@@ -630,11 +630,11 @@
 
 .triangle-right-text {
     background: #824fd2;
-    padding-top: 2%;
+    padding-top: 3%;
     padding-left: 10%;
     /* padding-right: 40%; */
     color: #fff;
-    font-family: 'DM Serif Display', serif;
+    font-family: Helvetica;
     width: 300px;
 }
 
@@ -916,24 +916,24 @@
 .left-haxagon {
     clip-path: polygon(0 0, 75% 0%, 100% 50%, 75% 100%, 0 100%, 0% 50%);
     height: 125px;
-    background: #bdd6ff;
+    /* background: #bdd6ff; */
     width: 160px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 50px;
+    /* padding-right: 50px; */
     position: relative;
 }
 
 .right-hexagon {
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
     height: 125px;
-    background: #ffebaf;
+    /* background: #ffebaf; */
     width: 160px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 50px;
+    /* padding-left: 50px; */
     position: relative;
 }
 
@@ -941,40 +941,41 @@
     position: absolute;
     height: 50px !important;
     width: 50px;
-    right: 40px;
+    right: 55px;
 }
 
 .left-hex-inner {
     position: absolute;
     height: 50px !important;
     width: 50px;
-    left: 40px;
+    left: 55px;
 }
 
 .left-hexagon-text {
-    color: #2d5597;
+    color: #000;
     font-family: sans-serif;
     font-weight: bold;
     margin-top: 3px;
+    text-align: center;
 }
 
 .right-hexagon-text {
-    color: #ffc000;
+    color: #000;
     font-family: sans-serif;
     font-weight: bold;
     margin-top: 3px;
-    text-align: end;
+    text-align: center;
     margin-right: 8px;
 }
 
 
 .chart {
-    height: 200px;
+    height: 250px;
     padding-right: 50px;
 }
 
 #myChart {
-    height: 200px;
+    height: 250px;
 }
 
 .dominantskill {
@@ -988,13 +989,13 @@
     height: 110px;
 }
 
-.img-left {
+/* .img-left {
     padding-left: 20px;
 }
 
 .img-right {
     padding-right: 20px;
-}
+} */
 
 .DominantSkills-text {
     font-family: sans-serif;
@@ -1078,7 +1079,7 @@
     background: #824fd2;
     padding: 6px;
     color: #fff;
-    font-family: 'DM Serif Display', serif;
+    font-family: Helvetica;
     width: 700px;
     text-align: center;
 }

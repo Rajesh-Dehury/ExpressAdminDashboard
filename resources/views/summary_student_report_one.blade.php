@@ -40,7 +40,7 @@
             <div class="container">
                 <div class="left-side">
                     <div class="triangle-left-box">
-                        <span class="triangle-left-text">LifeStrengths</span>
+                        <span class="triangle-left-text">Your LifeStrengths</span>
                         <span class="triangle-left-left"></span>
                     </div>
                     <div class="content">
@@ -125,18 +125,15 @@
                         </div>
                     </div>
                     <div class="triangle-left-box">
-                        <span class="triangle-left-text">TopCharacter</span>
+                        <span class="triangle-left-text">Your Character</span>
                         <span class="triangle-left-left"></span>
                     </div>
                     <div class="TopCharacter-text">
                         <div class="TopCharacter-inner">
                             <img src="{{asset('assets/images/report/Clip path group.png')}}" alt="">
                             <div>
-                                <h2>Lorem ipsum dolor sit.</h2>
-                                <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum,
-                                    et.
-                                    Atque expedita est,
-                                    exercitationem magnam maiores maxime sapiente unde.</p>
+                                <h2>{{$top_ch->title}}</h2>
+                                <p class="text-justify">{{$top_ch->individual_description}}</p>
                             </div>
                         </div>
                     </div>
@@ -145,7 +142,7 @@
                     <div class="">
                         <div class="triangle-right-box">
                             <span class="triangle-right-right"></span>
-                            <span class="triangle-right-text">LifePower</span>
+                            <span class="triangle-right-text">Your LifePowers</span>
                         </div>
                     </div>
                     <div class="chart">
@@ -154,32 +151,32 @@
                     <div class="">
                         <div class="triangle-right-box">
                             <span class="triangle-right-right"></span>
-                            <span class="triangle-right-text">Dominant Skills</span>
+                            <span class="triangle-right-text">Your Dominant Skills</span>
                         </div>
                     </div>
                     <div class="DominantSkills-text">
                         <p class="text-justify">{{$dominant_data['dominant_skills_text']}}</p>
                     </div>
                     <div class="dominantskill">
-                        <div class="">
-                            <div class="left-haxagon" style="background-color: {{$dominant_data['dominant_skill_color1']}};">
+                        <div class="d-flex justify-content-center">
+                            <div class="left-haxagon">
                                 <img class="img-left" src="{{$dominant_data['dominant_skill_img1']}}" alt="">
                                 <img src="{{$dominant_data['dominant_skill_inner_img1']}}" alt="" class="left-hex-inner">
                             </div>
-                            <p class="left-hexagon-text" style="color: {{$dominant_data['dominant_skill_text_color1']}};">{{$dominant_data['dominant_skill1']}}</p>
+                            <p class="left-hexagon-text">{{$dominant_data['dominant_skill1']}}</p>
                         </div>
-                        <div class="">
-                            <div class="right-hexagon" style="background-color: {{$dominant_data['dominant_skill_color2']}};">
+                        <div class="d-flex justify-content-center">
+                            <div class="right-hexagon">
                                 <img class="img-right" src="{{$dominant_data['dominant_skill_img2']}}" alt="">
                                 <img src="{{$dominant_data['dominant_skill_inner_img2']}}" alt="" class="right-hex-inner">
                             </div>
-                            <p class="right-hexagon-text" style="color: {{$dominant_data['dominant_skill_text_color2']}};">{{$dominant_data['dominant_skill2']}}</p>
+                            <p class="right-hexagon-text">{{$dominant_data['dominant_skill2']}}</p>
                         </div>
                     </div>
                     <div class="">
                         <div class="triangle-right-box">
                             <span class="triangle-right-right"></span>
-                            <span class="triangle-right-text">Developing Skills</span>
+                            <span class="triangle-right-text">Your Developing Skills</span>
                         </div>
                     </div>
                     <div class="DominantSkills-text">
@@ -187,25 +184,25 @@
                     </div>
                     <div class="dominantskill">
                         <div class="">
-                            <div class="left-haxagon" style="background-color: {{$developing_data['developing_skill_color1']}};">
+                            <div class="left-haxagon">
                                 <img class="img-left" src="{{$developing_data['developing_skill_img1']}}" alt="">
                                 <img src="{{$developing_data['developing_skill_inner_img1']}}" alt="" class="left-hex-inner">
                             </div>
-                            <p class="left-hexagon-text" style="color: {{$developing_data['developing_skill_text_color1']}};">{{$developing_data['developing_skill1']}}</p>
+                            <p class="left-hexagon-text">{{$developing_data['developing_skill1']}}</p>
                         </div>
                         <div class="">
-                            <div class="right-hexagon" style="background-color: {{$developing_data['developing_skill_color2']}};">
+                            <div class="right-hexagon">
                                 <img class="img-right" src="{{$developing_data['developing_skill_img2']}}" alt="">
                                 <img src="{{$developing_data['developing_skill_inner_img2']}}" alt="" class="right-hex-inner">
                             </div>
-                            <p class="right-hexagon-text" style="color: {{$developing_data['developing_skill_text_color2']}};">{{$developing_data['developing_skill2']}}</p>
+                            <p class="right-hexagon-text">{{$developing_data['developing_skill2']}}</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="bottom-box">
                 <img src="{{asset('assets/images/report/lifevitae_purple.png')}}" alt="">
-                <p>&copy; 2023, LifeVitae Pte Ltd. All rights reserved.</p>
+                <p>&copy; {{ date('Y') }}, LifeVitae Pte Ltd. All rights reserved.</p>
             </div>
 
             <!-- 2nd page -->
@@ -213,18 +210,18 @@
                 <div class="heading-box mt-30">
                     <div class="title-box">
                         <span class="title-side"></span>
-                        <span class="main-title">Suggested Activities</span>
+                        <span class="main-title">Your Suggested Activities</span>
                     </div>
                 </div>
 
-                <div class="container">
+                <!-- <div class="container">
                     <div class="fill-width" style="padding: 0 10px;">
                         <div class="triangle-left-box">
                             <span class="triangle-left-text">Suggested Activites</span>
                             <span class="triangle-left-left"></span>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="flex mt-30">
                     <div class="mt-20" class="suggested-img-box">
                         <img class="suggested-activites-img" src="{{asset('assets/images/report/Group.png')}}" alt="">
@@ -250,7 +247,7 @@
                 <div class="bottom-box-footer">
                     <div class="bottom-box">
                         <img src="{{asset('assets/images/report/lifevitae_purple.png')}}" alt="">
-                        <p>&copy; 2023, LifeVitae Pte Ltd. All rights reserved.</p>
+                        <p>&copy; {{ date('Y') }}, LifeVitae Pte Ltd. All rights reserved.</p>
                     </div>
 
                     <img src="{{asset('assets/images/report/bottom-bg.png')}}" alt="" class="bottom-bg">
@@ -260,33 +257,54 @@
         </div>
     </div>
     <button id="downloadPdf" class="no-print" onclick="generatePDF()">Download</button>
-    
+
     <script>
         const data = {
             labels: @json($skills),
             datasets: [{
-                label: 'My First Dataset',
+                label: '',
                 data: @json($skills_data),
                 fill: true,
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgb(255, 99, 132)',
-                pointBackgroundColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'rgba(45, 84, 151, 0.2)',
+                borderColor: 'rgb(45, 84, 151)',
+                pointBackgroundColor: 'rgb(45, 84, 151)',
                 pointBorderColor: '#fff',
                 pointHoverBackgroundColor: '#fff',
                 pointHoverBorderColor: 'rgb(255, 99, 132)'
             }]
         };
 
+        const labelColors = [
+            '#335089', // Cognitive - Dark Blue
+            '#6897CC', // Interactive - Light Blue
+            '#7BA753', // Emotive - Green
+            '#EFBE40', // Adaptive - Yellow
+            '#DA8043', // Creative - Orange
+            '#AA2217' // Motive - Red
+        ];
+
         const config = {
             type: 'radar',
             data: data,
             options: {
-                elements: {
-                    line: {
-                        borderWidth: 3
+                plugins: {
+                    legend: {
+                        display: false // This hides the legend label
                     }
                 },
-            },
+                scales: {
+                    r: {
+                        pointLabels: {
+                            color: (context) => labelColors[context.index % labelColors.length], // Set color for each label
+                        },
+                    }
+                },
+                elements: {
+                    line: {
+                        borderWidth: 1
+                    }
+                }
+            }
         };
 
         const ctx = document.getElementById('myChart').getContext('2d');
@@ -297,8 +315,9 @@
         function generatePDF() {
             window.print();
         }
-        window.addEventListener('load', generatePDF());
+        window.addEventListener('load', generatePDF);
     </script>
+
 </body>
 
 </html>

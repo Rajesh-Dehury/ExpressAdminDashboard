@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ForgotPassswordMail;
+use App\Models\ExpresDashboardMonthly;
 use App\Models\ExpressClient;
 use App\Models\ExpressClientAdmin;
 use App\Models\ExpressUser;
@@ -78,7 +79,7 @@ class ExpressAuthController extends Controller
         } catch (Exception $e) {
         }
 
-        return back()->with('message', "Please check your email.");
+        return view('express_forgot_password', ['message' => 'Please check your email.']);
     }
 
 
@@ -231,6 +232,12 @@ class ExpressAuthController extends Controller
             $reportCountQuater += $user->expressReport ? 1 : 0;
         }
 
+        $startOfLastMonth = Carbon::now()->subMonth()->startOfMonth()->toDateString();
+        $endOfLastMonth = Carbon::now()->subMonth()->endOfMonth()->toDateString();
+        shell_exec("python3 /expressadmin/express_admin_dashboard_monthly_with_response_patterns.py " . $express_client_admin->omr_client_id . " " . $startOfLastMonth . " " . $endOfLastMonth);
+
+        $monthly_records = ExpresDashboardMonthly::latest()->paginate(10);
+
         return view(
             'dashboard',
             compact(
@@ -243,7 +250,8 @@ class ExpressAuthController extends Controller
                 'start_month',
                 'year',
                 'total_registered_user_quater_count',
-                'reportCountQuater'
+                'reportCountQuater',
+                'monthly_records'
             )
         );
     }

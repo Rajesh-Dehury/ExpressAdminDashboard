@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ExpresDashboardMonthly;
 use App\Models\ExpressClient;
 use App\Models\ExpressUser;
 use App\Models\JobDetail;
 use App\Models\LifeStrength;
 use App\Models\LifeSuggestion;
+use App\Models\LifevitaeCharacter;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Auth;
@@ -31,15 +34,21 @@ class StudentSearchController extends Controller
 
         $life_strengths =  explode(',', $expressReport->life_strengths);
 
+        $script = "python3 D:/01-LifeVitae/00-Laravel/ExpressAdminDashboard/public/get_charachter.py {$id}";
 
-        $skills = ['MOTIVE', 'CREATIVE', 'ADAPTIVE', 'EMOTIVE', 'INTERACTIVE', 'COGNITIVE'];
+        $ch = json_decode(shell_exec($script), true);
+        
+        $top_ch = LifevitaeCharacter::find($ch['lifevitae_charachter']);
+
+
+        $skills = ['Cognitive', 'Interactive', 'Emotive', 'Adaptive', 'Creative', 'Motive'];
         $skills_data = [
-            $expressReport->MOTIVE,
-            $expressReport->CREATIVE,
-            $expressReport->ADAPTIVE,
-            $expressReport->EMOTIVE,
-            $expressReport->INTERACTIVE,
             $expressReport->COGNITIVE,
+            $expressReport->INTERACTIVE,
+            $expressReport->EMOTIVE,
+            $expressReport->ADAPTIVE,
+            $expressReport->CREATIVE,
+            $expressReport->MOTIVE,
         ];
 
         $dominant_skills = explode(',', $expressReport->dominant_skills);
@@ -65,6 +74,7 @@ class StudentSearchController extends Controller
                 'suggestedActivity',
                 'life_strengths_images',
                 'life_strengths_bg',
+                'top_ch'
             )
         );
     }
@@ -78,14 +88,14 @@ class StudentSearchController extends Controller
         $life_strengths =  explode(',', $expressReport->life_strengths);
 
 
-        $skills = ['MOTIVE', 'CREATIVE', 'ADAPTIVE', 'EMOTIVE', 'INTERACTIVE', 'COGNITIVE'];
+        $skills = ['Cognitive', 'Interactive', 'Emotive', 'Adaptive', 'Creative', 'Motive'];
         $skills_data = [
-            $expressReport->MOTIVE,
-            $expressReport->CREATIVE,
-            $expressReport->ADAPTIVE,
-            $expressReport->EMOTIVE,
-            $expressReport->INTERACTIVE,
             $expressReport->COGNITIVE,
+            $expressReport->INTERACTIVE,
+            $expressReport->EMOTIVE,
+            $expressReport->ADAPTIVE,
+            $expressReport->CREATIVE,
+            $expressReport->MOTIVE,
         ];
 
         $dominant_skills = explode(',', $expressReport->dominant_skills);
@@ -122,6 +132,142 @@ class StudentSearchController extends Controller
     public function quaterlyReport()
     {
         return view('report_one');
+    }
+
+    public function monthlyReport($id)
+    {
+        $monthly_report = ExpresDashboardMonthly::findOrFail($id);
+
+        // Extract skills and other patterns
+        $dominant_skills = $this->extractSkillsAndText($monthly_report->dominant_skill_text);
+        $developing_skills = $this->extractSkillsAndText($monthly_report->developing_skill_text);
+        $co_curricular_patterns = $this->safeJsonDecode($monthly_report->co_curricular_patterns);
+        $social_patterns = $this->safeJsonDecode($monthly_report->social_patterns);
+        $top_strengths = $this->extractTopStrengths($monthly_report->top_strengths);
+
+        // Extract the start and end dates for the given month
+        $start_date = Carbon::createFromFormat('Y-m', $monthly_report->year_month)->startOfMonth();
+        $end_date = $start_date->copy()->addMonth()->startOfMonth();
+
+        // Total Licenses Issued in the month
+        $total_licenses_issued = ExpressUser::where('omr_client_id', $monthly_report->school_name)
+            ->whereBetween('created_at', [$start_date, $end_date])
+            ->count();
+
+        // Reports Generated in the month
+        $reports_generated = ExpressUser::where('omr_client_id', $monthly_report->school_name)
+            ->whereHas('expressReport', function ($query) use ($start_date, $end_date) {
+                $query->whereBetween('created_at', [$start_date, $end_date]);
+            })
+            ->count();
+
+        // Top Life Path data
+        $top_lp_data = $this->parseTopLp($monthly_report->top_lp);
+        $job_details = JobDetail::whereIn('id', array_keys($top_lp_data))->get();
+
+        $labels = [];
+        $values = [];
+
+        foreach ($job_details as $job) {
+            $labels[] = $job->title;
+            $values[] = $top_lp_data[$job->id];
+        }
+
+        array_multisort($values, SORT_DESC, $labels);
+
+        // dd($top_lp_data, $labels,$values,$job_details);
+
+        // Pass data to the view
+        return view('monthly_summary_report', [
+            'monthly_report' => $monthly_report,
+            'dominant_skills' => $dominant_skills,
+            'developing_skills' => $developing_skills,
+            'co_curricular_patterns' => $co_curricular_patterns,
+            'social_patterns' => $social_patterns,
+            'top_strengths' => $top_strengths,
+            'top_lp_labels' => $labels,
+            'top_lp_values' => $values,
+            'total_licenses_issued' => $total_licenses_issued,
+            'reports_generated' => $reports_generated,
+        ]);
+    }
+
+
+    private function parseTopLp(string $top_lp): array
+    {
+        $data = [];
+        $pairs = explode(';', $top_lp);
+
+        foreach ($pairs as $pair) {
+            if (strpos($pair, ':') !== false) {
+                list($id, $value) = explode(':', $pair);
+                $data[(int) $id] = (int) $value;
+            }
+        }
+
+        return $data;
+    }
+
+
+    private function extractTopStrengths(?string $strengths): array
+    {
+        if (is_null($strengths) || trim($strengths) === '') {
+            return [];
+        }
+
+        return array_map('trim', explode(',', $strengths));
+    }
+
+
+    private function safeJsonDecode(?string $jsonString): array
+    {
+        if (is_null($jsonString) || trim($jsonString) === '') {
+            return [];
+        }
+
+        // Replace single quotes with double quotes to fix JSON format issues.
+        $fixedJson = str_replace("'", "\"", $jsonString);
+
+        $decoded = json_decode($fixedJson, true);
+
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            return []; // Return an empty array on failure.
+        }
+
+        return $decoded;
+    }
+
+
+
+    protected $skillColors = [
+        'MOTIVE' => '#c00000',
+        'CREATIVE' => '#ff9000',
+        'ADAPTIVE' => '#ffbe00',
+        'EMOTIVE' => '#6fac45',
+        'INTERACTIVE' => '#5b9bd5',
+        'COGNITIVE' => '#2d5497',
+    ];
+
+
+    public function extractSkillsAndText(string $input): array
+    {
+
+        list($keys, $content) = explode(':', $input, 2);
+        $keyArray = explode(',', $keys);
+
+        $result = [];
+        foreach ($keyArray as $index => $key) {
+            $trimmedKey = trim($key);
+
+            $result['skills'][] = [
+                'name' => $trimmedKey,
+                'color' => $this->skillColors[$trimmedKey] ?? '#000000' // Default to black if not found
+            ];
+        }
+
+        $result['text'] = trim($content);
+
+        return $result;
     }
 
     function suggestedActivity($DominantSkills)

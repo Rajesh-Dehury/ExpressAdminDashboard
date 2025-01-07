@@ -194,6 +194,7 @@ page[size="A4"] {
 @media print {
     body {
         -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
         background: #fff !important;
         box-shadow: none !important;
         padding: 0;
@@ -238,4 +239,22 @@ page[size="A4"] {
     .skill_img_inner {
         width: 60px !important;
     }
+}
+
+.main-box {
+    page-break-before: auto;
+    break-inside: avoid;
+}
+
+table {
+    page-break-inside: avoid;
+}
+
+.row {
+    page-break-inside: avoid;
+}
+
+.section {
+    break-before: auto;
+    page-break-inside: avoid;
 }

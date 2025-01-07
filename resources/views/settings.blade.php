@@ -12,7 +12,7 @@
                 </button>
                 <p class="mb-0 heading-text">Settings</p>
             </div>
-            <form method="get" action="{{route('express.search')}}" class="position-relative d-none d-lg-block">
+            <form method="get" action="{{route('express.search')}}" class="position-relative d-none">
                 <i class="bi bi-search position-absolute position-absolute top-50 translate-middle-y top-search-icon"></i>
                 <input type="search" class="main-search" name="student_name" placeholder="Search for student name...">
             </form>
@@ -29,7 +29,7 @@
                     <div class="row mb-5">
                         <div class="col-sm-6">
                             <div class="form-group mb-3">
-                                <label for="Your_Logo" class="mb-3">Your Logo</label>
+                                <label for="Your_Logo" class="mb-3">Your Logo (Recommended aspect ratio 1:1)</label>
                                 <div class="d-flex">
                                     <div class="logo_outline" onclick="triggerFileInput()" role="button">
                                         <div class="d-flex align-items-center mt-2">

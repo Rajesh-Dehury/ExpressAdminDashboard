@@ -32,7 +32,7 @@
                 <img src="{{asset('assets/images/professional_report/mask_group_bg.png')}}" alt="" class="mask-img">
                 <img src="{{asset('assets/images/professional_report/logo_LV_polos.png')}}" alt="" class="mask-img2">
                 <img src="{{asset('assets/images/professional_report/letter_head_footer_simple.png')}}" alt="" class="footer-img">
-                <p class="footer-text"><span>&copy;</span> 2023, LifeVitae Pte Ltd. All rights reserved.</p>
+                <p class="footer-text"><span>&copy;</span> {{ date('Y') }}, LifeVitae Pte Ltd. All rights reserved.</p>
             </div>
         </div>
     </page>
@@ -104,7 +104,7 @@
                 <img src="{{asset('assets/images/professional_report/logo LV polos 1.png')}}" alt="" class="mask-img2">
                 <p class="page-number">1</p>
                 <img src="{{asset('assets/images/professional_report/letter_head_footer_simple.png')}}" alt="" class="footer-img">
-                <p class="footer-text"><span>&copy;</span> 2023, LifeVitae Pte Ltd. All rights reserved.</p>
+                <p class="footer-text"><span>&copy;</span> {{ date('Y') }}, LifeVitae Pte Ltd. All rights reserved.</p>
             </div>
         </div>
     </page>
@@ -219,7 +219,7 @@
                 <img src="{{asset('assets/images/professional_report/logo LV polos 1.png')}}" alt="" class="mask-img2">
                 <p class="page-number">2</p>
                 <img src="{{asset('assets/images/professional_report/letter_head_footer_simple.png')}}" alt="" class="footer-img">
-                <p class="footer-text"><span>&copy;</span> 2023, LifeVitae Pte Ltd. All rights reserved.</p>
+                <p class="footer-text"><span>&copy;</span> {{ date('Y') }}, LifeVitae Pte Ltd. All rights reserved.</p>
             </div>
         </div>
     </page>
@@ -291,7 +291,7 @@
                 <img src="{{asset('assets/images/professional_report/logo LV polos 1.png')}}" alt="" class="mask-img2">
                 <p class="page-number">3</p>
                 <img src="{{asset('assets/images/professional_report/letter_head_footer_simple.png')}}" alt="" class="footer-img">
-                <p class="footer-text"><span>&copy;</span> 2023, LifeVitae Pte Ltd. All rights reserved.</p>
+                <p class="footer-text"><span>&copy;</span> {{ date('Y') }}, LifeVitae Pte Ltd. All rights reserved.</p>
             </div>
         </div>
     </page>
@@ -334,7 +334,7 @@
                 <img src="{{asset('assets/images/professional_report/logo LV polos 1.png')}}" alt="" class="mask-img2">
                 <p class="page-number">4</p>
                 <img src="{{asset('assets/images/professional_report/letter_head_footer_simple.png')}}" alt="" class="footer-img">
-                <p class="footer-text"><span>&copy;</span> 2023, LifeVitae Pte Ltd. All rights reserved.</p>
+                <p class="footer-text"><span>&copy;</span> {{ date('Y') }}, LifeVitae Pte Ltd. All rights reserved.</p>
             </div>
         </div>
     </page>
@@ -355,28 +355,28 @@
                             <div class="position-relative">
                                 <div>
                                     <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[0]}}" class="hex-shape-inner">
-                                    <p class="hex-text">{{$life_strengths[0]}}</p>
+                                    <p class="hex-text">{{ucwords($life_strengths[0])}}</p>
                                     <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[0]}}.png" class="position-absolute top-50 start-50 translate-middle ls-hex">
                                 </div>
                             </div>
                             <div class="position-relative">
                                 <div>
                                     <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[1]}}" class="hex-shape-inner">
-                                    <p class="hex-text">{{$life_strengths[1]}}</p>
+                                    <p class="hex-text">{{ucwords($life_strengths[1])}}</p>
                                     <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[1]}}.png" class="position-absolute top-50 start-50 translate-middle ls-hex">
                                 </div>
                             </div>
                             <div class="position-relative">
                                 <div>
                                     <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[2]}}" class="hex-shape-inner">
-                                    <p class="hex-text">{{$life_strengths[2]}}</p>
+                                    <p class="hex-text">{{ucwords($life_strengths[2])}}</p>
                                     <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[2]}}.png" class="position-absolute top-50 start-50 translate-middle ls-hex">
                                 </div>
                             </div>
                             <div class="position-relative">
                                 <div>
                                     <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[3]}}" class="hex-shape-inner">
-                                    <p class="hex-text">{{$life_strengths[3]}}</p>
+                                    <p class="hex-text">{{ucwords($life_strengths[3])}}</p>
                                     <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[3]}}.png" class="position-absolute top-50 start-50 translate-middle ls-hex">
                                 </div>
                             </div>
@@ -385,7 +385,7 @@
                             <div class="position-relative">
                                 <div>
                                     <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[4]}}" class="hex-shape-inner">
-                                    <p class="hex-text">{{$life_strengths[4]}}</p>
+                                    <p class="hex-text">{{ucwords($life_strengths[4])}}</p>
                                     <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[4]}}.png" class="position-absolute top-50 start-50 translate-middle ls-hex">
                                 </div>
                             </div>
@@ -397,7 +397,7 @@
                             <div class="position-relative">
                                 <div>
                                     <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[5]}}" class="hex-shape-inner">
-                                    <p class="hex-text">{{$life_strengths[5]}}</p>
+                                    <p class="hex-text">{{ucwords($life_strengths[5])}}</p>
                                     <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[5]}}.png" class="position-absolute top-50 start-50 translate-middle ls-hex">
                                 </div>
                             </div>
@@ -406,28 +406,28 @@
                             <div class="position-relative">
                                 <div>
                                     <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[6]}}" class="hex-shape-inner">
-                                    <p class="hex-text">{{$life_strengths[6]}}</p>
+                                    <p class="hex-text">{{ucwords($life_strengths[6])}}</p>
                                     <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[6]}}.png" class="position-absolute top-50 start-50 translate-middle ls-hex">
                                 </div>
                             </div>
                             <div class="position-relative">
                                 <div>
                                     <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[7]}}" class="hex-shape-inner">
-                                    <p class="hex-text">{{$life_strengths[7]}}</p>
+                                    <p class="hex-text">{{ucwords($life_strengths[7])}}</p>
                                     <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[7]}}.png" class="position-absolute top-50 start-50 translate-middle ls-hex">
                                 </div>
                             </div>
                             <div class="position-relative">
                                 <div>
                                     <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[8]}}" class="hex-shape-inner">
-                                    <p class="hex-text">{{$life_strengths[8]}}</p>
+                                    <p class="hex-text">{{ucwords($life_strengths[8])}}</p>
                                     <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[8]}}.png" class="position-absolute top-50 start-50 translate-middle ls-hex">
                                 </div>
                             </div>
                             <div class="position-relative">
                                 <div>
                                     <img src="{{asset('assets/images/Design assets/')}}/{{$life_strengths_images[9]}}" class="hex-shape-inner">
-                                    <p class="hex-text">{{$life_strengths[9]}}</p>
+                                    <p class="hex-text">{{ucwords($life_strengths[9])}}</p>
                                     <img src="{{asset('assets/images/report')}}/hex-{{$life_strengths_bg[9]}}.png" class="position-absolute top-50 start-50 translate-middle ls-hex">
                                 </div>
                             </div>
@@ -451,9 +451,9 @@
                 </div>
             </div>
             <div class="page-content1">
-                <div class="header-content" style="margin: 5px 40px;">
+                <!-- <div class="header-content" style="margin: 5px 40px;">
                     <p class="header-content-text">Your LifeStrengths</p>
-                </div>
+                </div> -->
                 <div class="mx-5 mt-3">
                     <div class="d-flex flex-wrap">
                         @foreach($lifeStrengthText['achievements_strength'] as $index => $achievement)
@@ -493,7 +493,7 @@
             <img src="{{asset('assets/images/professional_report/logo LV polos 1.png')}}" alt="" class="mask-img2">
             <p class="page-number">5</p>
             <img src="{{asset('assets/images/professional_report/letter_head_footer_simple.png')}}" alt="" class="footer-img">
-            <p class="footer-text"><span>&copy;</span> 2023, LifeVitae Pte Ltd. All rights reserved.</p>
+            <p class="footer-text"><span>&copy;</span> {{ date('Y') }}, LifeVitae Pte Ltd. All rights reserved.</p>
         </div>
         </div>
     </page>
@@ -546,7 +546,7 @@
                 <img src="{{asset('assets/images/professional_report/logo LV polos 1.png')}}" alt="" class="mask-img2">
                 <p class="page-number">6</p>
                 <img src="{{asset('assets/images/professional_report/letter_head_footer_simple.png')}}" alt="" class="footer-img">
-                <p class="footer-text"><span>&copy;</span> 2023, LifeVitae Pte Ltd. All rights reserved.</p>
+                <p class="footer-text"><span>&copy;</span> {{ date('Y') }}, LifeVitae Pte Ltd. All rights reserved.</p>
             </div>
         </div>
     </page>
@@ -599,12 +599,19 @@
 
                 <div class="mx-5 text-center mt-5">
                     <p class="mb-0">Address:</p>
+
+                    @if (session('user_country') === 'Indonesia')
                     <p class="mb-0"><strong>PT LifeVitae Indonesia</strong></p>
-                    <p class="mb-0">(Indonesia Office) </p>
+                    <p class="mb-0">(Indonesia Office)</p>
                     <p class="mb-0">Gedung 18 Office Park</p>
-                    <p class="mb-0">
-                        Lantai 21 Unit C, JI. T.B. Simatupang No. 18 Desa/Kelurahan</p>
+                    <p class="mb-0">Lantai 21 Unit C, JI. T.B. Simatupang No. 18 Desa/Kelurahan</p>
                     <p class="mb-0">Kebagusan, Kec. Pasar Minggu Jakarta Selatan, DKI Jakarta 12520</p>
+                    @else
+                    <p class="mb-0"><strong>LifeVitae Pvt Ltd (India Office)</strong></p>
+                    <p class="mb-0">Tower-2, 22C, 375 Prince </p>
+                    <p class="mb-0">Anwar Shah Road, Kolkata</p>
+                    <p class="mb-0">West Bengal, 700068, India</p>
+                    @endif
                 </div>
                 <div>
                     <div class="d-flex justify-content-between mx-5 mt-3">
@@ -632,7 +639,7 @@
                 <img src="{{asset('assets/images/professional_report/logo LV polos 1.png')}}" alt="" class="mask-img2">
                 <p class="page-number">6</p>
                 <img src="{{asset('assets/images/professional_report/letter_head_footer_simple.png')}}" alt="" class="footer-img">
-                <p class="footer-text"><span>&copy;</span> 2023, LifeVitae Pte Ltd. All rights reserved.</p>
+                <p class="footer-text"><span>&copy;</span> {{ date('Y') }}, LifeVitae Pte Ltd. All rights reserved.</p>
             </div>
         </div>
     </page>
@@ -646,28 +653,49 @@
         const data = {
             labels: @json($skills),
             datasets: [{
-                label: 'My First Dataset',
+                label: '',
                 data: @json($skills_data),
                 fill: true,
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgb(255, 99, 132)',
-                pointBackgroundColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'rgba(45, 84, 151, 0.2)',
+                borderColor: 'rgb(45, 84, 151)',
+                pointBackgroundColor: 'rgb(45, 84, 151)',
                 pointBorderColor: '#fff',
                 pointHoverBackgroundColor: '#fff',
                 pointHoverBorderColor: 'rgb(255, 99, 132)'
             }]
         };
 
+        const labelColors = [
+            '#335089', // Cognitive - Dark Blue
+            '#6897CC', // Interactive - Light Blue
+            '#7BA753', // Emotive - Green
+            '#EFBE40', // Adaptive - Yellow
+            '#DA8043', // Creative - Orange
+            '#AA2217' // Motive - Red
+        ];
+
         const config = {
             type: 'radar',
             data: data,
             options: {
-                elements: {
-                    line: {
-                        borderWidth: 3
+                plugins: {
+                    legend: {
+                        display: false // This hides the legend label
                     }
                 },
-            },
+                scales: {
+                    r: {
+                        pointLabels: {
+                            color: (context) => labelColors[context.index % labelColors.length], // Set color for each label
+                        },
+                    }
+                },
+                elements: {
+                    line: {
+                        borderWidth: 1
+                    }
+                }
+            }
         };
 
         const ctx = document.getElementById('myChart').getContext('2d');
